@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GoalItem} from "./_Model/goalItem";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'goals';
+  selectedItem: GoalItem | null = null;
+
+  createItem(): void {
+    const newItem = new GoalItem();
+    this.selectedItem = newItem;
+  }
 }
