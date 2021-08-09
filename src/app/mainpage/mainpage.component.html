@@ -1,0 +1,15 @@
+<div class="outerContainer">
+  <mat-toolbar>
+    <button (click)="createItem()"> Create new Item </button>
+  </mat-toolbar>
+
+  <div class="mainContainer">
+    <div class="leftContainer">
+      <app-goalcontainer [goalList]="[]" [name]="'funded'"></app-goalcontainer>
+      <app-goalcontainer [goalList]="[]" [name]="'semi-funded'"></app-goalcontainer>
+    </div>
+    <div class="rightContainer">
+      <app-goaldetails [item]="selectedItem"></app-goaldetails>
+    </div>
+  </div>
+</div>

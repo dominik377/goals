@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { GoalcontainerComponent } from './goalcontainer/goalcontainer.component';
 import {MatListModule} from "@angular/material/list";
+import { MainpageComponent } from './mainpage/mainpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GoaldetailsComponent,
-    GoalcontainerComponent
+    GoalcontainerComponent,
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
