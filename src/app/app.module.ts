@@ -11,6 +11,7 @@ import { GoalcontainerComponent } from './goalcontainer/goalcontainer.component'
 import {MatListModule} from "@angular/material/list";
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { TestComponent } from './test/test.component';
+import {TestGoaldetailsComponent} from "./test/goaldetails/goaldetails.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TestComponent } from './test/test.component';
     GoaldetailsComponent,
     GoalcontainerComponent,
     MainpageComponent,
-    TestComponent
+    TestComponent,
+    TestGoaldetailsComponent
   ],
   imports: [
     BrowserModule,

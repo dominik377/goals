@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
+  displayComponent: 'goaldetails' | null = null;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectDisplayComponent(comp: 'goaldetails' | null): void {
+    this.displayComponent = comp
   }
 
 }
