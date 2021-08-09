@@ -10,13 +10,15 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import { GoalcontainerComponent } from './goalcontainer/goalcontainer.component';
 import {MatListModule} from "@angular/material/list";
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GoaldetailsComponent,
     GoalcontainerComponent,
-    MainpageComponent
+    MainpageComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
