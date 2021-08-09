@@ -1,9 +1,10 @@
 <div *ngIf="item === null"> No Item defined </div>
 <div class="main" *ngIf="item !== null">
   <select class="item" [(ngModel)]="item.categoryA">
-    <ng-container *ngFor="let option of ['ua', 'funded', 'semi-funded', 'plausible', 'implausible']">
+    <ng-container *ngFor="let option of ['ua', 'funded', 'semi-funded', 'near', 'far']">
       <option value="option"> {{option}}</option>
     </ng-container>
   </select>
+  <input type="text" [(ngModel)]="item.displayName">
 </div>
 

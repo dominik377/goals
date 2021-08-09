@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
+import {BehaviorSubject} from "rxjs";
+
 import {GoalItem} from "./_Model/goalItem";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
-  goalList: GoalItem [] = [];
+  goalList: GoalItem [] = []
+  selectedGoal: GoalItem | null = null
+  getGoalList: BehaviorSubject<GoalItem []>
+  getSelectedGoal: BehaviorSubject<GoalItem | null>;
 
   constructor() {
-    this.initGoalList();
-
+    this.getGoalList = new BehaviorSubject<GoalItem []>([])
+    this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
   }
 
-  initGoalList (): void {
-    for (const i of [0, 1, 2]) {
-      const g = new GoalItem();
-      this.goalList.push (g);
-    }
+  createNewGoal() {
+    const g = new GoalItem();
+    this.goalList.push (g);
+    this.selectedGoal = g;
+
+    this.getGoalList.next(this.goalList)
+    this.getSelectedGoal.next(this.selectedGoal)
   }
 }
