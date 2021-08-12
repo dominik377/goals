@@ -14,4 +14,8 @@ export class GoaldetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  inputChangeHandler($event: any, variable: any): void {
+    variable = $event.target.value;
+  }
+
 }

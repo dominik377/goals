@@ -1,10 +1,24 @@
-<div *ngIf="item === null"> No Item defined </div>
-<div class="main" *ngIf="item !== null">
-  <select class="item" [(ngModel)]="item.categoryA">
-    <ng-container *ngFor="let option of ['ua', 'funded', 'semi-funded', 'near', 'far']">
-      <option value="option"> {{option}}</option>
-    </ng-container>
-  </select>
-  <input type="text" [(ngModel)]="item.displayName">
-</div>
-
+<mat-card>
+  <mat-card-header>Details</mat-card-header>
+  <mat-card-content>
+    <div *ngIf="item === null"> No Item defined </div>
+    <div *ngIf="item !== null" class="main">
+      <select matNativeControl (change)="inputChangeHandler($event, item.categoryA)">
+        <option value="'ua'" disabled selected > Funding State </option>
+        <ng-container *ngFor="let option of ['ua', 'funded', 'semi-funded', 'near', 'far']">
+          <option *ngIf="option !== 'ua'" value="{{option}}"> {{option}}</option>
+        </ng-container>
+      </select>
+      <select matNativeControl (change)="inputChangeHandler($event, item.categoryB)">
+        <option value="'ua'" disabled selected > Zeitliche Dauer </option>
+        <ng-container *ngFor="let option of ['perennial', 'one-time-long','one-time-short']">
+          <option *ngIf="option !== 'ua'" value="{{option}}"> {{option}}</option>
+        </ng-container>
+      </select>
+      <input type="text" [(ngModel)]="item.displayName">
+      <mat-radio-group aria-label="Juiciness">
+        <mat-radio-button *ngFor="let o of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" value="{{o}}"> {{o}} </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </mat-card-content>
+</mat-card>

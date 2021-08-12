@@ -12,6 +12,9 @@ import {MatListModule} from "@angular/material/list";
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { TestComponent } from './test/test.component';
 import {TestGoaldetailsComponent} from "./test/goaldetails/goaldetails.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatCardModule} from "@angular/material/card";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -22,14 +25,17 @@ import {TestGoaldetailsComponent} from "./test/goaldetails/goaldetails.component
     TestComponent,
     TestGoaldetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatListModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatListModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatRadioModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
