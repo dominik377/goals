@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import {GoalItem} from "../../_Model/goalItem";
+import {GlobalService} from "../../global.service";
 
 @Component({
   selector: 'app-test-goaldetails',
@@ -8,8 +10,13 @@ import {GoalItem} from "../../_Model/goalItem";
 })
 export class TestGoaldetailsComponent implements OnInit {
   exampleGoal: GoalItem | null = null;
+  selectedGoal: GoalItem | null = null;
 
-  constructor() {
+  constructor(private globalService: GlobalService) {
+    this.globalService.getSelectedGoal.subscribe( (next) => {
+      this.selectedGoal = next;
+    })
+
     this.exampleGoal = new GoalItem();
     this.exampleGoal.displayName = 'Example Goal'
     this.exampleGoal.categoryA = 'semi-funded';
@@ -27,6 +34,9 @@ export class TestGoaldetailsComponent implements OnInit {
     this.exampleGoal.fundingLevelList[3].neededNormal = 30;
     this.exampleGoal.fundingLevelList[3].neededOverkill = 400;
     this.exampleGoal.fundingLevelList[3].assigned = 0;
+
+    this.globalService.addGoal(this.exampleGoal)
+
   }
 
   ngOnInit(): void {

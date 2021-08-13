@@ -17,12 +17,22 @@ export class GlobalService {
     this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
   }
 
-  createNewGoal() {
-    const g = new GoalItem();
-    this.goalList.push (g);
-    this.selectedGoal = g;
-
+  publishGoals(): void {
     this.getGoalList.next(this.goalList)
     this.getSelectedGoal.next(this.selectedGoal)
+  }
+
+  addGoal(newGoal: GoalItem): void {
+    this.goalList.push (newGoal)
+    this.selectedGoal = newGoal
+
+    this.publishGoals()
+  }
+
+  createNewGoal() {
+    const g = new GoalItem();
+    this.addGoal(g)
+
+    this.publishGoals()
   }
 }
