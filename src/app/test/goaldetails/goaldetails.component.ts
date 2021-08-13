@@ -15,18 +15,18 @@ export class TestGoaldetailsComponent implements OnInit {
     this.exampleGoal.categoryA = 'semi-funded';
     this.exampleGoal.categoryB = 'one-time-long';
     this.exampleGoal.juicyness = 5;
-    this.exampleGoal.fundingLevels.timeOneTime.neededNormal = 300;
-    this.exampleGoal.fundingLevels.timeOneTime.neededOverkill = 1000
-    this.exampleGoal.fundingLevels.timeOneTime.assigned  =  400;
-    this.exampleGoal.fundingLevels.timePerennial.neededNormal = 120;
-    this.exampleGoal.fundingLevels.timePerennial.neededOverkill = 300;
-    this.exampleGoal.fundingLevels.timePerennial.assigned = 50;
-    this.exampleGoal.fundingLevels.moneyOneTime.neededNormal = 100;
-    this.exampleGoal.fundingLevels.moneyOneTime.neededOverkill = 400;
-    this.exampleGoal.fundingLevels.moneyOneTime.assigned = 0;
-    this.exampleGoal.fundingLevels.moneyPereniall.neededNormal = 30;
-    this.exampleGoal.fundingLevels.moneyPereniall.neededOverkill = 400;
-    this.exampleGoal.fundingLevels.moneyPereniall.assigned = 0;
+    this.exampleGoal.fundingLevelList[0].neededNormal = 300;
+    this.exampleGoal.fundingLevelList[0].neededOverkill = 1000
+    this.exampleGoal.fundingLevelList[0].assigned  =  400;
+    this.exampleGoal.fundingLevelList[1].neededNormal = 120;
+    this.exampleGoal.fundingLevelList[1].neededOverkill = 300;
+    this.exampleGoal.fundingLevelList[1].assigned = 50;
+    this.exampleGoal.fundingLevelList[2].neededNormal = 100;
+    this.exampleGoal.fundingLevelList[2].neededOverkill = 400;
+    this.exampleGoal.fundingLevelList[2].assigned = 0;
+    this.exampleGoal.fundingLevelList[3].neededNormal = 30;
+    this.exampleGoal.fundingLevelList[3].neededOverkill = 400;
+    this.exampleGoal.fundingLevelList[3].assigned = 0;
   }
 
   ngOnInit(): void {
