@@ -15,6 +15,7 @@ import {TestGoaldetailsComponent} from "./test/goaldetails/goaldetails.component
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
+import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatRadioModule} from "@angular/material/radio";
     GoalcontainerComponent,
     MainpageComponent,
     TestComponent,
-    TestGoaldetailsComponent
+    TestGoaldetailsComponent,
+    FundinglevelComponent
   ],
     imports: [
         BrowserModule,
