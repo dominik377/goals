@@ -4,26 +4,33 @@
     <div *ngIf="item === null"> No Item defined </div>
     <div *ngIf="item !== null" class="main">
 
-      <select matNativeControl (change)="inputChangeHandler($event, item.categoryA)">
+      <select matNativeControl (change)="inputChangeHandler($event, 'item.categoryA', item)">
         <option value="'ua'" disabled selected > Funding State </option>
-        <ng-container *ngFor="let option of ['ua', 'funded', 'semi-funded', 'near', 'far']">
-          <option *ngIf="option !== 'ua'" value="{{option}}"> {{option}}</option>
+        <ng-container *ngFor="let option of ['funded', 'semi-funded', 'near', 'far']">
+          <option *ngIf="option !== item.categoryA" value="{{option}}"> {{option}}</option>
+          <option *ngIf="option === item.categoryA" value="{{option}}" selected > {{option}}</option>
         </ng-container>
       </select>
 
-      <select matNativeControl (change)="inputChangeHandler($event, item.categoryB)">
-        <option value="'ua'" disabled selected > Zeitliche Dauer </option>
+      <select matNativeControl (change)="inputChangeHandler($event, 'item.categoryB', item)">
+        <option value="'ua'" disabled selected *ngIf="item.categoryB==='ua'"> Zeitliche Dauer </option>
         <ng-container *ngFor="let option of ['perennial', 'one-time-long','one-time-short']">
-          <option *ngIf="option !== 'ua'" value="{{option}}"> {{option}}</option>
+          <option *ngIf="option !== item.categoryB" value="{{option}}"> {{option}}</option>
+          <option *ngIf="option === item.categoryB" value="{{option}}" selected > {{option}}</option>
         </ng-container>
       </select>
       <input type="text" [(ngModel)]="item.displayName">
 
-      <mat-radio-group aria-label="Juiciness">
+      <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.juicyness">
         <mat-radio-button *ngFor="let o of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" value="{{o}}"> {{o}} </mat-radio-button>
       </mat-radio-group>
 
       <app-goaldetails-fundinglevel *ngFor="let fun of item.fundingLevelList" [item]="fun"></app-goaldetails-fundinglevel>
     </div> <!--END : MAIN  -->
+    <div>
+      <p> Just for Testing </p>
+
+      <div *ngIf="item !== null"> {{item.categoryA}}</div>
+    </div>
   </mat-card-content>
 </mat-card>

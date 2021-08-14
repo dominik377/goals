@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+
 import {GoalItem} from "../_Model/goalItem";
+import {GlobalService} from "../global.service";
 
 @Component({
   selector: 'app-goaldetails',
@@ -9,13 +11,21 @@ import {GoalItem} from "../_Model/goalItem";
 export class GoaldetailsComponent implements OnInit {
   @Input() item: GoalItem | null = null;
 
-  constructor() { }
+  constructor(private globalService: GlobalService, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.globalService.selectedGoalUpdated.subscribe((next) => {
+      if (next === true) {
+        this.cd.markForCheck();
+      }
+    })
   }
 
-  inputChangeHandler($event: any, variable: any): void {
-    variable = $event.target.value;
+  inputChangeHandler($event: any, variable: any, item: any): void {
+    const evalString = `${variable} = $event.target.value`
+    eval (evalString)
+    console.log($event.target.value)
+    this.globalService.sendSelectedGoalUpdatedSignal()
   }
 
 }

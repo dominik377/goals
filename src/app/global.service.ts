@@ -11,10 +11,12 @@ export class GlobalService {
   selectedGoal: GoalItem | null = null
   getGoalList: BehaviorSubject<GoalItem []>
   getSelectedGoal: BehaviorSubject<GoalItem | null>;
+  selectedGoalUpdated: BehaviorSubject<boolean | null>
 
   constructor() {
     this.getGoalList = new BehaviorSubject<GoalItem []>([])
     this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
+    this.selectedGoalUpdated = new BehaviorSubject<boolean | null>(null)
   }
 
   publishGoals(): void {
@@ -32,7 +34,10 @@ export class GlobalService {
   createNewGoal() {
     const g = new GoalItem();
     this.addGoal(g)
-
     this.publishGoals()
+  }
+
+  sendSelectedGoalUpdatedSignal(): void {
+    this.selectedGoalUpdated.next(true)
   }
 }
