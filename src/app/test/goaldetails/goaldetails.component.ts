@@ -19,7 +19,7 @@ export class TestGoaldetailsComponent implements OnInit {
 
     this.exampleGoal = new GoalItem();
     this.exampleGoal.displayName = 'Example Goal'
-    this.exampleGoal.categoryA = 'semi-funded';
+    this.exampleGoal.categoryA = 'funded';
     this.exampleGoal.categoryB = 'one-time-long';
     this.exampleGoal.juicyness = 5;
     this.exampleGoal.fundingLevelList[0].neededNormal = 300;

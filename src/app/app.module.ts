@@ -16,6 +16,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
 import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -27,17 +29,19 @@ import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.c
     TestGoaldetailsComponent,
     FundinglevelComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatListModule,
-        MatFormFieldModule,
-        MatCardModule,
-        MatRadioModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

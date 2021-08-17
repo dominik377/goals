@@ -33,6 +33,7 @@ export class GlobalService {
 
   createNewGoal() {
     const g = new GoalItem();
+    console.log(g)
     this.addGoal(g)
     this.publishGoals()
   }
