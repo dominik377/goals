@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GoalItem} from "../_Model/goalItem";
 import {GlobalService} from "../global.service";
+import * as _lodash from 'lodash';
 
 @Component({
   selector: 'app-mainpage',
@@ -17,9 +18,10 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.globalService.getGoalList.subscribe( (next: GoalItem []) => {
-      this.fullGoalList = next;
-      this.fundedList = next.filter ( (x) => x.categoryA === 'funded')
-      this.semifundedList = next.filter ( (x) => x.categoryA = 'semi-funded')
+      const nextClone: GoalItem [] = _lodash.cloneDeep(next)
+      this.fullGoalList = nextClone;
+      this.fundedList = nextClone.filter ( (x) => x.categoryA === 'funded')
+      this.semifundedList = nextClone.filter ( (x) => x.categoryA === 'semi-funded')
       console.log(this.fullGoalList)
     })
 

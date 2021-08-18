@@ -19,6 +19,7 @@ import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.c
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import {MatOptionModule} from "@angular/material/core";
     MatCardModule,
     MatRadioModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

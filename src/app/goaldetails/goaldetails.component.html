@@ -3,10 +3,11 @@
   <mat-card-content>
     <div *ngIf="item === null"> No Item defined </div>
     <div *ngIf="item !== null" class="main">
+
       <mat-form-field>
         <mat-label> Select Funding Level </mat-label>
         <mat-select [(ngModel)]="item.categoryA">
-          <mat-option *ngFor="let option of ['funded', 'semi-funded', 'near', 'far']" [value]="option">
+          <mat-option *ngFor="let option of  ['funded', 'semifunded', 'near', 'far', 'semi-funded']" [value]="option">
             {{option}}
           </mat-option>
         </mat-select>
