@@ -13,17 +13,16 @@ export class MainpageComponent implements OnInit {
   fullGoalList: GoalItem [] = []
   fundedList: GoalItem [] = [];
   semifundedList: GoalItem [] = [];
+  nearList: GoalItem [] = [];
+  farList: GoalItem [] = [];
 
   constructor(private globalService: GlobalService) {}
 
   ngOnInit(): void {
-    this.globalService.getGoalList.subscribe( (next: GoalItem []) => {
-      const nextClone: GoalItem [] = _lodash.cloneDeep(next)
-      this.fullGoalList = nextClone;
-      this.fundedList = nextClone.filter ( (x) => x.categoryA === 'funded')
-      this.semifundedList = nextClone.filter ( (x) => x.categoryA === 'semi-funded')
-      console.log(this.fullGoalList)
-    })
+    this.fundedList = this.globalService.fundedList;
+    this.semifundedList = this.globalService.semifundedList;
+    this.nearList = this.globalService.nearList;
+    this.farList = this.globalService.farList;
 
     this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
       this.selectedItem = next;
@@ -32,6 +31,10 @@ export class MainpageComponent implements OnInit {
 
   createItem(): void {
     this.globalService.createNewGoal()
+  }
+
+  testUpdateGoalList(): void {
+    this.globalService.testUpdateGoalList()
   }
 
 }

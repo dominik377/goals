@@ -8,6 +8,10 @@ import {GoalItem} from "./_Model/goalItem";
 })
 export class GlobalService {
   goalList: GoalItem [] = []
+  fundedList: GoalItem [] = []
+  semifundedList: GoalItem [] = []
+  nearList: GoalItem [] = []
+  farList: GoalItem [] = []
   selectedGoal: GoalItem | null = null
   getGoalList: BehaviorSubject<GoalItem []>
   getSelectedGoal: BehaviorSubject<GoalItem | null>;
@@ -33,12 +37,17 @@ export class GlobalService {
 
   createNewGoal() {
     const g = new GoalItem();
-    console.log(g)
-    this.addGoal(g)
+    this.selectedGoal = g
     this.publishGoals()
   }
 
   sendSelectedGoalUpdatedSignal(): void {
     this.selectedGoalUpdated.next(true)
+  }
+
+  testUpdateGoalList(): void {
+
+
+
   }
 }
