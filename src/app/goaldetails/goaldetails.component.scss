@@ -2,9 +2,26 @@
   display:flex;
   flex-direction: column;
   border:1px solid lightskyblue;
+  overflow-y: scroll;
 }
 
 .item{
   margin-bottom:10px;
   width:400px;
+}
+
+.detail{
+  display:flex;
+  flex-direction:column;
+  border:2px ridge blue;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
 }

@@ -18,6 +18,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {MatOptionModule} from "@angular/material/core";
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
