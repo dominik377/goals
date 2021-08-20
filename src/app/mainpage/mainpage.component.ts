@@ -10,7 +10,6 @@ import * as _lodash from 'lodash';
 })
 export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
-  fullGoalList: GoalItem [] = []
   fundedList: GoalItem [] = [];
   semifundedList: GoalItem [] = [];
   nearList: GoalItem [] = [];
@@ -33,10 +32,6 @@ export class MainpageComponent implements OnInit {
     this.globalService.createNewGoal()
   }
 
-  testUpdateGoalList(): void {
-    this.globalService.testUpdateGoalList()
-  }
-
   detailOkHandler(event: GoalItem) {
     console.log(event.displayName)
     _lodash.remove(this.globalService.fundedList, event)
@@ -57,6 +52,11 @@ export class MainpageComponent implements OnInit {
         this.globalService.farList.push (event)
         break;
     }
+  }
+
+  selectedHandler(event: GoalItem) {
+    this.globalService.selectedGoal = event
+    this.globalService.publishGoals()
   }
 
 }

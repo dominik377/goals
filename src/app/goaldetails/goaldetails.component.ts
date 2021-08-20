@@ -17,26 +17,11 @@ import {GlobalService} from "../global.service";
   templateUrl: './goaldetails.component.html',
   styleUrls: ['./goaldetails.component.scss']
 })
-export class GoaldetailsComponent implements OnInit {
+export class GoaldetailsComponent {
   @Input() item: GoalItem | null = null;
   @Output() ok: EventEmitter<GoalItem> = new EventEmitter();
 
-  constructor(private globalService: GlobalService, private cd: ChangeDetectorRef) { }
-
-  ngOnInit(): void {
-    this.globalService.selectedGoalUpdated.subscribe((next) => {
-      if (next === true) {
-        this.cd.markForCheck();
-      }
-    })
-  }
-
-  inputChangeHandler($event: any, variable: any, item: any): void {
-    const evalString = `${variable} = $event.target.value`
-    eval (evalString)
-    console.log($event.target.value)
-    this.globalService.sendSelectedGoalUpdatedSignal()
-  }
+  constructor(private globalService: GlobalService) { }
 
   okHandler(): void {
     if (this.item !== null) {

@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GoalItem} from "../_Model/goalItem";
+import {GlobalService} from "../global.service";
 
 @Component({
   selector: 'app-goalcontainer',
@@ -9,10 +10,19 @@ import {GoalItem} from "../_Model/goalItem";
 export class GoalcontainerComponent implements OnInit {
   @Input() goalList: GoalItem [] = []
   @Input() name = ''
+  @Output() selected: EventEmitter<GoalItem> = new EventEmitter()
+  selectedItem: GoalItem | null = null
 
-  constructor() { }
+  constructor(private globalService: GlobalService) {}
 
   ngOnInit(): void {
+    this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
+      this.selectedItem = next;
+    })
+  }
+
+  clickHandler(event: GoalItem): void {
+    this.selected.emit(event)
   }
 
 }

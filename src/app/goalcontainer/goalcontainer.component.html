@@ -1,4 +1,4 @@
 <div class="header"> {{name}}</div>
 <mat-list>
-  <mat-list-item *ngFor="let item of goalList"> {{item.displayName}} </mat-list-item>
+  <mat-list-item *ngFor="let item of goalList" (click)="clickHandler(item)"  [ngClass]="{'selected': item === selectedItem}"> {{item.displayName}} </mat-list-item>
 </mat-list>

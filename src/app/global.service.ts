@@ -45,9 +45,4 @@ export class GlobalService {
     this.selectedGoalUpdated.next(true)
   }
 
-  testUpdateGoalList(): void {
-
-
-
-  }
 }
