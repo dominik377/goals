@@ -37,4 +37,26 @@ export class MainpageComponent implements OnInit {
     this.globalService.testUpdateGoalList()
   }
 
+  detailOkHandler(event: GoalItem) {
+    console.log(event.displayName)
+    _lodash.remove(this.globalService.fundedList, event)
+    _lodash.remove(this.globalService.semifundedList, event)
+    _lodash.remove(this.globalService.nearList, event)
+    _lodash.remove(this.globalService.farList, event)
+    switch (event.categoryA){
+      case 'funded':
+        this.globalService.fundedList.push (event)
+        break;
+      case 'semi-funded':
+        this.globalService.semifundedList.push (event)
+        break;
+      case 'near':
+        this.globalService.nearList.push (event)
+        break;
+      case 'far':
+        this.globalService.farList.push (event)
+        break;
+    }
+  }
+
 }

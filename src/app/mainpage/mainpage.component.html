@@ -8,9 +8,11 @@
     <div class="leftContainer">
       <app-goalcontainer [goalList]="fundedList" [name]="'funded'"></app-goalcontainer>
       <app-goalcontainer [goalList]="semifundedList" [name]="'semi-funded'"></app-goalcontainer>
+      <app-goalcontainer [goalList]="nearList" [name]="'near'"></app-goalcontainer>
+      <app-goalcontainer [goalList]="farList" [name]="'far'"></app-goalcontainer>
     </div>
     <div class="rightContainer">
-      <app-goaldetails [item]="selectedItem"></app-goaldetails>
+      <app-goaldetails [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
     </div>
   </div>
 </div>

@@ -39,11 +39,6 @@
 
       <app-goaldetails-fundinglevel *ngFor="let fun of item.fundingLevelList" [item]="fun"></app-goaldetails-fundinglevel>
     </div> <!--END : MAIN  -->
-    <div>
-      <p> Just for Testing </p>
-
-      <div *ngIf="item !== null"> {{item.categoryA}}</div>
-    </div>
     <button (click)="okHandler()"> OK </button>
   </mat-card-content>
 </mat-card>
