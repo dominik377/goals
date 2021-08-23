@@ -19,6 +19,7 @@ import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.c
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MatInputModule } from '@angular/material/input';
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

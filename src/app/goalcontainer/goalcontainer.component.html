@@ -1,4 +1,7 @@
 <div class="header"> {{name}}</div>
-<mat-list>
-  <mat-list-item *ngFor="let item of goalList" (click)="clickHandler(item)"  [ngClass]="{'selected': item === selectedItem}"> {{item.displayName}} </mat-list-item>
-</mat-list>
+<div class="container">
+  <ng-container *ngFor="let item of goalList" >
+    <button mat-raised-button *ngIf="item === selectedItem" color="warn" (click)="clickHandler(item)"> {{item.displayName}} </button>
+    <button mat-raised-button *ngIf="item !== selectedItem" color="primary" (click)="clickHandler(item)"> {{item.displayName}} </button>
+  </ng-container>
+</div>
