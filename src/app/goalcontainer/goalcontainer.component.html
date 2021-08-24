@@ -1,7 +1,8 @@
 <div class="header"> {{name}}</div>
 <div class="container">
   <ng-container *ngFor="let item of goalList" >
-    <button mat-raised-button *ngIf="item === selectedItem" color="warn" (click)="clickHandler(item)"> {{item.displayName}} </button>
-    <button mat-raised-button *ngIf="item !== selectedItem" color="primary" (click)="clickHandler(item)"> {{item.displayName}} </button>
+    <button mat-raised-button *ngIf="item === selectedItem" class="selectedButton" color="warn" (click)="clickHandler(item)"> {{item.displayName}} </button>
+    <button mat-raised-button *ngIf="item !== selectedItem" class="button" color="primary" (click)="clickHandler(item)"> {{item.displayName}} </button>
+    <div class="buttonSpacer"></div>
   </ng-container>
 </div>

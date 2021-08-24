@@ -1,18 +1,37 @@
 :host{
   flex-grow:1;
   border:1px ridge grey;
-  overflow: hidden;
+  position:relative;
 }
 
 .header{
-  height:30px;
-  padding-top:8px;
   text-align:center;
-  box-shadow: 10px 5px 5px black;
+  height:17px;
+  position:absolute;
+  top:-12px;
+  left:15px;
+  z-index:10;
+  background-color: aliceblue;
+  box-shadow:0 2px 4px rgba(100,100,100,0.2);
+  border-radius:8px;
 }
 
 .container{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
+  padding:5px;
+  overflow-y: scroll;
+}
+
+.buttonSpacer{
+  width:10px;
+}
+
+.selectedButton{
+  background-image:linear-gradient(to bottom right, rgb(100,200,100), rgb(180,255, 180) );
+}
+
+.button{
+  background-image:linear-gradient(to bottom right, rgb(100,100,200), rgb(180,180, 255) );
 }
