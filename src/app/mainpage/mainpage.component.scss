@@ -5,11 +5,9 @@
 }
 
 .mainContainer{
-  padding: 20px;
-  margin-top:50px;
-  border:2px solid;
-  border-image:linear-gradient(to bottom right, ghostwhite, lightskyblue);
-  border-image-slice:1% 1% 1% 1%;
+  box-sizing:border-box;
+  padding: 0 20px 5px 0;
+  margin-top:10px;
   flex-grow:1;
   display:flex;
   flex-direction: row;
@@ -18,10 +16,6 @@
 
 .leftContainer{
   padding: 5px;
-  margin-top:50px;
-  border:2px solid;
-  border-image:linear-gradient(to bottom right, ghostwhite, lightskyblue);
-  border-image-slice:1% 1% 1% 1%;
   flex-grow:1;
   display:flex;
   flex-direction: column;
@@ -30,10 +24,7 @@
 
 .rightContainer{
   padding: 5px;
-  margin-top:50px;
-  border:2px solid;
-  border-image:linear-gradient(to bottom right, ghostwhite, lightskyblue);
-  border-image-slice:1% 1% 1% 1%;
+  margin-left:10px;
   flex-grow:1;
   flex-basis:30%;
 }
