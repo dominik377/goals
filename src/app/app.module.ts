@@ -20,6 +20,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from "@angular/material/button";
+import {MatBadgeModule} from "@angular/material/badge";
+
+import {JuicynessColorPipe} from './goalcontainer/JuicynessColorPipe'
 
 
 @NgModule({
@@ -30,23 +33,25 @@ import {MatButtonModule} from "@angular/material/button";
     MainpageComponent,
     TestComponent,
     TestGoaldetailsComponent,
-    FundinglevelComponent
+    FundinglevelComponent,
+    JuicynessColorPipe
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatListModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatInputModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatListModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatRadioModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatInputModule,
+        MatButtonModule,
+        MatBadgeModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
