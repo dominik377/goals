@@ -23,6 +23,10 @@ export class MainpageComponent implements OnInit {
     this.nearList = this.globalService.nearList;
     this.farList = this.globalService.farList;
 
+    this.globalService.backendTest().subscribe(next => {
+      console.log('%c Backend Version:  ' + next.version, 'color: green')
+    })
+
     this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
       this.selectedItem = next;
     })
@@ -57,6 +61,18 @@ export class MainpageComponent implements OnInit {
   selectedHandler(event: GoalItem) {
     this.globalService.selectedGoal = event
     this.globalService.publishGoals()
+  }
+
+  saveHandler(): void {
+    this.globalService.saveAllData();
+  }
+
+  loadHandler(): void  {
+    this.globalService.loadAllData()
+  }
+
+  logHandler(): void {
+    console.log(this.fundedList)
   }
 
 }
