@@ -75,4 +75,13 @@ export class MainpageComponent implements OnInit {
     console.log(this.fundedList)
   }
 
+  deleteHandler(): void {
+    if (this.selectedItem !== null) {
+      _lodash.remove(this.globalService.fundedList, this.selectedItem)
+      _lodash.remove(this.globalService.semifundedList, this.selectedItem)
+      _lodash.remove(this.globalService.nearList, this.selectedItem)
+      _lodash.remove(this.globalService.farList, this.selectedItem)
+    }
+  }
+
 }
