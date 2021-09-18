@@ -24,6 +24,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatBadgeModule} from "@angular/material/badge";
 
 import {JuicynessColorPipe} from './goalcontainer/JuicynessColorPipe'
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {JuicynessColorPipe} from './goalcontainer/JuicynessColorPipe'
         MatInputModule,
         MatButtonModule,
         MatBadgeModule,
-        HttpClientModule
+        HttpClientModule,
+        MatTabsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

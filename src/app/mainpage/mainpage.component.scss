@@ -38,3 +38,26 @@
   border:2px ridge blue;
   width:300px;
 }
+
+.testx1{
+  color:orange;
+}
+
+::ng-deep .mat-tab-body-wrapper{
+  flex-grow: 1;
+}
+
+
+
+::ng-deep .mat-tab-group{
+  height:100%;
+}
+
+::ng-deep .mat-tab-body-content{
+  box-sizing: border-box;
+  padding: 5px;
+  display:flex;
+  flex-direction: column;
+}
+
+

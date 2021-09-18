@@ -9,10 +9,21 @@
 
   <div class="mainContainer">
     <div class="leftContainer">
-      <app-goalcontainer [goalList]="fundedList" [name]="'funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="semifundedList" [name]="'semi-funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="nearList" [name]="'near'" (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="farList" [name]="'far'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <mat-tab-group >
+        <mat-tab label="Actions" >
+            <app-goalcontainer [goalList]="fundedList" [name]="'funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
+            <app-goalcontainer [goalList]="semifundedList" [name]="'semi-funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
+            <app-goalcontainer [goalList]="nearList" [name]="'near'" (selected)="selectedHandler($event)"></app-goalcontainer>
+            <app-goalcontainer [goalList]="farList" [name]="'far'" (selected)="selectedHandler($event)"></app-goalcontainer>
+         </mat-tab>
+        <mat-tab label="Goals">
+          test 2
+          <div></div>
+        </mat-tab>
+        <mat-tab label="Fields of Interest">
+          <div class="testx1"> Test x1</div>
+        </mat-tab>
+      </mat-tab-group>
     </div>
     <div class="rightContainer">
       <app-goaldetails [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
