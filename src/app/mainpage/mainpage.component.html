@@ -13,8 +13,8 @@
         <mat-tab label="Actions" >
             <app-goalcontainer [goalList]="fundedList" [name]="'funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
             <app-goalcontainer [goalList]="semifundedList" [name]="'semi-funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
-            <app-goalcontainer [goalList]="nearList" [name]="'near'" (selected)="selectedHandler($event)"></app-goalcontainer>
-            <app-goalcontainer [goalList]="farList" [name]="'far'" (selected)="selectedHandler($event)"></app-goalcontainer>
+            <app-goalcontainer [goalList]="nearList" [name]="'realistisch'" (selected)="selectedHandler($event)"></app-goalcontainer>
+            <app-goalcontainer [goalList]="farList" [name]="'nicht realistisch'" (selected)="selectedHandler($event)"></app-goalcontainer>
          </mat-tab>
         <mat-tab label="Goals">
           test 2

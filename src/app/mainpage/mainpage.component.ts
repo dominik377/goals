@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {SnackbarService} from "../_Utility/snackbar.service";
+
+import * as _lodash from 'lodash';
+
 import {GoalItem} from "../_Model/goalItem";
 import {GlobalService} from "../global.service";
-import * as _lodash from 'lodash';
+
 
 @Component({
   selector: 'app-mainpage',
@@ -15,9 +19,10 @@ export class MainpageComponent implements OnInit {
   nearList: GoalItem [] = [];
   farList: GoalItem [] = [];
 
-  constructor(private globalService: GlobalService) {}
+  constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
   ngOnInit(): void {
+    this.snackbarService.openSnackBar('Test!!');
     this.fundedList = this.globalService.fundedList;
     this.semifundedList = this.globalService.semifundedList;
     this.nearList = this.globalService.nearList;
