@@ -22,7 +22,6 @@ export class MainpageComponent implements OnInit {
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
   ngOnInit(): void {
-    this.snackbarService.openSnackBar('Test!!');
     this.fundedList = this.globalService.fundedList;
     this.semifundedList = this.globalService.semifundedList;
     this.nearList = this.globalService.nearList;

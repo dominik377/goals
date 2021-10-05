@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {GoalItem} from "./_Model/goalItem";
 import {environment} from "../environments/environment";
+import {SnackbarService} from "./_Utility/snackbar.service";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class GlobalService {
   getSelectedGoal: BehaviorSubject<GoalItem | null>;
   selectedGoalUpdated: BehaviorSubject<boolean | null>
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private snackbarService: SnackbarService) {
     this.getGoalList = new BehaviorSubject<GoalItem []>([])
     this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
     this.selectedGoalUpdated = new BehaviorSubject<boolean | null>(null)
@@ -65,7 +66,7 @@ export class GlobalService {
     }
 
     this.http.post<any>(environment.backend + '/update', body ).subscribe(next => {
-      alert(next)
+      this.snackbarService.openSnackBar('Data saved');
     })
   }
 
@@ -89,6 +90,8 @@ export class GlobalService {
 
       this.farList.length = 0
       this.farList.push(...data.farList)
+
+      this.snackbarService.openSnackBar('data Loaded');
 
     })
   }
