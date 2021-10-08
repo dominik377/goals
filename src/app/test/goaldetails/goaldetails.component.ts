@@ -22,18 +22,6 @@ export class TestGoaldetailsComponent implements OnInit {
     this.exampleGoal.categoryA = 'funded';
     this.exampleGoal.categoryB = 'one-time-long';
     this.exampleGoal.juicyness = 5;
-    this.exampleGoal.fundingLevelList[0].neededNormal = 300;
-    this.exampleGoal.fundingLevelList[0].neededOverkill = 1000
-    this.exampleGoal.fundingLevelList[0].assigned  =  400;
-    this.exampleGoal.fundingLevelList[1].neededNormal = 120;
-    this.exampleGoal.fundingLevelList[1].neededOverkill = 300;
-    this.exampleGoal.fundingLevelList[1].assigned = 50;
-    this.exampleGoal.fundingLevelList[2].neededNormal = 100;
-    this.exampleGoal.fundingLevelList[2].neededOverkill = 400;
-    this.exampleGoal.fundingLevelList[2].assigned = 0;
-    this.exampleGoal.fundingLevelList[3].neededNormal = 30;
-    this.exampleGoal.fundingLevelList[3].neededOverkill = 400;
-    this.exampleGoal.fundingLevelList[3].assigned = 0;
 
     this.globalService.addGoal(this.exampleGoal)
 

@@ -1,9 +1,0 @@
-<div>
-  <div *ngIf="item === null"> Item ist null </div>
-  <ng-container *ngIf="item !== null">
-    <p> {{item.name}}</p>
-    <input label="neededNormal" [(ngModel)]="item.neededNormal">
-    <input label="neededOverkill" [(ngModel)]="item.neededOverkill">
-    <input label="assigned" [(ngModel)]="item.assigned">
-  </ng-container>
-</div>

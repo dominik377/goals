@@ -37,7 +37,6 @@
             <mat-radio-button *ngFor="let o of [0, 1, 2, 3, 4, 5]" [value]="o"> {{o}} </mat-radio-button>
           </mat-radio-group>
 
-      <app-goaldetails-fundinglevel *ngFor="let fun of item.fundingLevelList" [item]="fun"></app-goaldetails-fundinglevel>
     </div> <!--END : MAIN  -->
     <button (click)="okHandler()"> OK </button>
   </mat-card-content>

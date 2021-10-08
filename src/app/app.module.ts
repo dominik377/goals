@@ -16,7 +16,6 @@ import {TestGoaldetailsComponent} from "./test/goaldetails/goaldetails.component
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
-import { FundinglevelComponent } from './goaldetails/fundinglevel/fundinglevel.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import { MatInputModule } from '@angular/material/input';
@@ -36,7 +35,6 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MainpageComponent,
     TestComponent,
     TestGoaldetailsComponent,
-    FundinglevelComponent,
     JuicynessColorPipe
   ],
     imports: [
