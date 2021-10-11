@@ -12,30 +12,34 @@
       </form>
 
 
-        <mat-form-field>
-            <mat-label> Select Funding Level </mat-label>
-            <mat-select [(ngModel)]="item.categoryA">
-              <mat-option *ngFor="let option of  ['funded', 'semi-funded', 'near', 'far']" [value]="option">
-                {{option}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field>
+        <mat-label> Select Funding Level </mat-label>
+        <mat-select [(ngModel)]="item.categoryA">
+          <mat-option *ngFor="let option of  ['funded', 'semi-funded', 'near', 'far']" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
 
-          <mat-form-field>
-            <mat-label> Select Time Category </mat-label>
-            <mat-select [(ngModel)]="item.categoryB">
-              <mat-option *ngFor="let option of  ['perennial', 'one-time-long','one-time-short']" [value]="option">
-                {{option}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field>
+        <mat-label> Select Time Category </mat-label>
+        <mat-select [(ngModel)]="item.categoryB">
+          <mat-option *ngFor="let option of  ['perennial', 'one-time-long','one-time-short']" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
 
 
+        <div class="radiocontainer">
+          <mat-label> Juicyness</mat-label>
           <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.juicyness">
             <mat-radio-button *ngFor="let o of [0, 1, 2, 3, 4, 5]" [value]="o"> {{o}} </mat-radio-button>
           </mat-radio-group>
+        </div>
+
 
     </div> <!--END : MAIN  -->
     <button (click)="okHandler()"> OK </button>

@@ -25,3 +25,17 @@
 .example-full-width {
   width: 100%;
 }
+
+.radiocontainer{
+  display: flex;
+  flex-direction: row;
+}
+
+:host {
+  ::ng-deep .mat-radio-label {
+    margin-left: 20px;
+  }
+  ::ng-deep .mat-radio-label-content {
+    margin-left: -7px;
+  }
+}
