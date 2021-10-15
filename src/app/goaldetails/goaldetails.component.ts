@@ -20,7 +20,6 @@ export class GoaldetailsComponent {
       if(next !== null) {
         setTimeout(() => {
           if (this.item !== null) {
-            this.displaynameRef.nativeElement.value = 'changed'
             this.displaynameRef.nativeElement.focus()
           }
         }, 100 )
