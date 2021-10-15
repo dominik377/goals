@@ -38,6 +38,7 @@ export class MainpageComponent implements OnInit {
 
   createItem(): void {
     this.globalService.createNewGoal()
+    this.globalService.focusOnGoalDetails.next(true)
   }
 
   detailOkHandler(event: GoalItem) {

@@ -7,7 +7,7 @@
       <form class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Displayname</mat-label>
-          <input matInput [(ngModel)]="item.displayName" [ngModelOptions]="{standalone: true}">
+          <input #displaynameRef matInput [(ngModel)]="item.displayName" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
       </form>
 

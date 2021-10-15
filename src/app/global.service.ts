@@ -21,11 +21,16 @@ export class GlobalService {
   getSelectedGoal: BehaviorSubject<GoalItem | null>;
   selectedGoalUpdated: BehaviorSubject<boolean | null>
 
+  focusOnGoalDetails: BehaviorSubject<boolean | null>
+
   constructor(private http:HttpClient, private snackbarService: SnackbarService) {
     this.getGoalList = new BehaviorSubject<GoalItem []>([])
     this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
     this.selectedGoalUpdated = new BehaviorSubject<boolean | null>(null)
+    this.focusOnGoalDetails = new BehaviorSubject<boolean | null>(null)
   }
+
+
 
   publishGoals(): void {
     this.getGoalList.next(this.goalList)

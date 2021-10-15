@@ -1,13 +1,6 @@
 import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output
+  Component, EventEmitter, Input, Output, ViewChild
 } from '@angular/core';
-import * as _lodash from 'lodash';
 
 import {GoalItem} from "../_Model/goalItem";
 import {GlobalService} from "../global.service";
@@ -20,8 +13,21 @@ import {GlobalService} from "../global.service";
 export class GoaldetailsComponent {
   @Input() item: GoalItem | null = null;
   @Output() ok: EventEmitter<GoalItem> = new EventEmitter();
+  @ViewChild('displaynameRef') displaynameRef: any
 
-  constructor(private globalService: GlobalService) { }
+  constructor(private globalService: GlobalService) {
+    this.globalService.focusOnGoalDetails.subscribe(next => {
+      if(next !== null) {
+        setTimeout(() => {
+          if (this.item !== null) {
+            this.displaynameRef.nativeElement.value = 'changed'
+            this.displaynameRef.nativeElement.focus()
+          }
+        }, 100 )
+
+      }
+    })
+  }
 
   okHandler(): void {
     if (this.item !== null) {
