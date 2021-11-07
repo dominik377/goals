@@ -1,18 +1,18 @@
 <div class="header"> {{name}}</div>
 <div class="container">
   <ng-container *ngFor="let item of goalList" >
-    <button mat-raised-button *ngIf="item === selectedItem" class="selectedButton" color="warn" (click)="clickHandler(item)"> {{item.displayName}}
+    <div  *ngIf="item === selectedItem" class="button button--green"  (click)="clickHandler(item)"> {{item.displayName}}
       <div class="badge">
         <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
         <div class="badgeInner">  {{item.juicyness}}  </div>
       </div>
-    </button>
-    <button mat-raised-button   *ngIf="item !== selectedItem" class="button" color="primary" (click)="clickHandler(item)" > {{item.displayName}}
+    </div>
+    <div  class="button button--blue" *ngIf="item !== selectedItem"  (click)="clickHandler(item)" > {{item.displayName}}
       <div class="badge">
         <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
         <div class="badgeInner">  {{item.juicyness}}  </div>
       </div>
-    </button>
+    </div>
     <div class="buttonSpacer"></div>
   </ng-container>
 </div>
