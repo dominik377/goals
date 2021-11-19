@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {GoalItem} from "./_Model/goalItem";
-import {GlobalService} from "./global.service";
 
 @Component({
   selector: 'app-root',
