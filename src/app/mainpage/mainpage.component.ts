@@ -14,18 +14,14 @@ import {GlobalService} from "../global.service";
 })
 export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
-  fundedList: GoalItem [] = [];
-  semifundedList: GoalItem [] = [];
-  nearList: GoalItem [] = [];
-  farList: GoalItem [] = [];
+  goalList: GoalItem [] = [];
+
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
   ngOnInit(): void {
-    this.fundedList = this.globalService.fundedList;
-    this.semifundedList = this.globalService.semifundedList;
-    this.nearList = this.globalService.nearList;
-    this.farList = this.globalService.farList;
+    this.goalList = this.globalService.goalList;
+
 
     this.globalService.backendTest().subscribe(next => {
       console.log('%c Backend Version:  ' + next.version, 'color: green')
@@ -43,24 +39,8 @@ export class MainpageComponent implements OnInit {
 
   detailOkHandler(event: GoalItem) {
     console.log(event.displayName)
-    _lodash.remove(this.globalService.fundedList, event)
-    _lodash.remove(this.globalService.semifundedList, event)
-    _lodash.remove(this.globalService.nearList, event)
-    _lodash.remove(this.globalService.farList, event)
-    switch (event.categoryA){
-      case 'funded':
-        this.globalService.fundedList.push (event)
-        break;
-      case 'semi-funded':
-        this.globalService.semifundedList.push (event)
-        break;
-      case 'near':
-        this.globalService.nearList.push (event)
-        break;
-      case 'far':
-        this.globalService.farList.push (event)
-        break;
-    }
+    _lodash.remove(this.globalService.goalList, event)
+        this.globalService.goalList.push (event)
   }
 
   selectedHandler(event: GoalItem) {
@@ -77,15 +57,12 @@ export class MainpageComponent implements OnInit {
   }
 
   logHandler(): void {
-    console.log(this.fundedList)
   }
 
   deleteHandler(): void {
     if (this.selectedItem !== null) {
-      _lodash.remove(this.globalService.fundedList, this.selectedItem)
-      _lodash.remove(this.globalService.semifundedList, this.selectedItem)
-      _lodash.remove(this.globalService.nearList, this.selectedItem)
-      _lodash.remove(this.globalService.farList, this.selectedItem)
+      _lodash.remove(this.globalService.goalList, this.selectedItem)
+
     }
   }
 

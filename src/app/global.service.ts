@@ -11,10 +11,6 @@ import {SnackbarService} from "./_Utility/snackbar.service";
 })
 export class GlobalService {
   goalList: GoalItem [] = []
-  fundedList: GoalItem [] = []
-  semifundedList: GoalItem [] = []
-  nearList: GoalItem [] = []
-  farList: GoalItem [] = []
   selectedGoal: GoalItem | null = null
 
   getGoalList: BehaviorSubject<GoalItem []>
@@ -63,10 +59,6 @@ export class GlobalService {
       newvalues: {
         id: 1,
         goalList: this.goalList,
-        fundedList: this.fundedList,
-        semifundedList: this.semifundedList,
-        nearList: this.nearList,
-        farList: this.farList
       }
     }
 
@@ -84,17 +76,15 @@ export class GlobalService {
     this.http.post<any>(environment.backend + '/query', body ).subscribe(next => {
 
       const data =  next.result[0]
-      this.fundedList.length = 0
-      this.fundedList.push(...data.fundedList)
 
-      this.semifundedList.length = 0
-      this.semifundedList.push(...data.semifundedList)
+      // intermediate Version for moving the saves to goalList
 
-      this.nearList.length = 0
-      this.nearList.push(...data.nearList)
+      this.goalList.length = 0
+      this.goalList.push(...data.goalList)
 
-      this.farList.length = 0
-      this.farList.push(...data.farList)
+
+      console.log(this.goalList)
+
 
       this.snackbarService.openSnackBar('data Loaded');
 

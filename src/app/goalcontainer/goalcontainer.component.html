@@ -1,18 +1,20 @@
 <div class="header"> {{name}}</div>
 <div class="container">
   <ng-container *ngFor="let item of goalList" >
-    <div  *ngIf="item === selectedItem" class="button button--green"  (click)="clickHandler(item)"> {{item.displayName}}
-      <div class="badge">
-        <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
-        <div class="badgeInner">  {{item.juicyness}}  </div>
+    <ng-container *ngIf="item.categoryA === itemFilter" >
+      <div  *ngIf="item === selectedItem" class="button button--green"  (click)="clickHandler(item)"> {{item.displayName}}
+        <div class="badge">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
+          <div class="badgeInner">  {{item.juicyness}}  </div>
+        </div>
       </div>
-    </div>
-    <div  class="button button--blue" *ngIf="item !== selectedItem"  (click)="clickHandler(item)" > {{item.displayName}}
-      <div class="badge">
-        <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
-        <div class="badgeInner">  {{item.juicyness}}  </div>
+      <div  class="button button--blue" *ngIf="item !== selectedItem"  (click)="clickHandler(item)" > {{item.displayName}}
+        <div class="badge">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
+          <div class="badgeInner">  {{item.juicyness}}  </div>
+        </div>
       </div>
-    </div>
-    <div class="buttonSpacer"></div>
+      <div class="buttonSpacer"></div>
+    </ng-container>
   </ng-container>
 </div>
