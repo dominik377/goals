@@ -9,21 +9,7 @@
 
   <div class="mainContainer">
     <div class="leftContainer">
-      <mat-tab-group >
-        <mat-tab label="Actions" >
-            <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
-            <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" (selected)="selectedHandler($event)"></app-goalcontainer>
-            <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'" (selected)="selectedHandler($event)"></app-goalcontainer>
-            <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'" (selected)="selectedHandler($event)"></app-goalcontainer>
-         </mat-tab>
-        <mat-tab label="Goals">
-          test 2
-          <div></div>
-        </mat-tab>
-        <mat-tab label="Fields of Interest">
-          <div class="testx1"> Test x1</div>
-        </mat-tab>
-      </mat-tab-group>
+      <app-tabview></app-tabview>
     </div>
     <div class="rightContainer">
       <app-goaldetails [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>

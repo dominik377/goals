@@ -25,6 +25,8 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {JuicynessColorPipe} from './goalcontainer/JuicynessColorPipe'
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { SplitviewComponent } from './mainpage/splitview/splitview.component';
+import { TabviewComponent } from './mainpage/tabview/tabview.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MainpageComponent,
     TestComponent,
     TestGoaldetailsComponent,
-    JuicynessColorPipe
+    JuicynessColorPipe,
+    SplitviewComponent,
+    TabviewComponent
   ],
     imports: [
         BrowserModule,

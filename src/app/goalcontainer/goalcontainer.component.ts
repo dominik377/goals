@@ -13,6 +13,7 @@ export class GoalcontainerComponent implements OnInit {
   @Output() selected: EventEmitter<GoalItem> = new EventEmitter()
   selectedItem: GoalItem | null = null
   @Input() itemFilter : 'funded' | 'semi-funded' | 'near' | 'far' | null = null
+  @Input() actionGoalField: 'action' | 'goal' | 'field' | null = null
 
   constructor(private globalService: GlobalService) {}
 
