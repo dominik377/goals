@@ -1,1 +1,31 @@
-<p>splitview works!</p>
+
+<div class="outerContainer">
+    <div class="section" label="Actions" >
+      <div class="header">  Actions </div>
+      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'" [actionGoalField]="'action'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'"  [actionGoalField]="'action'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'" [actionGoalField]="'action'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'" [actionGoalField]="'action'" (selected)="selectedHandler($event)"></app-goalcontainer>
+    </div>
+    <div class="section" label="Goals">
+      <div class="header"> Goals  </div>
+      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
+    </div>
+    <div class="section" label="Fields of Interest">
+      <div class="header"> Fields of interest  </div>
+      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'"[actionGoalField]="'goal'"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'"[actionGoalField]="'goal'"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'"[actionGoalField]="'goal'"  (selected)="selectedHandler($event)"></app-goalcontainer>
+    </div>
+    <div class="section" label="Unassigned">
+      <div class="header">  Unassigned </div>
+      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" [actionGoalField]="null" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>
+    </div>
+</div>
