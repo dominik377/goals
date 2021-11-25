@@ -21,11 +21,4 @@
       <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'"[actionGoalField]="'field'"  (selected)="selectedHandler($event)"></app-goalcontainer>
       <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'"[actionGoalField]="'field'"  (selected)="selectedHandler($event)"></app-goalcontainer>
     </div>
-    <div class="section" label="Unassigned">
-      <div class="header">  Unassigned </div>
-      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" [actionGoalField]="null" (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>
-    </div>
 </div>

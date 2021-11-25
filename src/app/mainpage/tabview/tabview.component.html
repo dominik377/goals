@@ -14,10 +14,10 @@
       <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
     </mat-tab>
     <mat-tab label="Fields of Interest">
-      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'"[actionGoalField]="'goal'"  (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" [actionGoalField]="'goal'" (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'"[actionGoalField]="'goal'"  (selected)="selectedHandler($event)"></app-goalcontainer>
-      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'"[actionGoalField]="'goal'"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'"[actionGoalField]="'field'"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'semi-funded'" [itemFilter]="'semi-funded'" [actionGoalField]="'field'" (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'realistisch'" [itemFilter]="'near'"[actionGoalField]="'field'"  (selected)="selectedHandler($event)"></app-goalcontainer>
+      <app-goalcontainer [goalList]="goalList" [name]="'nicht realistisch'" [itemFilter]="'far'"[actionGoalField]="'field'"  (selected)="selectedHandler($event)"></app-goalcontainer>
     </mat-tab>
     <mat-tab label="Unassigned">
       <app-goalcontainer [goalList]="goalList" [name]="'funded'"  [itemFilter]="'funded'"[actionGoalField]="null"  (selected)="selectedHandler($event)"></app-goalcontainer>

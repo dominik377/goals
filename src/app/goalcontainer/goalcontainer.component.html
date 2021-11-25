@@ -1,7 +1,7 @@
 <div class="header"> {{name}}</div>
 <div class="container">
   <ng-container *ngFor="let item of goalList" >
-    <ng-container *ngIf="item.categoryA === itemFilter && (actionGoalField === null || item.actionGoalField === actionGoalField )" >
+    <ng-container *ngIf="item.categoryA === itemFilter && (item.actionGoalField === actionGoalField || ( actionGoalField === null && ['action', 'goal', 'field'].indexOf(item.actionGoalField) === -1 ))" >
       <div  *ngIf="item === selectedItem" class="button button--green"  (click)="clickHandler(item)"> {{item.displayName}}
         <div class="badge">
           <div class="badgeInnerBackground" [ngStyle]="{'background-image': item.juicyness | juicynessColorPipe}"></div>
