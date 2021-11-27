@@ -8,7 +8,7 @@ import { GoaldetailsComponent } from './goaldetails/goaldetails.component';
 import {FormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { GoalcontainerComponent } from './goalcontainer/goalcontainer.component';
+import { GoalcontainerComponent } from './mainpage/goalcontainer/goalcontainer.component';
 import {MatListModule} from "@angular/material/list";
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { TestComponent } from './test/test.component';
@@ -22,7 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from "@angular/material/button";
 import {MatBadgeModule} from "@angular/material/badge";
 
-import {JuicynessColorPipe} from './goalcontainer/JuicynessColorPipe'
+import {JuicynessColorPipe} from './mainpage/goalcontainer/JuicynessColorPipe'
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { SplitviewComponent } from './mainpage/splitview/splitview.component';
