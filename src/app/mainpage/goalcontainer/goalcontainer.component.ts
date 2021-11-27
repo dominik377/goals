@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GoalItem} from "../../_Model/goalItem";
 import {GlobalService} from "../../global.service";
+import {actionGoalField} from "../actionGoalField";
 
 @Component({
   selector: 'app-goalcontainer',
@@ -13,7 +14,7 @@ export class GoalcontainerComponent implements OnInit {
   @Output() selected: EventEmitter<GoalItem> = new EventEmitter()
   selectedItem: GoalItem | null = null
   @Input() itemFilter : string | 'funded' | 'semi-funded' | 'near' | 'far' | null = null
-  @Input() actionGoalField: 'action' | 'goal' | 'field' | null = null
+  @Input() actionGoalField: actionGoalField = null
 
   constructor(private globalService: GlobalService) {}
 
