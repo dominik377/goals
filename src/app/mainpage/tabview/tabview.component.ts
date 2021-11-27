@@ -12,6 +12,7 @@ export class TabviewComponent implements OnInit {
 
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
+  actionGoalFieldCategories: ('action' | 'goal' | 'field' | null) [] = ['action', 'goal', 'field']
 
 
   constructor(private globalService: GlobalService) {}

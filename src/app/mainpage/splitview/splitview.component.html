@@ -1,5 +1,5 @@
 <div class="outerContainer">
-  <ng-container *ngFor="let agf of ['action', 'goal', 'field']">
+  <ng-container *ngFor="let agf of actionGoalFieldCategories">
     <div class="section">
       <div class="header"> {{agf}} </div>
       <ng-container *ngFor="let fundingState of ['funded', 'semi-funded', 'near', 'far']">
