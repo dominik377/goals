@@ -15,6 +15,7 @@ import {GlobalService} from "../global.service";
 export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
+  selectedView: 'overview' | 'test' = 'overview';
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
@@ -63,6 +64,10 @@ export class MainpageComponent implements OnInit {
       _lodash.remove(this.globalService.goalList, this.selectedItem)
 
     }
+  }
+
+  selectView(selected: 'overview' | 'test') {
+    this.selectedView = selected
   }
 
 }

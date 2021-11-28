@@ -27,7 +27,6 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { SplitviewComponent } from './mainpage/splitview/splitview.component';
 import { TabviewComponent } from './mainpage/tabview/tabview.component';
-import { LeftComponent } from './mainpage/left/left.component';
 import { RightComponent } from './mainpage/right/right.component';
 import { OverviewComponent } from './mainpage/overview/overview.component';
 
@@ -43,7 +42,6 @@ import { OverviewComponent } from './mainpage/overview/overview.component';
     JuicynessColorPipe,
     SplitviewComponent,
     TabviewComponent,
-    LeftComponent,
     RightComponent,
     OverviewComponent
   ],

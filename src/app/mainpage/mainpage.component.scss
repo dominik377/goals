@@ -15,6 +15,20 @@
   height:100%;
 }
 
+
+.headerArea{
+  height:100%;
+  width:150px;
+  display:flex;
+  flex-direction:row;
+  background:lightblue;
+  overflow:hidden;
+}
+
+  .headerAreaButton{
+
+  }
+
 .leftContainer{
   padding: 5px;
   flex-grow:1;
@@ -30,10 +44,10 @@
   flex-basis:30%;
 }
 
-.leftSubArea{
-  flex-grow:1;
-  border:1px solid grey;
-}
+
+
+
+
 
 .test{
   border:2px ridge blue;
@@ -44,21 +58,6 @@
   color:orange;
 }
 
-::ng-deep .mat-tab-body-wrapper{
-  flex-grow: 1;
-}
 
-
-
-::ng-deep .mat-tab-group{
-  height:100%;
-}
-
-::ng-deep .mat-tab-body-content{
-  box-sizing: border-box;
-  padding: 5px;
-  display:flex;
-  flex-direction: column;
-}
 
 
