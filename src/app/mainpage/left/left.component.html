@@ -1,0 +1,8 @@
+<mat-toolbar>
+  <button (click)="selectView('overview')"> Overview </button>
+  <button (click)="selectView('test')"> Test view </button>
+</mat-toolbar>
+
+<app-mainpage-overview *ngIf="selectedView === 'overview'"></app-mainpage-overview>
+<div *ngIf="selectedView === 'test'"> Test View </div>
+

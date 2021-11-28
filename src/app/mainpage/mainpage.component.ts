@@ -15,8 +15,6 @@ import {GlobalService} from "../global.service";
 export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  tabOrSplitView: 'tab' | 'split' = 'tab'
-
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
@@ -65,10 +63,6 @@ export class MainpageComponent implements OnInit {
       _lodash.remove(this.globalService.goalList, this.selectedItem)
 
     }
-  }
-
-  selectView(tabOrSplit: 'tab' | 'split') {
-    this.tabOrSplitView = tabOrSplit
   }
 
 }

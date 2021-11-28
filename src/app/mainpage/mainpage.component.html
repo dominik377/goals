@@ -5,14 +5,11 @@
     <button (click)="loadHandler()"> Load </button>
     <button (click)="logHandler()"> Log FundedList</button>
     <button (click)="deleteHandler()" > Delete Goal</button>
-    <button (click)="selectView('tab')"> Select Tab view </button>
-    <button (click)="selectView('split')"> Select Split view </button>
   </mat-toolbar>
 
   <div class="mainContainer">
     <div class="leftContainer">
-      <app-tabview *ngIf="tabOrSplitView === 'tab'"></app-tabview>
-      <app-splitview *ngIf="tabOrSplitView === 'split'"> </app-splitview>
+      <app-mainpage-left> </app-mainpage-left>
     </div>
     <div class="rightContainer">
       <app-goaldetails [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>

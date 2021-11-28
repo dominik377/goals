@@ -1,0 +1,7 @@
+<mat-toolbar>
+  <button (click)="selectView('tab')"> Select Tab view </button>
+  <button (click)="selectView('split')"> Select Split view </button>
+</mat-toolbar>
+
+<app-tabview *ngIf="tabOrSplitView === 'tab'"></app-tabview>
+<app-splitview *ngIf="tabOrSplitView === 'split'"> </app-splitview>
