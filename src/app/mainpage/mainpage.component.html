@@ -15,8 +15,8 @@
 
   <div class="mainContainer">
     <div class="leftContainer">
-      <app-mainpage-overview *ngIf="selectedView === 'overview'"></app-mainpage-overview>
-      <div *ngIf="selectedView === 'test'"> Test View </div>
+      <app-mainpage-overview *ngIf="selectedLeftView === 'overview'"></app-mainpage-overview>
+      <div *ngIf="selectedLeftView === 'test'"> Test View </div>
     </div>
     <div class="rightContainer">
       <app-goaldetails [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
