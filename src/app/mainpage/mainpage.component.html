@@ -5,12 +5,27 @@
     <button (click)="loadHandler()"> Load </button>
     <button (click)="logHandler()"> Log FundedList</button>
     <button (click)="deleteHandler()" > Delete Goal</button>
-    <div class="headerArea">
-      <button (click)="selectView('overview')"> Overview </button>
-      <button (click)="selectView('test')"> Test view </button>
+    <div style="width:20px;"> </div> <!-- Spacer  -->
+    <div class="headerAreaOuter">
+      <div class="headerAreaInnerTop"> left Content </div>
+      <div class="headerAreaInnerBottom">
+        <button (click)="selectLeftView('overview')"> Overview </button>
+        <button (click)="selectLeftView('test')"> Test view </button>
+      </div>
     </div>
     <div style="width:20px;"> </div> <!-- Spacer  -->
-    <div class="headerArea"> Select Right Content</div>
+    <div class="headerAreaOuter">
+      <div class="headerAreaInnerTop"> Right Content </div>
+      <div class="headerAreaInnerBottom">
+        <button (click)="selectRightView('details')"> Details </button>
+        <button (click)="selectRightView('test')"> Test view </button>
+      </div>
+    </div>
+    <div class="headerArea">
+
+    </div>
+
+
   </mat-toolbar>
 
   <div class="mainContainer">
@@ -19,7 +34,8 @@
       <div *ngIf="selectedLeftView === 'test'"> Test View </div>
     </div>
     <div class="rightContainer">
-      <app-goaldetails [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
+      <app-goaldetails *ngIf="selectedRightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
+      <div *ngIf="selectedRightView === 'test'"> Test View </div>
     </div>
   </div>
 </div>

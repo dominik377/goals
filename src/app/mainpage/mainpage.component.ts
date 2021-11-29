@@ -16,6 +16,7 @@ export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   selectedLeftView: 'overview' | 'test' = 'overview';
+  selectedRightView: 'details' | 'test' = 'details';
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
@@ -66,8 +67,12 @@ export class MainpageComponent implements OnInit {
     }
   }
 
-  selectView(selected: 'overview' | 'test') {
+  selectLeftView(selected: 'overview' | 'test') {
     this.selectedLeftView = selected
+  }
+
+  selectRightView(selected: 'details' | 'test') {
+    this.selectedRightView = selected
   }
 
 }

@@ -16,16 +16,28 @@
 }
 
 
-.headerArea{
+.headerAreaOuter{
   height:100%;
   width:150px;
   display:flex;
-  flex-direction:row;
-  background:lightblue;
+  flex-direction:column;
   overflow:hidden;
+  font-size:10px;
 }
+  .headerAreaInnerTop{
+    flex-basis:0;
+    flex-grow:1;
+  }
+
+  .headerAreaInnerBottom{
+    flex-basis:0;
+    flex-grow:2;
+    display:flex;
+    flex-direction:row;
+  }
 
   .headerAreaButton{
+    flex-grow:1;
 
   }
 
