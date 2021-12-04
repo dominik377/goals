@@ -29,6 +29,7 @@ import { SplitviewComponent } from './mainpage/splitview/splitview.component';
 import { TabviewComponent } from './mainpage/tabview/tabview.component';
 import { RightComponent } from './mainpage/right/right.component';
 import { OverviewComponent } from './mainpage/overview/overview.component';
+import { HeaderdivisionComponent } from './_GUI_Elements/headerdivision/headerdivision.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { OverviewComponent } from './mainpage/overview/overview.component';
     SplitviewComponent,
     TabviewComponent,
     RightComponent,
-    OverviewComponent
+    OverviewComponent,
+    HeaderdivisionComponent
   ],
     imports: [
         BrowserModule,

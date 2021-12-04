@@ -75,4 +75,8 @@ export class MainpageComponent implements OnInit {
     this.selectedRightView = selected
   }
 
+  testHandler(e: any): void {
+    alert(e)
+  }
+
 }
