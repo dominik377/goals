@@ -15,8 +15,8 @@ import {GlobalService} from "../global.service";
 export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  selectedLeftView: 'overview' | 'test' = 'overview';
-  selectedRightView: 'details' | 'test' = 'details';
+  leftView: 'overview' | 'test' = 'overview';
+  rightView: 'details' | 'test' = 'details';
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 
@@ -68,12 +68,16 @@ export class MainpageComponent implements OnInit {
   }
 
   selectLeftView(selected: 'overview' | 'test') {
-    this.selectedLeftView = selected
+    this.leftView = selected
   }
 
+
   selectRightView(selected: 'details' | 'test') {
-    this.selectedRightView = selected
+      this.rightView = selected
   }
+
+
+
 
   testHandler(e: any): void {
     alert(e)

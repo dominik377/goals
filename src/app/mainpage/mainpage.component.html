@@ -6,35 +6,25 @@
     <button (click)="logHandler()"> Log FundedList</button>
     <button (click)="deleteHandler()" > Delete Goal</button>
     <div style="width:20px;"> </div> <!-- Spacer  -->
-    <div class="headerAreaOuter">
-      <div class="headerAreaInnerTop"> left Content </div>
-      <div class="headerAreaInnerBottom">
-        <button (click)="selectLeftView('overview')"> Overview </button>
-        <button (click)="selectLeftView('test')"> Test view </button>
-      </div>
-    </div>
-    <div style="width:20px;"> </div> <!-- Spacer  -->
-    <div class="headerAreaOuter">
-      <div class="headerAreaInnerTop"> Right Content </div>
-      <div class="headerAreaInnerBottom">
-        <button (click)="selectRightView('details')"> Details </button>
-        <button (click)="selectRightView('test')"> Test view </button>
-      </div>
-    </div>
-    <div class="headerArea">
 
-    </div>
+
+    <app-gui-headerdivision [header]="'left'" [labelList]="['overview', 'test']" (clickEmitter)="selectLeftView($event)"> </app-gui-headerdivision>
+    <div style="width:20px;"> </div> <!-- Spacer  -->
+    <app-gui-headerdivision [header]="'right'" [labelList]="['details', 'test']" (clickEmitter)="selectRightView($event)"> </app-gui-headerdivision>
+
+
+
 
   </mat-toolbar>
 
   <div class="mainContainer">
     <div class="leftContainer">
-      <app-mainpage-overview *ngIf="selectedLeftView === 'overview'"></app-mainpage-overview>
-      <div *ngIf="selectedLeftView === 'test'"> Test View </div>
+      <app-mainpage-overview *ngIf="leftView === 'overview'"></app-mainpage-overview>
+      <div *ngIf="leftView === 'test'"> Test View </div>
     </div>
     <div class="rightContainer">
-      <app-goaldetails *ngIf="selectedRightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
-      <div *ngIf="selectedRightView === 'test'"> Test View </div>
+      <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
+      <div *ngIf="rightView === 'test'"> Test View </div>
     </div>
   </div>
 </div>
