@@ -7,13 +7,9 @@
     <button (click)="deleteHandler()" > Delete Goal</button>
     <div style="width:20px;"> </div> <!-- Spacer  -->
 
-
-    <app-gui-headerdivision [header]="'left'" [labelList]="['overview', 'test']" (clickEmitter)="selectLeftView($event)"> </app-gui-headerdivision>
+    <app-gui-headerdivision [header]="'left'" [buttonList]="leftViewButtons" (clickEmitter)="selectLeftView($event)"> </app-gui-headerdivision>
     <div style="width:20px;"> </div> <!-- Spacer  -->
-    <app-gui-headerdivision [header]="'right'" [labelList]="['details', 'test']" (clickEmitter)="selectRightView($event)"> </app-gui-headerdivision>
-
-
-
+    <app-gui-headerdivision [header]="'right'" [buttonList]="rightViewButtons" (clickEmitter)="selectRightView($event)"> </app-gui-headerdivision>
 
   </mat-toolbar>
 

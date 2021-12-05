@@ -1,4 +1,11 @@
-<div class="header"> {{header}} </div>
-<ng-container *ngFor="let label of labelList">
-  <button (click)="buttonHandler(label)"> {{label}} </button>
-</ng-container>
+<div class="outer">
+  <div class="header"> {{header}} </div>
+  <ng-container *ngFor="let button of buttonList">
+      <mat-icon (click)="buttonHandler(button.value)"
+                class="icon-display"
+              #tooltip="matTooltip"
+              matTooltip={{button.label}} >
+         {{button.icon}}
+      </mat-icon>
+  </ng-container>
+</div>

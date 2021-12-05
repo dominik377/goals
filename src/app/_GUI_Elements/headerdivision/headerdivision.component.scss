@@ -1,0 +1,30 @@
+.outer{
+  display:flex;
+  flex-direction:column;
+}
+
+.header{
+  font-size:10px;
+}
+
+.icon-display{
+  transform: scale(0.75);
+  opacity:0.5;
+  margin-top:-10px;
+
+
+  border-radius:9px;
+  font-weight:700;
+  background-image:linear-gradient(to bottom right, grey, white);
+    padding:2px 2px 2px 2px;
+
+    z-index:20;
+
+
+
+    box-shadow: 0 2px 4px rgba(50,60,70,0.2);
+
+
+}
+
+

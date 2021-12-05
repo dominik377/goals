@@ -5,6 +5,7 @@ import * as _lodash from 'lodash';
 
 import {GoalItem} from "../_Model/goalItem";
 import {GlobalService} from "../global.service";
+import {headerdivisionButtonInterface} from "../_GUI_Elements/headerdivision/headerdivisionButtonInterface";
 
 
 @Component({
@@ -16,7 +17,33 @@ export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   leftView: 'overview' | 'test' = 'overview';
+  leftViewButtons: headerdivisionButtonInterface [] =  [
+    {
+      label: 'overview',
+      value: 'overview',
+      icon: 'view_column'
+    },
+    {
+      label: 'test',
+      value: 'test',
+      icon: 'update'
+    },
+
+  ]
   rightView: 'details' | 'test' = 'details';
+  rightViewButtons: headerdivisionButtonInterface [] =  [
+    {
+      label: 'details',
+      value: 'details',
+      icon: 'view_column'
+    },
+    {
+      label: 'test',
+      value: 'test',
+      icon: 'update'
+    },
+  ]
+  testIcon = 'view_column'
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
 

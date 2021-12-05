@@ -30,6 +30,8 @@ import { TabviewComponent } from './mainpage/tabview/tabview.component';
 import { RightComponent } from './mainpage/right/right.component';
 import { OverviewComponent } from './mainpage/overview/overview.component';
 import { HeaderdivisionComponent } from './_GUI_Elements/headerdivision/headerdivision.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -47,25 +49,27 @@ import { HeaderdivisionComponent } from './_GUI_Elements/headerdivision/headerdi
     OverviewComponent,
     HeaderdivisionComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatListModule,
-        MatFormFieldModule,
-        MatCardModule,
-        MatRadioModule,
-        MatSelectModule,
-        MatOptionModule,
-        MatInputModule,
-        MatButtonModule,
-        MatBadgeModule,
-        HttpClientModule,
-        MatTabsModule,
-        MatSnackBarModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatButtonModule,
+    MatBadgeModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatTooltipModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
