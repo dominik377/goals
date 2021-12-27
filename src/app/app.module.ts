@@ -32,6 +32,10 @@ import { OverviewComponent } from './mainpage/overview/overview.component';
 import { HeaderdivisionComponent } from './_GUI_Elements/headerdivision/headerdivision.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { TestcomponentComponent } from './test/testcomponent/testcomponent.component';
+import {TestComponentGuiComponent} from './test/testcomponent/gui/gui.component';
+import { GuiComponent } from './mainpage/overview/gui/gui.component';
+import {GoaldetailsGuiComponent} from "./goaldetails/gui/gui.component";
 
 
 @NgModule({
@@ -47,7 +51,11 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     TabviewComponent,
     RightComponent,
     OverviewComponent,
-    HeaderdivisionComponent
+    HeaderdivisionComponent,
+    TestcomponentComponent,
+    TestComponentGuiComponent,
+    GuiComponent,
+    GoaldetailsGuiComponent
   ],
   imports: [
     BrowserModule,

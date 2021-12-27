@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 81.1 81.7" style="enable-background:new 0 0 81.1 81.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#EBEBEC;}
+	.st2{fill:#004586;}
+	.st3{fill:url(#SVGID_00000037660356164744906430000009628392271688968617_);}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="16.3919" y1="-2.993" x2="64.7081" y2="80.693" gradientTransform="matrix(1 0 0 1 0 2)">
+	<stop  offset="0" style="stop-color:#CCCCCC"/>
+	<stop  offset="0" style="stop-color:#72CAEB"/>
+	<stop  offset="1" style="stop-color:#1C2B5D"/>
+</linearGradient>
+<path class="st0" d="M61.1,81.7H20c-11,0-20-9-20-20V20C0,9,9,0,20,0h41.1c11,0,20,9,20,20v41.7C81.1,72.7,72.1,81.7,61.1,81.7z"/>
+<path class="st1" d="M59.8,78.9H21.4c-10.3,0-18.7-8.4-18.7-18.7V21.3C2.7,11,11.1,2.6,21.4,2.6h38.4c10.3,0,18.7,8.4,18.7,18.7
+	v38.9C78.5,70.5,70.1,78.9,59.8,78.9z"/>
+<rect x="10.7" y="15.9" class="st2" width="25" height="5.6"/>
+<linearGradient id="SVGID_00000019677825048569927100000006399672008240709269_" gradientUnits="userSpaceOnUse" x1="42.3484" y1="73.1895" x2="42.3484" y2="48.5122" gradientTransform="matrix(1.0679 0 0 -1.4329 -3.4739 111.824)">
+	<stop  offset="0" style="stop-color:#CCCCCC"/>
+	<stop  offset="0" style="stop-color:#DADADA;stop-opacity:0.9693"/>
+	<stop  offset="0" style="stop-color:#EBEBEB;stop-opacity:0.9162"/>
+	<stop  offset="0" style="stop-color:#F6F6F6;stop-opacity:0.8502"/>
+	<stop  offset="0" style="stop-color:#FDFDFD;stop-opacity:0.7574"/>
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.5"/>
+	<stop  offset="1" style="stop-color:#F1F2F2;stop-opacity:0"/>
+</linearGradient>
+<path style="fill:url(#SVGID_00000019677825048569927100000006399672008240709269_);" d="M72.8,42.3v-10c0-14-6.9-25.4-15.3-25.4H26
+	C17.6,7,10.7,18.4,10.7,32.4v10L72.8,42.3L72.8,42.3z"/>
+<rect x="26.8" y="35.8" class="st2" width="25" height="5.6"/>
+<rect x="40.5" y="55.7" class="st2" width="25" height="5.6"/>
+</svg>

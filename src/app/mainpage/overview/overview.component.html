@@ -1,7 +1,2 @@
-<mat-toolbar>
-  <app-gui-headerdivision [header]="'select View'" [buttonList]="tabOrSplitViewButtons" (clickEmitter)="selectView($event)"> </app-gui-headerdivision>
-</mat-toolbar>
-
-
 <app-tabview *ngIf="tabOrSplitView === 'tab'"></app-tabview>
 <app-splitview *ngIf="tabOrSplitView === 'split'"> </app-splitview>

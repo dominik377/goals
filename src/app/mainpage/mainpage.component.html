@@ -1,26 +1,51 @@
 <div class="outerContainer">
-  <mat-toolbar>
-    <button (click)="createItem()"> Create new Item </button>
-    <button (click)="saveHandler()"> Save </button>
-    <button (click)="loadHandler()"> Load </button>
-    <button (click)="logHandler()"> Log FundedList</button>
-    <button (click)="deleteHandler()" > Delete Goal</button>
-    <div style="width:20px;"> </div> <!-- Spacer  -->
+  <div class="header">
+    <app-gui-headerdivision [header]="'Main Functions'">
+      <button (click)="createItem()"> Create new Item </button>
+      <button (click)="saveHandler()"> Save </button>
+      <button (click)="loadHandler()"> Load </button>
+      <button (click)="deleteHandler()" > Delete Item</button>
+    </app-gui-headerdivision>
+    <div style="width:40px;"> </div> <!-- Spacer  -->
 
-    <app-gui-headerdivision [header]="'left'" [buttonList]="leftViewButtons" (clickEmitter)="selectLeftView($event)"> </app-gui-headerdivision>
-    <div style="width:20px;"> </div> <!-- Spacer  -->
-    <app-gui-headerdivision [header]="'right'" [buttonList]="rightViewButtons" (clickEmitter)="selectRightView($event)"> </app-gui-headerdivision>
 
-  </mat-toolbar>
+
+
+    <app-gui-headerdivision [header]="'left Component'">
+      <button (click)="selectLeftView('overview')">overview</button>
+      <button (click)="selectLeftView('test')">test</button>
+    </app-gui-headerdivision>
+
+
+    <div style="width:5px;"> </div> <!-- Mini -  Spacer  -->
+    <app-gui-headerdivision [header]="'overview'" *ngIf="leftView === 'overview'" > <app-mainpage-overview-gui></app-mainpage-overview-gui> </app-gui-headerdivision>
+    <app-gui-headerdivision [header]="'test'" *ngIf="leftView === 'test'" > <app-testcomponent-gui></app-testcomponent-gui> </app-gui-headerdivision>
+
+    <div style="width:40px;"> </div> <!-- Spacer  -->
+    <app-gui-headerdivision [header]="'right Component'">
+      <button (click)="selectRightView('details')">details</button>
+      <button (click)="selectRightView('test')">test</button>
+    </app-gui-headerdivision>
+
+    <div style="width:5px;"> </div> <!-- Mini -  Spacer  -->
+    <app-gui-headerdivision [header]="'details'" *ngIf="rightView === 'details'" > <app-goaldetails-gui></app-goaldetails-gui> </app-gui-headerdivision>
+    <app-gui-headerdivision [header]="'test'" *ngIf="rightView === 'test'" >  <app-testcomponent-gui></app-testcomponent-gui> </app-gui-headerdivision>
+
+    <div style="width:40px;"> </div> <!-- Spacer  -->
+    <app-gui-headerdivision [header]="'Test Functions'">
+      <button (click)="logHandler()"> Log FundedList</button>
+    </app-gui-headerdivision>
+
+  </div>
 
   <div class="mainContainer">
     <div class="leftContainer">
       <app-mainpage-overview *ngIf="leftView === 'overview'"></app-mainpage-overview>
-      <div *ngIf="leftView === 'test'"> Test View </div>
+      <app-testcomponent *ngIf="leftView === 'test'"> </app-testcomponent>
     </div>
     <div class="rightContainer">
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
-      <div *ngIf="rightView === 'test'"> Test View </div>
+      <app-testcomponent *ngIf="rightView === 'test'">  </app-testcomponent>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {headerdivisionButtonInterface} from "../../_GUI_Elements/headerdivision/headerdivisionButtonInterface";
+import {MainpageOverviewGuiService} from "./gui.service";
 
 @Component({
   selector: 'app-mainpage-overview',
@@ -9,26 +10,16 @@ import {headerdivisionButtonInterface} from "../../_GUI_Elements/headerdivision/
 })
 export class OverviewComponent implements OnInit {
   tabOrSplitView: 'tab' | 'split' = 'tab'
-  tabOrSplitViewButtons: headerdivisionButtonInterface [] = [
-    {
-      label: 'tab',
-      value: 'tab',
-      icon: 'view_column'
-    },
-    {
-      label: 'split',
-      value: 'split',
-      icon: 'verified_user'
-    },
-  ]
 
-  constructor() { }
+
+  constructor(private mainpageOverviewGuiService: MainpageOverviewGuiService) { }
 
   ngOnInit(): void {
+    this.mainpageOverviewGuiService.updateTabSplit.subscribe(x => {
+      this.tabOrSplitView = x
+    })
   }
 
-  selectView(tabOrSplit: 'tab' | 'split') {
-    this.tabOrSplitView = tabOrSplit
-  }
+
 
 }
