@@ -15,8 +15,8 @@
       <mat-form-field>
         <mat-label> Select Funding Level </mat-label>
         <mat-select [(ngModel)]="item.categoryA">
-          <mat-option *ngFor="let option of  ['funded', 'semi-funded', 'near', 'far']" [value]="option">
-            {{option}}
+          <mat-option *ngFor="let option of  ['funded', 'semi-funded', 'near', 'seminear', 'far', 'veryfar']" [value]="option">
+            {{option | fundingCategoryNamePipe}}
           </mat-option>
         </mat-select>
       </mat-form-field>

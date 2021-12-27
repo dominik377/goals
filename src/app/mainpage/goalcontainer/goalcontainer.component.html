@@ -1,4 +1,4 @@
-<div class="header"> {{name}}</div>
+<div class="header"> {{name | fundingCategoryNamePipe}}</div>
 <div class="container">
   <ng-container *ngFor="let item of goalList" >
     <ng-container *ngIf="item.categoryA === itemFilter && (item.actionGoalField === actionGoalField || ( actionGoalField === null && ['action', 'goal', 'field'].indexOf(item.actionGoalField) === -1 ))" >

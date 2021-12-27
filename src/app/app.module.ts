@@ -22,7 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from "@angular/material/button";
 import {MatBadgeModule} from "@angular/material/badge";
 
-import {JuicynessColorPipe} from './mainpage/goalcontainer/JuicynessColorPipe'
+import {JuicynessColorPipe} from './mainpage/goalcontainer/JuicynessColorPipe';
+import {FundingCategoryNamePipe} from '././_Model/FundingCategoryNamePipe';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { SplitviewComponent } from './mainpage/splitview/splitview.component';
@@ -47,6 +48,7 @@ import {GoaldetailsGuiComponent} from "./goaldetails/gui/gui.component";
     TestComponent,
     TestGoaldetailsComponent,
     JuicynessColorPipe,
+    FundingCategoryNamePipe,
     SplitviewComponent,
     TabviewComponent,
     RightComponent,
