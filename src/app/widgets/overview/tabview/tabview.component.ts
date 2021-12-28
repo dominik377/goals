@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import {GoalItem} from "../../../_Model/goalItem";
 import {GlobalService} from "../../../global.service";
-import {actionGoalField} from "../../../mainpage/actionGoalField";
+import {actionGoalField} from "../../../_Model/actionGoalField";
+import {actionGoalFieldListAbridged} from "../../../_Model/actionGoalFieldListAbridged";
+import {actionGoalFieldList} from "../../../_Model/actionGoalFieldList";
+
 
 @Component({
   selector: 'app-tabview',
@@ -13,7 +16,7 @@ export class TabviewComponent implements OnInit {
 
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  actionGoalFieldCategories: actionGoalField [] = ['action', 'goal', 'field']
+  actionGoalFieldCategories: actionGoalField [] = actionGoalFieldList
 
 
   constructor(private globalService: GlobalService) {}

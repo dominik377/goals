@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {GoalItem} from "../../../_Model/goalItem";
 import {GlobalService} from "../../../global.service";
-import {actionGoalField} from "../../../mainpage/actionGoalField";
+import {actionGoalField} from "../../../_Model/actionGoalField";
+import {actionGoalFieldList} from "../../../_Model/actionGoalFieldList";
+import {actionGoalFieldListAbridged} from "../../../_Model/actionGoalFieldListAbridged";
 
 @Component({
   selector: 'app-splitview',
@@ -12,7 +14,7 @@ export class SplitviewComponent implements OnInit {
 
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  actionGoalFieldCategories: actionGoalField [] = ['action', 'goal', 'field']
+  actionGoalFieldCategories: actionGoalField [] = actionGoalFieldListAbridged
 
 
   constructor(private globalService: GlobalService) {}
