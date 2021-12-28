@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
-import {GoalItem} from "../../_Model/goalItem";
-import {GlobalService} from "../../global.service";
-import {actionGoalField} from "../actionGoalField";
+import {GoalItem} from "../../../_Model/goalItem";
+import {GlobalService} from "../../../global.service";
+import {actionGoalField} from "../../../mainpage/actionGoalField";
 
 @Component({
-  selector: 'app-tabview',
-  templateUrl: './tabview.component.html',
-  styleUrls: ['./tabview.component.scss']
+  selector: 'app-splitview',
+  templateUrl: './splitview.component.html',
+  styleUrls: ['./splitview.component.scss']
 })
-export class TabviewComponent implements OnInit {
+export class SplitviewComponent implements OnInit {
 
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];

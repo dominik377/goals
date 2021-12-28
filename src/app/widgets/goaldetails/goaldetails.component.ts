@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
-import {GoalItem} from "../_Model/goalItem";
-import {GlobalService} from "../global.service";
+import {GoalItem} from "../../_Model/goalItem";
+import {GlobalService} from "../../global.service";
 import {GoaldetailsGuiService} from "./gui.service";
 
 @Component({

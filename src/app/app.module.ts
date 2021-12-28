@@ -4,15 +4,15 @@ import {HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GoaldetailsComponent } from './goaldetails/goaldetails.component';
+import { GoaldetailsComponent } from './widgets/goaldetails/goaldetails.component';
 import {FormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { GoalcontainerComponent } from './mainpage/goalcontainer/goalcontainer.component';
+import { GoalcontainerComponent } from './widgets/overview/goalcontainer/goalcontainer.component';
 import {MatListModule} from "@angular/material/list";
 import { MainpageComponent } from './mainpage/mainpage.component';
-import { TestComponent } from './test/test.component';
-import {TestGoaldetailsComponent} from "./test/goaldetails/goaldetails.component";
+import { TestComponent } from './_test/test.component';
+import {TestGoaldetailsComponent} from "./_test/goaldetails/goaldetails.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
@@ -22,21 +22,20 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from "@angular/material/button";
 import {MatBadgeModule} from "@angular/material/badge";
 
-import {JuicynessColorPipe} from './mainpage/goalcontainer/JuicynessColorPipe';
+import {JuicynessColorPipe} from './widgets/overview/goalcontainer/JuicynessColorPipe';
 import {FundingCategoryNamePipe} from '././_Model/FundingCategoryNamePipe';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-import { SplitviewComponent } from './mainpage/splitview/splitview.component';
-import { TabviewComponent } from './mainpage/tabview/tabview.component';
-import { RightComponent } from './mainpage/right/right.component';
-import { OverviewComponent } from './mainpage/overview/overview.component';
+import { SplitviewComponent } from './widgets/overview/splitview/splitview.component';
+import { TabviewComponent } from './widgets/overview/tabview/tabview.component';
+import { OverviewComponent } from './widgets/overview/overview.component';
 import { HeaderdivisionComponent } from './_GUI_Elements/headerdivision/headerdivision.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from "@angular/material/tooltip";
-import { TestcomponentComponent } from './test/testcomponent/testcomponent.component';
-import {TestComponentGuiComponent} from './test/testcomponent/gui/gui.component';
-import { GuiComponent } from './mainpage/overview/gui/gui.component';
-import {GoaldetailsGuiComponent} from "./goaldetails/gui/gui.component";
+import { TestcomponentComponent } from './_test/testcomponent/testcomponent.component';
+import {TestComponentGuiComponent} from './_test/testcomponent/gui/gui.component';
+import { GuiComponent } from './widgets/overview/gui/gui.component';
+import {GoaldetailsGuiComponent} from "./widgets/goaldetails/gui/gui.component";
 
 
 @NgModule({
@@ -51,7 +50,6 @@ import {GoaldetailsGuiComponent} from "./goaldetails/gui/gui.component";
     FundingCategoryNamePipe,
     SplitviewComponent,
     TabviewComponent,
-    RightComponent,
     OverviewComponent,
     HeaderdivisionComponent,
     TestcomponentComponent,

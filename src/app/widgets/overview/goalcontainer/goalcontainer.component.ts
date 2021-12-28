@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {GoalItem} from "../../_Model/goalItem";
-import {GlobalService} from "../../global.service";
-import {actionGoalField} from "../actionGoalField";
+import {GoalItem} from "../../../_Model/goalItem";
+import {GlobalService} from "../../../global.service";
+import {actionGoalField} from "../../../mainpage/actionGoalField";
 
 @Component({
   selector: 'app-goalcontainer',
