@@ -31,6 +31,7 @@ export class GlobalService {
   publishGoals(): void {
     this.getGoalList.next(this.goalList)
     this.getSelectedGoal.next(this.selectedGoal)
+    this.sendSelectedGoalUpdatedSignal()
   }
 
   addGoal(newGoal: GoalItem): void {
