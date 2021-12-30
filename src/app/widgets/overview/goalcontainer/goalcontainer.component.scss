@@ -63,7 +63,7 @@
     font-weight: bold;
     transform: scaleY(2);
     z-index:50;
-    top: calc(50% - 10px);
+    top: calc(50% - 11px);
     left: calc(100% + 5px);
     animation-name: selectedKeyFrames1;
     animation-duration: 5s;
@@ -75,7 +75,7 @@
     font-weight: bold;
     transform: scaleY(2);
     z-index:50;
-    top: calc(50% - 10px);
+    top: calc(50% - 11px);
     left: calc(100% + 12px);
     animation-name: selectedKeyFrames2;
     animation-duration: 5s;
@@ -87,7 +87,7 @@
     font-weight: bold;
     transform: scaleY(2);
     z-index:50;
-    top: calc(50% - 10px);
+    top: calc(50% - 11px);
     left: calc(100% + 19px);
     animation-name: selectedKeyFrames3;
     animation-duration: 5s;
@@ -99,8 +99,8 @@
   font-weight: bold;
   transform: scaleY(2);
   z-index:50;
-  top: calc(50% - 10px);
-  left: -14px;
+  top: calc(50% - 11px);
+  left: -13px;
   animation-name: selectedKeyFrames1;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -111,8 +111,8 @@
   font-weight: bold;
   transform: scaleY(2);
   z-index:50;
-  top: calc(50% - 10px);
-  left: -21px;
+  top: calc(50% - 11px);
+  left: -20px;
   animation-name: selectedKeyFrames2;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -123,8 +123,8 @@
   font-weight: bold;
   transform: scaleY(2);
   z-index:50;
-  top: calc(50% - 10px);
-  left: -28px;
+  top: calc(50% - 11px);
+  left: -27px;
   animation-name: selectedKeyFrames3;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -136,7 +136,7 @@
   transform: scaleX(2);
   z-index:50;
   top: -21px;
-  left: calc(50% - 10px);
+  left: calc(50% - 5px);
   animation-name: selectedKeyFrames1;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -148,7 +148,7 @@
   transform: scaleX(2);
   z-index:50;
   top: -27px;
-  left: calc(50% - 10px);
+  left: calc(50% - 5px);
   animation-name: selectedKeyFrames2;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -160,7 +160,7 @@
   transform: scaleX(2);
   z-index:50;
   top: -33px;
-  left: calc(50% - 10px);
+  left: calc(50% - 5px);
   animation-name: selectedKeyFrames3;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -171,8 +171,8 @@
   font-weight: bold;
   transform: scaleX(2);
   z-index:50;
-  top: calc(100% + 7px);
-  left: calc(50% - 10px);
+  top: calc(100% + 1px);
+  left: calc(50% - 5px);
   animation-name: selectedKeyFrames1;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -183,8 +183,8 @@
   font-weight: bold;
   transform: scaleX(2);
   z-index:50;
-  top: calc(100% + 13px);
-  left: calc(50% - 10px);
+  top: calc(100% + 7px);
+  left: calc(50% - 5px);
   animation-name: selectedKeyFrames2;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -195,8 +195,8 @@
   font-weight: bold;
   transform: scaleX(2);
   z-index:50;
-  top: calc(100% + 19px);
-  left: calc(50% - 10px);
+  top: calc(100% + 13px);
+  left: calc(50% - 5px);
   animation-name: selectedKeyFrames3;
   animation-duration: 5s;
   animation-iteration-count: infinite;
