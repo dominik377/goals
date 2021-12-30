@@ -34,6 +34,175 @@
   background-image:linear-gradient(to bottom right, rgb(100,200,100), rgb(180,255, 180) );
 }
 
+
+  @keyframes selectedKeyFrames1 {
+    0%    {color: rgba(0,0,0,0);}
+    50%   {color: rgba(0,0,0,0);}
+    62%   {color: rgba(0,0, 255, 1);}
+    87%   {color: rgba(0, 0, 255, 1);}
+    100%  {color: rgba(0,0,0,0);}
+  }
+
+  @keyframes selectedKeyFrames2 {
+    0%    {color: rgba(0,0,0,0);}
+    25%  {color: rgba(0,0,0,0);}
+    37%    {color: rgba(0,0,255,0.7);}
+    87%    {color: rgba(0,0,255,0.7);}
+    100%   {color: rgba(0,0,0,0);}
+  }
+
+  @keyframes selectedKeyFrames3 {
+    0%  {color: rgba(0,0,0,0);}
+    12%    {color: rgba(0, 0,255, 0.4);}
+    87%    {color: rgba(0,0,255, 0.4);}
+    100%  {color: rgba(0,0,0,0);}
+  }
+
+  .selectedRight1{
+    position:absolute;
+    font-weight: bold;
+    transform: scaleY(2);
+    z-index:50;
+    top: calc(50% - 10px);
+    left: calc(100% + 5px);
+    animation-name: selectedKeyFrames1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .selectedRight2{
+    position:absolute;
+    font-weight: bold;
+    transform: scaleY(2);
+    z-index:50;
+    top: calc(50% - 10px);
+    left: calc(100% + 12px);
+    animation-name: selectedKeyFrames2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .selectedRight3{
+    position:absolute;
+    font-weight: bold;
+    transform: scaleY(2);
+    z-index:50;
+    top: calc(50% - 10px);
+    left: calc(100% + 19px);
+    animation-name: selectedKeyFrames3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+.selectedLeft1{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleY(2);
+  z-index:50;
+  top: calc(50% - 10px);
+  left: -14px;
+  animation-name: selectedKeyFrames1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedLeft2{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleY(2);
+  z-index:50;
+  top: calc(50% - 10px);
+  left: -21px;
+  animation-name: selectedKeyFrames2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedLeft3{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleY(2);
+  z-index:50;
+  top: calc(50% - 10px);
+  left: -28px;
+  animation-name: selectedKeyFrames3;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedTop1{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleX(2);
+  z-index:50;
+  top: -21px;
+  left: calc(50% - 10px);
+  animation-name: selectedKeyFrames1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedTop2{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleX(2);
+  z-index:50;
+  top: -27px;
+  left: calc(50% - 10px);
+  animation-name: selectedKeyFrames2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedTop3{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleX(2);
+  z-index:50;
+  top: -33px;
+  left: calc(50% - 10px);
+  animation-name: selectedKeyFrames3;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedBottom1{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleX(2);
+  z-index:50;
+  top: calc(100% + 7px);
+  left: calc(50% - 10px);
+  animation-name: selectedKeyFrames1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedBottom2{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleX(2);
+  z-index:50;
+  top: calc(100% + 13px);
+  left: calc(50% - 10px);
+  animation-name: selectedKeyFrames2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.selectedBottom3{
+  position:absolute;
+  font-weight: bold;
+  transform: scaleX(2);
+  z-index:50;
+  top: calc(100% + 19px);
+  left: calc(50% - 10px);
+  animation-name: selectedKeyFrames3;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+
 .button{
   position:relative;
   height:25px;
