@@ -11,27 +11,12 @@
         </mat-form-field>
       </form>
 
-
-      <mat-form-field>
-        <mat-label> Select Funding Level </mat-label>
-        <mat-select [(ngModel)]="item.categoryA">
-          <mat-option *ngFor="let option of  ['funded', 'semi-funded', 'near', 'seminear', 'far', 'veryfar']" [value]="option">
-            {{option | fundingCategoryNamePipe}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-
-      <mat-form-field>
-        <mat-label> Select Time Category </mat-label>
-        <mat-select [(ngModel)]="item.categoryB">
-          <mat-option *ngFor="let option of  ['perennial', 'one-time-long','one-time-short']" [value]="option">
-            {{option}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-
+      <div class="radiocontainer">
+        <div class="radiolabel"> Funding Level / Realism </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.categoryA">
+          <mat-radio-button *ngFor="let o of ['funded', 'semi-funded', 'near', 'seminear', 'far', 'veryfar']" [value]="o"> {{o  | fundingCategoryNamePipe}} </mat-radio-button>
+        </mat-radio-group>
+      </div>
 
       <div class="radiocontainer">
         <div class="radiolabel"> Juicyness</div>
