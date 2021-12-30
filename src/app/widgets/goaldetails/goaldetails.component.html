@@ -48,13 +48,6 @@
       </div>
 
       <div class="radiocontainer">
-        <div class="radiolabel"> Action Category </div>
-        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionCategory">
-          <mat-radio-button *ngFor="let o of [ 'purchase', 'practise',  'project', 'meta-action', 'other']" [value]="o"> {{o}} </mat-radio-button>
-        </mat-radio-group>
-      </div>
-
-      <div class="radiocontainer">
         <div class="radiolabel"> Action / Goal / Field  </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalField">
           <mat-radio-button *ngFor="let o of [ 'action', 'goal', 'field', 'smallproject', 'largeproject', 'metaaction'  ]" [value]="o"  (change)="actionGoalFieldSelected($event)"> {{o}} </mat-radio-button>
