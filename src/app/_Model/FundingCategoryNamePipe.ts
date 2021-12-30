@@ -6,10 +6,10 @@ export class FundingCategoryNamePipe {
     if (x === null ) {return 'linear-gradient(to bottom right, black, black'}
     if (x === 'funded' )  {return 'funded' }
     if (x === 'semi-funded' )  {return 'semi-funded'}
-    if (x === 'near' )  {return 'sehr realistisch'}
-    if (x === 'seminear' )  {return 'halbwegs realistisch'}
-    if (x === 'far' )  {return 'eher unrealistisch'}
-    if (x === 'veryfar' )  {return 'sehr unrealistisch'}
+    if (x === 'near' )  {return 'very realistic'}
+    if (x === 'seminear' )  {return 'halfway realistic'}
+    if (x === 'far' )  {return 'rather unrealistic'}
+    if (x === 'veryfar' )  {return 'very unrealistic'}
     else {
       return 'an Error occured in Fundingcategorynamepipe'
     }
