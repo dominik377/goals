@@ -13,6 +13,7 @@ export class GoalItem {
   actionGoalFieldSecondary : string = 'undefined'
   resoucesNeeded: number = 0
   resourcesAssigned: number = 0
+  priority: number = 0
 
 
   constructor() {
