@@ -16,7 +16,7 @@ export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   leftView: 'overview' | 'test' = 'overview';
-  rightView: 'details' | 'test' = 'details';
+  rightView: 'details' | 'daily' | 'test' = 'details';
 
   testIcon = 'view_column'
 
@@ -75,7 +75,7 @@ export class MainpageComponent implements OnInit {
   }
 
 
-  selectRightView(selected: 'details' | 'test') {
+  selectRightView(selected: 'details' | 'daily' | 'test') {
     this.rightView = selected
   }
 

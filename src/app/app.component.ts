@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
+import {GlobalService} from "./global.service";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,12 @@ export class AppComponent {
   constructor(
     private matIconRegistry:MatIconRegistry,
     private domSanitzer:DomSanitizer,
+    private globalService: GlobalService
   ){
+    this.globalService.init()
+
+
+
     this.matIconRegistry.addSvgIcon(
       'custom_split',
       this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/split_19.svg')

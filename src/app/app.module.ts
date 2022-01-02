@@ -37,6 +37,8 @@ import { TestcomponentComponent } from './_test/testcomponent/testcomponent.comp
 import {TestComponentGuiComponent} from './_test/testcomponent/gui/gui.component';
 import { GuiComponent } from './widgets/overview/gui/gui.component';
 import {GoaldetailsGuiComponent} from "./widgets/goaldetails/gui/gui.component";
+import { DailyComponent } from './widgets/daily/daily.component';
+import { DivisionComponent } from './widgets/daily/division/division.component';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import {GoaldetailsGuiComponent} from "./widgets/goaldetails/gui/gui.component";
     TestcomponentComponent,
     TestComponentGuiComponent,
     GuiComponent,
-    GoaldetailsGuiComponent
+    GoaldetailsGuiComponent,
+    DailyComponent,
+    DivisionComponent
   ],
   imports: [
     BrowserModule,

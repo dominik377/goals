@@ -3,6 +3,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 import {GoalItem} from "./_Model/goalItem";
+import {DailyItem} from "./_Model/dailyItem";
 import {environment} from "../environments/environment";
 import {SnackbarService} from "./_Utility/snackbar.service";
 
@@ -12,6 +13,9 @@ import {SnackbarService} from "./_Utility/snackbar.service";
 export class GlobalService {
   goalList: GoalItem [] = []
   selectedGoal: GoalItem | null = null
+  globalDailyItem: DailyItem
+
+
 
   getGoalList: BehaviorSubject<GoalItem []>
   getSelectedGoal: BehaviorSubject<GoalItem | null>;
@@ -24,6 +28,14 @@ export class GlobalService {
     this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
     this.selectedGoalUpdated = new BehaviorSubject<boolean | null>(null)
     this.focusOnGoalDetails = new BehaviorSubject<boolean | null>(null)
+
+    this.globalDailyItem = new DailyItem()
+    console.log(this.globalDailyItem)
+  }
+
+  init(): void {
+    this.globalDailyItem = new DailyItem()
+    console.log(this.globalDailyItem)
   }
 
 
@@ -60,8 +72,11 @@ export class GlobalService {
       newvalues: {
         id: 1,
         goalList: this.goalList,
+        dailyItem: this.globalDailyItem
       }
     }
+
+    console.log(body)
 
     this.http.post<any>(environment.backend + '/update', body ).subscribe(next => {
       this.snackbarService.openSnackBar('Data saved');
@@ -82,9 +97,14 @@ export class GlobalService {
 
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
-
-
       console.log(this.goalList)
+
+      if (data.dailyItem !== undefined) {
+        this.globalDailyItem = data.dailyItem
+      } else {
+        this.globalDailyItem = new DailyItem()
+      }
+
 
 
       this.snackbarService.openSnackBar('data Loaded');

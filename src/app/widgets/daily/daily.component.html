@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-header><h2>Today </h2></mat-card-header>
+  <mat-card-content>
+    <mat-card>
+      <mat-card-header> Stance  </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label> Select Stance </mat-label>
+          <mat-select [(ngModel)]="content.stance">
+            <mat-option *ngFor="let option of  ['Get things done', 'Rationality', 'Zen', 'Aggressive']" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header> Focus goals</mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> 1 </mat-label>
+            <input #displaynameRef matInput [(ngModel)]="content.focus [1]" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> 2 </mat-label>
+            <input #displaynameRef matInput [(ngModel)]="content.focus [2]" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header> What am I looking forward to? </mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> 1 </mat-label>
+            <input #displaynameRef matInput [(ngModel)]="content.forward [1]" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> 2 </mat-label>
+            <input #displaynameRef matInput [(ngModel)]="content.forward [2]" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header> What is bothering me ?  </mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> 1 </mat-label>
+            <input #displaynameRef matInput [(ngModel)]="content.bothering [1]" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> 2 </mat-label>
+            <input #displaynameRef matInput [(ngModel)]="content.bothering [2]" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
