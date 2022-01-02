@@ -2,6 +2,7 @@ import {actionGoalField} from "./actionGoalField";
 import {actionGoalFieldSecondary} from "./actionGoalFieldSecondary";
 
 export class GoalItem {
+  id: number | null = null
   displayName = '';
   details = '';
   categoryA: 'funded' | 'semi-funded' | 'near' |'seminear' | 'far' | 'veryfar' | null  = null;
@@ -26,7 +27,6 @@ export class GoalItem {
   secret: boolean = false
 
   constructor() {
-
 
 
   }

@@ -15,6 +15,7 @@ export class GlobalService {
   selectedGoal: GoalItem | null = null
   globalDailyItem: DailyItem
   showPrivate = [true]
+  itemIdCounter = 0;
 
 
 
@@ -55,7 +56,12 @@ export class GlobalService {
   }
 
   createNewGoal() {
+    // create new goal and assign a unique Id
     const g = new GoalItem();
+    this.itemIdCounter += 1
+    g.id = this.itemIdCounter
+
+
     this.selectedGoal = g
     this.publishGoals()
   }
@@ -67,21 +73,29 @@ export class GlobalService {
 
 
   saveAllData(): void {
-    const body = {
-      collection: environment.dbCollection,
-      query: {id: 1},
-      newvalues: {
-        id: 1,
-        goalList: this.goalList,
-        dailyItem: this.globalDailyItem
+
+    if (this.goalList.length < 50) { // prevent accisentially overwriting my data with a new, empty dataset
+      alert('You are trying to overwrite your data with an empty list')
+      return
+    } else {
+
+      const body = {
+        collection: environment.dbCollection,
+        query: {id: 1},
+        newvalues: {
+          id: 1,
+          goalList: this.goalList,
+          dailyItem: this.globalDailyItem,
+          itemIdCounter: this.itemIdCounter
+        }
       }
+
+      console.log(body)
+
+      this.http.post<any>(environment.backend + '/update', body).subscribe(next => {
+        this.snackbarService.openSnackBar('Data saved');
+      })
     }
-
-    console.log(body)
-
-    this.http.post<any>(environment.backend + '/update', body ).subscribe(next => {
-      this.snackbarService.openSnackBar('Data saved');
-    })
   }
 
   loadAllData(): void {
@@ -98,6 +112,8 @@ export class GlobalService {
 
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
+
+
       console.log(this.goalList)
 
       if (data.dailyItem !== undefined) {
@@ -105,6 +121,10 @@ export class GlobalService {
       } else {
         this.globalDailyItem = new DailyItem()
       }
+
+
+      this.itemIdCounter = data.itemIdCounter
+      console.log (this.itemIdCounter)
 
 
 
