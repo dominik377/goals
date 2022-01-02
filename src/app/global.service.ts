@@ -14,6 +14,7 @@ export class GlobalService {
   goalList: GoalItem [] = []
   selectedGoal: GoalItem | null = null
   globalDailyItem: DailyItem
+  showPrivate = [true]
 
 
 

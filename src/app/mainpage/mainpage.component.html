@@ -35,6 +35,10 @@
     <div style="width:40px;"> </div> <!-- Spacer  -->
     <app-gui-headerdivision [header]="'Test Functions'">
       <button (click)="logHandler()"> Log FundedList</button>
+      <div class="radiolabel"> Private </div>
+      <mat-radio-group aria-label="Juiciness" [(ngModel)]="showPrivate [0]">
+        <mat-radio-button *ngFor="let o of [true, false]" [value]="o"> {{o}} </mat-radio-button>
+      </mat-radio-group>
     </app-gui-headerdivision>
 
   </div>

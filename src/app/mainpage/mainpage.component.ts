@@ -17,10 +17,13 @@ export class MainpageComponent implements OnInit {
   goalList: GoalItem [] = [];
   leftView: 'overview' | 'test' = 'overview';
   rightView: 'details' | 'daily' | 'test' = 'details';
+  showPrivate: boolean []
 
   testIcon = 'view_column'
 
-  constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {}
+  constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {
+    this.showPrivate = this.globalService.showPrivate
+  }
 
   ngOnInit(): void {
     this.goalList = this.globalService.goalList;

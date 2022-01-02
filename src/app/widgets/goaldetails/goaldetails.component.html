@@ -4,6 +4,13 @@
     <div *ngIf="item === null"> No Item defined </div>
     <div *ngIf="item !== null" class="main">
 
+      <div class="radiocontainer">
+        <div class="radiolabel"> Private </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.secret">
+          <mat-radio-button *ngFor="let o of [true, false]" [value]="o"> {{o}} </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
       <form class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Displayname</mat-label>
@@ -26,19 +33,12 @@
       </div>
 
       <div class="radiocontainer">
-        <div class="radiolabel"> Primary Resource </div>
-        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.primaryResource">
-          <mat-radio-button *ngFor="let o of ['time', 'money', 'time AND money']" [value]="o"> {{o}} </mat-radio-button>
-        </mat-radio-group>
-      </div>
-
-      <div class="radiocontainer">
         <div class="radiolabel"> Action / Goal / Field  </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalField">
           <mat-radio-button *ngFor="let o of [ 'action', 'goal', 'field', 'smallproject', 'largeproject', 'metaaction'  ]" [value]="o"  (change)="actionGoalFieldSelected($event)"> {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
-      <div class="radiocontainer">
+      <div class="radiocontainer secondaryCat">
         <div class="radiolabel"> Secondary Category </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalFieldSecondary">
           <mat-radio-button *ngFor="let o of item.actionGoalField | actionGoalFieldToSecondaryPipe" [value]="o"> {{o}} </mat-radio-button>
@@ -51,6 +51,75 @@
           <mat-radio-button *ngFor="let o of [0, 1]" [value]="o"> {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> Lifechanging Potential </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.lifechangingPotential">
+          <mat-radio-button *ngFor="let o of [true, false]" [value]="o"> {{o}} </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> one Time or Periodic </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.onetimePeriodic">
+          <mat-radio-button *ngFor="let o of ['o', 'p']" [value]="o"> {{o}} </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label> Success Chance </mat-label>
+          <input #moneyPerRef matInput [(ngModel)]="item.successChance" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </form>
+
+      <ng-container *ngIf="item.onetimePeriodic === 'o'"> <!-- One Time  -->
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> Money required - Euro </mat-label>
+            <input #moneyOtRef matInput [(ngModel)]="item.moneyOt" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> Time required - hours </mat-label>
+            <input #moneyOtRef matInput [(ngModel)]="item.timeOt" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> expected Utilons </mat-label>
+            <input #moneyOtRef matInput [(ngModel)]="item.utilonsOt" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+
+      </ng-container>
+      <ng-container *ngIf="item.onetimePeriodic === 'p'"> <!-- Periodic  -->
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> Money required - Euro per week </mat-label>
+            <input #moneyPerRef matInput [(ngModel)]="item.moneyPer" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> Time required - hours per week  </mat-label>
+            <input #moneyPerRef matInput [(ngModel)]="item.timePer" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label> expected Utilons per week  </mat-label>
+            <input #moneyPerRef matInput [(ngModel)]="item.utilonsPer" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </form>
+
+      </ng-container>
+
+
+
 
     </div> <!--END : MAIN  -->
     <button (click)="okHandler()"> OK </button>

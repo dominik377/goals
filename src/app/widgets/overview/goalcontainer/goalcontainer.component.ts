@@ -15,8 +15,11 @@ export class GoalcontainerComponent implements OnInit {
   selectedItem: GoalItem | null = null
   @Input() itemFilter : string | 'funded' | 'semi-funded' | 'near' | 'far' | null = null
   @Input() actionGoalField: actionGoalField = 'undefined'
+  showPrivate: boolean []
 
-  constructor(private globalService: GlobalService) {}
+  constructor(private globalService: GlobalService) {
+    this.showPrivate = this.globalService.showPrivate
+  }
 
   ngOnInit(): void {
     this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
