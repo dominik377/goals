@@ -9,7 +9,7 @@ import {GoalItem} from "../../_Model/goalItem";
 })
 export class GoalItemComponent implements OnInit {
  @Input() Item: GoalItem | null = null
-  @Output() selected: EventEmitter<GoalItem> = new EventEmitter()
+
 
   selectedItem: GoalItem | null = null
   showPrivate: boolean []
@@ -25,7 +25,11 @@ export class GoalItemComponent implements OnInit {
   }
 
   clickHandler(event: GoalItem): void {
-    this.selected.emit(event)
+    this.globalService.selectedGoal = event
+    this.globalService.publishGoals()
   }
+
+
+
 
 }

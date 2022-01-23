@@ -8,27 +8,15 @@ import {actionGoalField} from "../../../_Model/actionGoalField";
   templateUrl: './goalcontainer.component.html',
   styleUrls: ['./goalcontainer.component.scss']
 })
-export class GoalcontainerComponent implements OnInit {
+export class GoalcontainerComponent {
   @Input() goalList: GoalItem [] = []
   @Input() name = ''
-  @Output() selected: EventEmitter<GoalItem> = new EventEmitter()
-  selectedItem: GoalItem | null = null
   @Input() itemFilter : string | 'funded' | 'semi-funded' | 'near' | 'far' | null = null
   @Input() actionGoalField: actionGoalField = 'undefined'
   showPrivate: boolean []
 
   constructor(private globalService: GlobalService) {
     this.showPrivate = this.globalService.showPrivate
-  }
-
-  ngOnInit(): void {
-    this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
-      this.selectedItem = next;
-    })
-  }
-
-  clickHandler(event: GoalItem): void {
-    this.selected.emit(event)
   }
 
 }

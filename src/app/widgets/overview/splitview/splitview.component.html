@@ -3,7 +3,7 @@
     <div class="section">
       <div class="header"> {{agf}} </div>
       <ng-container *ngFor="let fundingState of ['funded', 'semi-funded', 'near', 'seminear', 'far', 'veryfar']">
-        <app-goalcontainer [goalList]="goalList" [name]=fundingState  [itemFilter]=fundingState [actionGoalField]=agf (selected)="selectedHandler($event)"></app-goalcontainer>
+        <app-goalcontainer [goalList]="goalList" [name]=fundingState  [itemFilter]=fundingState [actionGoalField]=agf></app-goalcontainer>
       </ng-container>
     </div>
   </ng-container>
