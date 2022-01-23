@@ -22,11 +22,6 @@ export class SplitviewComponent implements OnInit {
   ngOnInit(): void {
     this.goalList = this.globalService.goalList;
 
-
-    this.globalService.backendTest().subscribe(next => {
-      console.log('%c Backend Version:  ' + next.version, 'color: green')
-    })
-
     this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
       this.selectedItem = next;
     })

@@ -15,7 +15,7 @@ import {GlobalService} from "../global.service";
 export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  leftView: 'overview' | 'test' = 'overview';
+  leftView: 'overview' | 'action' = 'overview';
   rightView: 'details' | 'daily' | 'test' = 'details';
   showPrivate: boolean []
 
@@ -73,7 +73,7 @@ export class MainpageComponent implements OnInit {
     }
   }
 
-  selectLeftView(selected: 'overview' | 'test') {
+  selectLeftView(selected: 'overview' | 'action') {
     this.leftView = selected
   }
 

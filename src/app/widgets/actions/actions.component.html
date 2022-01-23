@@ -1,1 +1,6 @@
-<p>actions works!</p>
+<ng-container *ngFor="let item of goalList">
+  <ng-container *ngIf="item.actionGoalField === 'action'">
+    <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+  </ng-container>
+
+</ng-container>

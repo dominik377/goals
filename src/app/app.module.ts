@@ -41,6 +41,8 @@ import { DailyComponent } from './widgets/daily/daily.component';
 import { DivisionComponent } from './widgets/daily/division/division.component';
 import { SubgoalsComponent } from './widgets/subgoals/subgoals.component';
 import { ActionsComponent } from './widgets/actions/actions.component';
+import {ActionsGuiComponent} from "./widgets/actions/gui/actions-gui.component";
+import { GoalItemComponent } from './_GUI_Elements/goalItem/goal-item.component';
 
 
 @NgModule({
@@ -65,7 +67,10 @@ import { ActionsComponent } from './widgets/actions/actions.component';
     DailyComponent,
     DivisionComponent,
     SubgoalsComponent,
-    ActionsComponent
+    ActionsComponent,
+    ActionsGuiComponent,
+    GoalItemComponent
+
   ],
   imports: [
     BrowserModule,
