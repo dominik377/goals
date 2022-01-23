@@ -1,5 +1,10 @@
 <ng-container *ngIf="Item !== null">
-  <div   [ngClass]="{'button--blue': Item.priority !== 1, 'button--orange': Item.priority === 1, 'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)"> {{Item.displayName}}
+  <div   [ngClass]="{'main': true,  'button--blue': Item.priority !== 1, 'button--orange': Item.priority === 1, 'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
+    <div class="text">
+
+        {{Item.displayName}}
+
+    </div>
     <div class="badge">
       <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
       <div class="badgeInner">  {{Item.juicyness}}  </div>

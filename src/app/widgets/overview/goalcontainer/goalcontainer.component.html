@@ -1,11 +1,15 @@
 <div class="header"> {{name | fundingCategoryNamePipe}}</div>
-<div class="container">
-  <ng-container *ngFor="let item of goalList" >
-    <ng-container *ngIf=" ! (showPrivate [0] === false && item.secret === true)">
-      <ng-container *ngIf="item.categoryA === itemFilter && (item.actionGoalField === actionGoalField || ( actionGoalField === null && ['action', 'goal', 'field'].indexOf(item.actionGoalField) === -1 ))" >
+<div class="outerContainer">
+  <div class="container">
+    <ng-container *ngFor="let item of goalList" >
+      <ng-container *ngIf=" ! (showPrivate [0] === false && item.secret === true)">
+        <ng-container *ngIf="item.categoryA === itemFilter && (item.actionGoalField === actionGoalField || ( actionGoalField === null && ['action', 'goal', 'field'].indexOf(item.actionGoalField) === -1 ))" >
 
-        <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+          <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+        </ng-container>
       </ng-container>
     </ng-container>
-  </ng-container>
+
+  </div>
+  <div style="flex-grow:1;"> </div> <!-- Spacer -->
 </div>

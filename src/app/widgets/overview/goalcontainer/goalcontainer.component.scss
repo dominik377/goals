@@ -1,7 +1,9 @@
 :host{
   flex-grow:1;
   flex-basis:100px;
-  border:1px ridge grey;
+  display:flex;
+  flex-direction:column;
+  border:1px ridge gray;
   position:relative;
   background-image:linear-gradient(to bottom right, #fff, #eee);
 }
@@ -18,12 +20,20 @@
   border-radius:8px;
 }
 
+.outerContainer{
+  display:flex;
+  flex-direction: column;
+}
+
 .container {
   flex-grow:1;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 5px;
+  gap: 5px;
 }
 
 .buttonSpacer{
