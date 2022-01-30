@@ -74,8 +74,8 @@ export class GlobalService {
 
   saveAllData(): void {
 
-    if (this.goalList.length < 50) { // prevent accisentially overwriting my data with a new, empty dataset
-      alert('You are trying to overwrite your data with an empty list')
+    if (this.goalList.length < 10) { // prevent accisentially overwriting my data with a new, empty dataset
+      alert('You are trying to overwrite your data with an empty list; please create more than 10 items before saving')
       return
     } else {
 

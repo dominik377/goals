@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {actionGoalFieldSecondaryLookup} from "../../_Model/actionGoalFieldSecondaryLookup";
+import {actionGoalFieldList} from "../../_Model/actionGoalFieldList";
 
 import {GoalItem} from "../../_Model/goalItem";
 import {GlobalService} from "../../global.service";
@@ -15,6 +16,7 @@ export class GoaldetailsComponent implements OnInit {
   @Output() ok: EventEmitter<GoalItem> = new EventEmitter();
   @ViewChild('displaynameRef') displaynameRef: any
   secondaryCategoryList : string [] = []
+  actionGoalFieldList = actionGoalFieldList
 
   constructor(private globalService: GlobalService, private goaldetailsGuiService: GoaldetailsGuiService) {
     this.globalService.focusOnGoalDetails.subscribe(next => {

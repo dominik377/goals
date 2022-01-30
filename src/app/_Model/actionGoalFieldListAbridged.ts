@@ -1,3 +1,3 @@
 import {actionGoalField} from "./actionGoalField";
 
-export const actionGoalFieldListAbridged: actionGoalField [] = ['action', 'smallproject', 'largeproject', 'field']
+export const actionGoalFieldListAbridged: actionGoalField [] = ['task', 'smallproject', 'largeproject', 'field']

@@ -7,7 +7,7 @@
     <div class="header"> Tasks </div>
     <div class="globalGoalContainer">
       <ng-container *ngFor="let item of goalList">
-        <ng-container *ngIf="item.actionGoalField === 'action' && item.actionGoalFieldSecondary === 'task'">
+        <ng-container *ngIf="item.actionGoalField === 'task'">
           <app-gui-goal-item [Item]="item"></app-gui-goal-item>
         </ng-container>
 
@@ -19,7 +19,7 @@
     <div class="header"> Practises </div>
     <div class="globalGoalContainer">
       <ng-container *ngFor="let item of goalList">
-        <ng-container *ngIf="item.actionGoalField === 'action' && item.actionGoalFieldSecondary === 'practise'">
+        <ng-container *ngIf="item.actionGoalField === 'practise'">
           <app-gui-goal-item [Item]="item"></app-gui-goal-item>
         </ng-container>
 
