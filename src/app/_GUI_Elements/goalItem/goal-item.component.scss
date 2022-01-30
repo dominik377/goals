@@ -1,4 +1,8 @@
 :host{
+
+}
+
+.main{
   box-seizing:border-box;
   flex-shrink: 1;
   height:32px;
@@ -7,19 +11,25 @@
   background-image:linear-gradient(to bottom right, #fff, #eee);
 }
 
-.main{
-  position: absolute;
-  text-overflow: clip;
-  min-width: 0;
-}
+  .main:hover{
+    height:unset;
+  }
 
 .text{
   flex-shrink: 1;
   max-width: 200px;
   height: calc(100% - 5px);
   position:relative;
+  white-space:nowrap;
+  text-overflow: ellipsis;
   overflow:hidden;
 }
+
+  .text:hover{
+    overflow:visible;
+    white-space: normal;
+    padding-bottom: 5px;
+  }
 
 .textInner{
 

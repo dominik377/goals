@@ -1,6 +1,30 @@
-<ng-container *ngFor="let item of goalList">
-  <ng-container *ngIf="item.actionGoalField === 'action'">
-    <app-gui-goal-item [Item]="item"></app-gui-goal-item>
-  </ng-container>
 
-</ng-container>
+
+
+<div class="outerContainer">
+
+  <div class="section">
+    <div class="header"> Tasks </div>
+    <div class="globalGoalContainer">
+      <ng-container *ngFor="let item of goalList">
+        <ng-container *ngIf="item.actionGoalField === 'action' && item.actionGoalFieldSecondary === 'task'">
+          <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+        </ng-container>
+
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="header"> Practises </div>
+    <div class="globalGoalContainer">
+      <ng-container *ngFor="let item of goalList">
+        <ng-container *ngIf="item.actionGoalField === 'action' && item.actionGoalFieldSecondary === 'practise'">
+          <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+        </ng-container>
+
+      </ng-container>
+    </div>
+  </div>
+
+</div>
