@@ -5,7 +5,8 @@ export class GoalItem {
   id: number | null = null
   displayName = '';
   details = '';
-  categoryA: 'funded' | 'semi-funded' | 'near' |'seminear' | 'far' | 'veryfar' | null  = null;
+  categoryA: 'funded' | 'semi-funded' | 'near' |'seminear' | 'far' | 'veryfar' | null  = null;  //  Deprecated : not yet deleted for reasons of save backwards compatibility
+  status: string | null = null;
   categoryB: 'perennial' | 'one-time-long' | 'one-time-short' | null = null;
   juicyness:  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | null = null;
   primaryResource: 'time' | 'money' | 'time AND money' = 'time'   //  Deprecated : not yet deleted for reasons of save backwards compatibility

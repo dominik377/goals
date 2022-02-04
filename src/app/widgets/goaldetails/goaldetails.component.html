@@ -19,13 +19,6 @@
       </form>
 
       <div class="radiocontainer">
-        <div class="radiolabel"> Funding Level / Realism </div>
-        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.categoryA">
-          <mat-radio-button *ngFor="let o of ['funded', 'semi-funded', 'near', 'seminear', 'far', 'veryfar']" [value]="o"> {{o  | fundingCategoryNamePipe}} </mat-radio-button>
-        </mat-radio-group>
-      </div>
-
-      <div class="radiocontainer">
         <div class="radiolabel"> Juicyness</div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.juicyness">
           <mat-radio-button *ngFor="let o of [0, 1, 2, 3, 4, 5]" [value]="o"> {{o}} </mat-radio-button>
@@ -35,15 +28,16 @@
       <div class="radiocontainer">
         <div class="radiolabel"> Action / Goal / Field  </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalField">
-          <mat-radio-button *ngFor="let o of actionGoalFieldList" [value]="o"  (change)="actionGoalFieldSelected($event)"> {{o}} </mat-radio-button>
+          <mat-radio-button *ngFor="let o of actionGoalFieldList" [value]="o"  (change)="actionGoalFieldSelected($event)" (click)="test(item)"> {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
-      <div class="radiocontainer secondaryCat">
-        <div class="radiolabel"> Secondary Category </div>
-        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalFieldSecondary">
-          <mat-radio-button *ngFor="let o of item.actionGoalField | actionGoalFieldToSecondaryPipe" [value]="o"> {{o}} </mat-radio-button>
+      <div class="radiocontainer">
+        <div class="radiolabel"> Status </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.status">
+          <mat-radio-button *ngFor="let o of item.actionGoalField | actionGoalFieldToStatusPipe" [value]="o"  > {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
+
 
       <div class="radiocontainer">
         <div class="radiolabel"> Priority </div>
@@ -122,6 +116,6 @@
 
 
     </div> <!--END : MAIN  -->
-    <button (click)="okHandler()"> OK </button>
+
   </mat-card-content>
 </mat-card>

@@ -1,17 +1,35 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+const nameLookup : { [char: string]: string } = {
+  'funded': 'funded',
+  'semi-funded': 'semi-funded',
+  'near': 'very realistic',
+  'seminear': 'halfway realistic',
+  'far': 'rather unrealistic',
+  'veryfar': 'very unrealistic',
+  // task
+  'assigned' : 'time slot assigned',
+  'asap' : 'as soon as possible',
+  'convenient': 'do when convenient',
+  'later': 'do later',
+  'consider': 'consider doing',
+  'mind': 'keep in mind'
+}
+
 @Pipe({ name: 'fundingCategoryNamePipe' })
 export class FundingCategoryNamePipe {
   transform(x: string | null): string {
-    if (x === null ) {return 'linear-gradient(to bottom right, black, black'}
-    if (x === 'funded' )  {return 'funded' }
-    if (x === 'semi-funded' )  {return 'semi-funded'}
-    if (x === 'near' )  {return 'very realistic'}
-    if (x === 'seminear' )  {return 'halfway realistic'}
-    if (x === 'far' )  {return 'rather unrealistic'}
-    if (x === 'veryfar' )  {return 'very unrealistic'}
-    else {
-      return 'an Error occured in Fundingcategorynamepipe'
+
+    let returnValue = 'error in fundingCategoryNamePipe '
+    if(x === null) {
+      return  returnValue
     }
+
+    returnValue = nameLookup [x]
+    if ( returnValue === undefined) {
+      returnValue = x
+    }
+
+    return returnValue
   }
 }

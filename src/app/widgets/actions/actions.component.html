@@ -1,30 +1,18 @@
 
-
-
 <div class="outerContainer">
 
   <div class="section">
     <div class="header"> Tasks </div>
-    <div class="globalGoalContainer">
-      <ng-container *ngFor="let item of goalList">
-        <ng-container *ngIf="item.actionGoalField === 'task'">
-          <app-gui-goal-item [Item]="item"></app-gui-goal-item>
-        </ng-container>
-
-      </ng-container>
-    </div>
+    <ng-container *ngFor="let fundingState of 'task' | actionGoalFieldToStatusPipe">
+      <app-goalcontainer [goalList]="goalList" [name]=fundingState  [itemFilter]=fundingState [actionGoalField]="'task'"></app-goalcontainer>
+    </ng-container>
   </div>
 
   <div class="section">
     <div class="header"> Practises </div>
-    <div class="globalGoalContainer">
-      <ng-container *ngFor="let item of goalList">
-        <ng-container *ngIf="item.actionGoalField === 'practise'">
-          <app-gui-goal-item [Item]="item"></app-gui-goal-item>
-        </ng-container>
-
-      </ng-container>
-    </div>
+    <ng-container *ngFor="let fundingState of 'practise' | actionGoalFieldToStatusPipe">
+      <app-goalcontainer [goalList]="goalList" [name]=fundingState  [itemFilter]=fundingState [actionGoalField]="'practise'"></app-goalcontainer>
+    </ng-container>
   </div>
 
 </div>

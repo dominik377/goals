@@ -63,6 +63,7 @@ export class GlobalService {
 
 
     this.selectedGoal = g
+    this.goalList.push(g)
     this.publishGoals()
   }
 
@@ -112,7 +113,6 @@ export class GlobalService {
 
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
-
 
       console.log(this.goalList)
 
