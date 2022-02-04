@@ -44,6 +44,7 @@ import { ActionsComponent } from './widgets/actions/actions.component';
 import {ActionsGuiComponent} from "./widgets/actions/gui/actions-gui.component";
 import { GoalItemComponent } from './_GUI_Elements/goalItem/goal-item.component';
 import {ActionGoalFieldToStatusPipe} from "./_Model/actionGoalFieldToStatusPipe";
+import { ProjectsComponent } from './widgets/projects/projects.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import {ActionGoalFieldToStatusPipe} from "./_Model/actionGoalFieldToStatusPipe"
     SubgoalsComponent,
     ActionsComponent,
     ActionsGuiComponent,
-    GoalItemComponent
+    GoalItemComponent,
+    ProjectsComponent
 
   ],
   imports: [

@@ -14,6 +14,7 @@
     <app-gui-headerdivision [header]="'left Component'">
       <button (click)="selectLeftView('overview')">overview</button>
       <button (click)="selectLeftView('action')">action</button>
+      <button (click)="selectLeftView('projects')"> projects </button>
     </app-gui-headerdivision>
 
 
@@ -47,6 +48,7 @@
     <div class="leftContainer">
       <app-mainpage-overview *ngIf="leftView === 'overview'"></app-mainpage-overview>
       <app-mainpage-actions *ngIf="leftView === 'action'"> </app-mainpage-actions>
+      <app-projects *ngIf="leftView === 'projects'"></app-projects>
     </div>
     <div class="rightContainer">
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
