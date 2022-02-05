@@ -60,8 +60,9 @@
 .rightContainer{
   padding: 5px;
   margin-left:10px;
-  flex-grow:1;
+  flex-grow:0;
   flex-basis:30%;
+  overflow-y:hidden;
 }
 
 

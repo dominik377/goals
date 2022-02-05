@@ -26,12 +26,11 @@
     <app-gui-headerdivision [header]="'right Component'">
       <button (click)="selectRightView('details')">details</button>
       <button (click)="selectRightView('daily')">daily</button>
-      <button (click)="selectRightView('test')">test</button>
+      <button (click)="selectRightView('tabview')">overview -  tabs</button>
     </app-gui-headerdivision>
 
     <div style="width:5px;"> </div> <!-- Mini -  Spacer  -->
     <app-gui-headerdivision [header]="'details'" *ngIf="rightView === 'details'" > <app-goaldetails-gui></app-goaldetails-gui> </app-gui-headerdivision>
-    <app-gui-headerdivision [header]="'test'" *ngIf="rightView === 'test'" >  <app-testcomponent-gui></app-testcomponent-gui> </app-gui-headerdivision>
 
     <div style="width:40px;"> </div> <!-- Spacer  -->
     <app-gui-headerdivision [header]="'Test Functions'">
@@ -53,7 +52,7 @@
     <div class="rightContainer">
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
-      <app-testcomponent *ngIf="rightView === 'test'">  </app-testcomponent>
+      <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
     </div>
   </div>
 </div>

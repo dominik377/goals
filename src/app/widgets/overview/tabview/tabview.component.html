@@ -3,7 +3,7 @@
   <mat-tab-group >
     <ng-container *ngFor="let agf of actionGoalFieldCategories">
       <mat-tab label={{agf}} >
-        <ng-container *ngFor="let fundingState of ['funded', 'semi-funded', 'near', 'seminear', 'far', 'veryfar', 'undefined']">
+        <ng-container *ngFor="let fundingState of agf | actionGoalFieldToStatusPipe">
           <app-goalcontainer [goalList]="goalList" [name]=fundingState  [itemFilter]=fundingState [actionGoalField]=agf></app-goalcontainer>
         </ng-container>
       </mat-tab>
