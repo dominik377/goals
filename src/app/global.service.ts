@@ -109,12 +109,13 @@ export class GlobalService {
 
       const data =  next.result[0]
 
-      // intermediate Version for moving the saves to goalList
 
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
 
       console.log(this.goalList)
+
+
 
       if (data.dailyItem !== undefined) {
         this.globalDailyItem = data.dailyItem
