@@ -74,6 +74,11 @@ export class MainpageComponent implements OnInit {
   }
 
   selectLeftView(selected: 'overview' | 'action' | 'projects') {
+    // if 'projects' is seleleted, the selectedItem must be a project
+    if(selected === 'projects' && ( this.selectedItem === null || ! ['smallproject', 'largeproject'].includes (this.selectedItem.actionGoalField)) ) {
+      alert(' no item selected or item is no project. Please select a Project before moving to project view')
+      return
+    }
     this.leftView = selected
   }
 

@@ -1,1 +1,44 @@
-<p>projects works!</p>
+<div class="outerContainer">
+  <div class="header">
+    <div *ngIf="baseProject === null"> no Item selected   </div>
+    <div *ngIf="baseProject !== null && ['smallproject', 'largeproject'].includes (baseProject.actionGoalField)"> {{baseProject.displayName}} --- {{baseProject.id}}  </div>
+    <div *ngIf="baseProject !== null && ! ['smallproject', 'largeproject'].includes (baseProject.actionGoalField)"> Selected Item is not a project   </div>
+  </div>
+
+  <div style="flex-basis:20px;"> </div> <!-- Spacer -->
+
+  <ng-container *ngIf="baseProject !== null">
+    <app-grid4> <!-- a grid with 4 boxes -->
+      <app-card g1>
+        <div header> Associated Tasks </div>
+        <div body>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id) ">
+             <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+
+          </ng-container>
+
+        </div>
+      </app-card>
+      <app-card g2>
+        <div header> t2  </div>
+        <div body> test body </div>
+      </app-card>
+      <app-card g3>
+        <div header> t3 s </div>
+        <div body> test body </div>
+      </app-card>
+      <app-card g4>
+        <div header> t4  </div>
+        <div body style="background-color:blue;"> test body </div>
+      </app-card>
+    </app-grid4>
+  </ng-container>
+
+
+</div>
+
+
+
+

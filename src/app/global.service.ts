@@ -67,6 +67,20 @@ export class GlobalService {
     this.publishGoals()
   }
 
+  createNewGoal2(): GoalItem {  // like the normal createNewGoal, but returns the goal
+    // create new goal and assign a unique Id
+    const g = new GoalItem();
+    this.itemIdCounter += 1
+    g.id = this.itemIdCounter
+
+
+    this.goalList.push(g)
+    this.selectedGoal = g
+    this.publishGoals()
+
+    return g
+  }
+
   sendSelectedGoalUpdatedSignal(): void {
     this.selectedGoalUpdated.next(true)
   }
@@ -106,27 +120,22 @@ export class GlobalService {
     }
 
     this.http.post<any>(environment.backend + '/query', body ).subscribe(next => {
-
       const data =  next.result[0]
 
-
+      //      ___ I ___     goal List
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
 
-      console.log(this.goalList)
 
-
-
+      //      ___ II ___    Daily Item
       if (data.dailyItem !== undefined) {
         this.globalDailyItem = data.dailyItem
       } else {
         this.globalDailyItem = new DailyItem()
       }
 
-
+      //      ___ III ___    Item Counter
       this.itemIdCounter = data.itemIdCounter
-      console.log (this.itemIdCounter)
-
 
 
       this.snackbarService.openSnackBar('data Loaded');

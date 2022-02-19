@@ -21,6 +21,7 @@
     <div style="width:5px;"> </div> <!-- Mini -  Spacer  -->
     <app-gui-headerdivision [header]="'overview'" *ngIf="leftView === 'overview'" > <app-mainpage-overview-gui></app-mainpage-overview-gui> </app-gui-headerdivision>
     <app-gui-headerdivision [header]="'test'" *ngIf="leftView === 'action'" > <app-testcomponent-gui></app-testcomponent-gui> </app-gui-headerdivision>
+    <app-gui-headerdivision [header]="'projects'" *ngIf="leftView === 'projects'" > <app-projects-gui></app-projects-gui> </app-gui-headerdivision>
 
     <div style="width:40px;"> </div> <!-- Spacer  -->
     <app-gui-headerdivision [header]="'right Component'">

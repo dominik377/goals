@@ -2,7 +2,7 @@ import {actionGoalField} from "./actionGoalField";
 import {actionGoalFieldSecondary} from "./actionGoalFieldSecondary";
 
 export class GoalItem {
-  id: number | null = null
+  id: number = -1
   displayName = '';
   details = '';
   categoryA: 'funded' | 'semi-funded' | 'near' |'seminear' | 'far' | 'veryfar' | null  = null;  //  Deprecated : not yet deleted for reasons of save backwards compatibility
@@ -26,6 +26,7 @@ export class GoalItem {
   utilonsPer : number |  'undefined' = 'undefined'
   lifechangingPotential: boolean = false
   secret: boolean = false
+  parentList: number [] = []
 
   constructor() {
 

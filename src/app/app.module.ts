@@ -49,6 +49,9 @@ import { StagesComponent } from './widgets/projects/stages/stages.component';
 import { VariantsComponent } from './widgets/projects/variants/variants.component';
 import { SubprojectsComponent } from './widgets/projects/subprojects/subprojects.component';
 import { TasksComponent } from './widgets/projects/tasks/tasks.component';
+import { CardComponent } from './_GUI_ELEMENTS/card/card.component';
+import { Grid4Component } from './_GUI_ELEMENTS/grid4/grid4.component';
+import {ProjectsGuiComponent} from "./widgets/projects/gui/gui.component";
 
 
 @NgModule({
@@ -81,7 +84,10 @@ import { TasksComponent } from './widgets/projects/tasks/tasks.component';
     StagesComponent,
     VariantsComponent,
     SubprojectsComponent,
-    TasksComponent
+    TasksComponent,
+    CardComponent,
+    Grid4Component,
+    ProjectsGuiComponent
 
   ],
   imports: [
