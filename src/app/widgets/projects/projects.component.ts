@@ -28,19 +28,21 @@ export class ProjectsComponent implements OnInit {
   }
 
   button1function(x: string): void {
-    console.log('%c button 1 function executed', 'color:blue')
-    if (this.baseProject === null) {
-      alert('no Item selected')
-      return
+    if (x !== 'null' && x !== null) {
+      console.log('%c button 1 function executed', 'color:blue')
+      if (this.baseProject === null) {
+        alert('no Item selected')
+        return
+      }
+
+      console.log(this.baseProject.id)
+
+      const newGoal = this.globalService.createNewGoal2()
+      newGoal.parentList.push(this.baseProject.id)
+      newGoal.displayName = 'test subtask'
+      newGoal.actionGoalField = 'task'
+      newGoal.status = 'undefined'
     }
-
-    console.log(this.baseProject.id)
-
-    const newGoal = this.globalService.createNewGoal2()
-    newGoal.parentList.push(this.baseProject.id)
-    newGoal.displayName = 'test subtask'
-    newGoal.actionGoalField = 'task'
-    newGoal.status = 'undefined'
   }
 
 

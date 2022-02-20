@@ -15,8 +15,8 @@ export class ProjectsGuiComponent implements OnInit {
   }
 
   activateButton1 (x: string): void {
-    console.log('%c gui-componet: b1 function activated', 'color:orange')
-    this.projectsGuiService.activateButton1(x)
+      console.log('%c gui-componet: b1 function activated', 'color:orange')
+      this.projectsGuiService.activateButton1(x)
   }
 
 }

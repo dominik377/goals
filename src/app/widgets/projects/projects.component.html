@@ -10,10 +10,10 @@
   <ng-container *ngIf="baseProject !== null">
     <app-grid4> <!-- a grid with 4 boxes -->
       <app-card g1>
-        <div header> Associated Tasks </div>
+        <div header> Associated Tasks and Practises </div>
         <div body>
           <ng-container *ngFor="let item of goalList">
-            <ng-container *ngIf="item.parentList.includes(baseProject.id) ">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id) && ['task', 'practise'].includes (item.actionGoalField) ">
              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
 
@@ -22,16 +22,23 @@
         </div>
       </app-card>
       <app-card g2>
-        <div header> t2  </div>
-        <div body> test body </div>
+        <div header> Sub - projects </div>
+        <div body>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id) && ['smallproject', 'largeproject'].includes (item.actionGoalField) ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+
+          </ng-container>
+        </div>
       </app-card>
       <app-card g3>
-        <div header> t3 s </div>
-        <div body> test body </div>
+        <div header>  </div>
+        <div body> work in progress </div>
       </app-card>
       <app-card g4>
-        <div header> t4  </div>
-        <div body style="background-color:blue;"> test body </div>
+        <div header>   </div>
+        <div body> work in progress </div>
       </app-card>
     </app-grid4>
   </ng-container>
