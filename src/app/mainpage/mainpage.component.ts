@@ -69,7 +69,8 @@ export class MainpageComponent implements OnInit {
   deleteHandler(): void {
     if (this.selectedItem !== null) {
       _lodash.remove(this.globalService.goalList, this.selectedItem)
-
+    } else {
+      alert('No Item selected for deletion')
     }
   }
 

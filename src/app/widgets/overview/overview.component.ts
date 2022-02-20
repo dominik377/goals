@@ -15,8 +15,8 @@ export class OverviewComponent implements OnInit {
   constructor(private mainpageOverviewGuiService: MainpageOverviewGuiService) { }
 
   ngOnInit(): void {
-    this.mainpageOverviewGuiService.updateTabSplit.subscribe(x => {
-      this.tabOrSplitView = x
+    this.mainpageOverviewGuiService.updateTabSplit.subscribe(tabOrSplit => {
+      this.tabOrSplitView = tabOrSplit
     })
   }
 
