@@ -52,6 +52,7 @@ import { TasksComponent } from './widgets/projects/tasks/tasks.component';
 import { CardComponent } from './_GUI_ELEMENTS/card/card.component';
 import { Grid4Component } from './_GUI_ELEMENTS/grid4/grid4.component';
 import {ProjectsGuiComponent} from "./widgets/projects/gui/gui.component";
+import { DoubleCardComponent } from './_GUI_Elements/doubleCard/doubleCard.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import {ProjectsGuiComponent} from "./widgets/projects/gui/gui.component";
     TasksComponent,
     CardComponent,
     Grid4Component,
-    ProjectsGuiComponent
+    ProjectsGuiComponent,
+    DoubleCardComponent
 
   ],
   imports: [

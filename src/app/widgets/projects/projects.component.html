@@ -9,29 +9,42 @@
 
   <ng-container *ngIf="baseProject !== null">
     <app-grid4> <!-- a grid with 4 boxes -->
-      <app-card g1>
-        <div header> Associated Tasks and Practises </div>
-        <div body>
+      <app-doubleCard g1>
+        <div header1> Associated Tasks and Practises </div>
+        <div body1>
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id) && ['task', 'practise'].includes (item.actionGoalField) ">
              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
-
           </ng-container>
-
         </div>
-      </app-card>
-      <app-card g2>
-        <div header> Sub - projects </div>
-        <div body>
+        <div header2> Indirect sub-tasks </div>
+        <div body2>
+          <ng-container *ngFor="let item of grandchildrenList">
+            <ng-container *ngIf="['task', 'practise'].includes (item.actionGoalField) ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
+      <app-doubleCard g2>
+        <div header1> Sub-Projects </div>
+        <div body1>
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id) && ['smallproject', 'largeproject'].includes (item.actionGoalField) ">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
-
           </ng-container>
         </div>
-      </app-card>
+        <div header2> Indirect sub- Projects </div>
+        <div body2>
+          <ng-container *ngFor="let item of grandchildrenList">
+            <ng-container *ngIf="['smallproject', 'largeproject'].includes (item.actionGoalField) ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
       <app-card g3>
         <div header>  </div>
         <div body> work in progress </div>

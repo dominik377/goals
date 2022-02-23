@@ -1,0 +1,15 @@
+<div class="outerContainer">
+  <div class="header" >
+    <ng-content  select="[header1]"> </ng-content>
+  </div>
+  <div class="cardBody" >
+    <ng-content  select="[body1]"></ng-content>
+  </div>
+  <div style="flex-basis:20px;"> </div> <!-- SPACER -->
+  <div class="header" >
+    <ng-content  select="[header2]"> </ng-content>
+  </div>
+  <div class="cardBody" >
+    <ng-content  select="[body2]"></ng-content>
+  </div>
+</div>

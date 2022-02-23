@@ -16,6 +16,8 @@ export class ProjectsGuiService {
     if(x !== 'null') {
       console.log('%c service: b1 function activated', 'color:green')
       this.button1Subject.next(x)
+      this.button1Subject.next('null')
+
     }
   }
 
