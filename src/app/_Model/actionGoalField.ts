@@ -1,1 +1,1 @@
-export type actionGoalField =  'task' | 'practise' | 'goal' | 'field' |  'smallproject' | 'largeproject' | 'metaaction' | 'undefined'
+export type actionGoalField =  'task' | 'practise' | 'goal' | 'field' |  'smallproject' | 'largeproject' | 'metaaction' | 'undefined' | 'problem'
