@@ -28,7 +28,13 @@
       <div class="radiocontainer">
         <div class="radiolabel"> Action / Goal / Field  </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalField">
-          <mat-radio-button *ngFor="let o of actionGoalFieldList" [value]="o"  (change)="actionGoalFieldSelected($event)" (click)="test(item)"> {{o}} </mat-radio-button>
+          <mat-radio-button *ngFor="let o of actionGoalFieldList" [value]="o"  (change)="actionGoalFieldSelected($event)" (click)="setStausUndefined(item)"> {{o}} </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="radiocontainer secondaryCat">
+        <div class="radiolabel"> Secondary Category </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalFieldSecondary">
+          <mat-radio-button *ngFor="let o of item.actionGoalField | actionGoalFieldToSecondaryPipe" [value]="o"> {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
       <div class="radiocontainer">

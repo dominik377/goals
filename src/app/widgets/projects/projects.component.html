@@ -45,16 +45,28 @@
           </ng-container>
         </div>
       </app-doubleCard>
-      <app-card g3>
-        <div header> Problems  </div>
-        <div body>
+      <app-doubleCard g3>
+        <div header1> Risk - permanent  </div>
+        <div body1>
           <ng-container *ngFor="let item of goalList">
-            <ng-container *ngIf="item.parentList.includes(baseProject.id) && ['problem'].includes (item.actionGoalField) ">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['risk'].includes (item.actionGoalField)
+               && ['permanent'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
         </div>
-      </app-card>
+        <div header2> Risk - Acute  </div>
+        <div body2>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['risk'].includes (item.actionGoalField)
+               && ['acute'].includes (item.actionGoalFieldSecondary)">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
       <app-card g4>
         <div header>   </div>
         <div body> work in progress </div>

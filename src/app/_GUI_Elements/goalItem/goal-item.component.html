@@ -1,6 +1,7 @@
-<ng-container *ngIf="Item !== null">
-  <div   [ngClass]="{'main': true,  'button--blue': Item.priority !== 1, 'button--orange': Item.priority === 1, 'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
-    <div class="text">
+<ng-container *ngIf="Item !== null && Item !== undefined" >
+  <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true,   'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
+    <div >  <!--   "{'color': Item | itemColorPipe}"> -->
+
 
         {{Item.displayName}}
 

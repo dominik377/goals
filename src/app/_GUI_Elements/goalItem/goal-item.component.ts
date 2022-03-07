@@ -1,10 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import {GlobalService} from "../../global.service";
 import {GoalItem} from "../../_Model/goalItem";
 
 @Component({
   selector: 'app-gui-goal-item',
-  templateUrl: './goal-item.component.html',
+templateUrl: './goal-item.component.html',
   styleUrls: ['./goal-item.component.scss']
 })
 export class GoalItemComponent implements OnInit {
@@ -30,6 +34,4 @@ export class GoalItemComponent implements OnInit {
   }
 
 
-
-
-}
+  }

@@ -57,8 +57,9 @@ export class ProjectsComponent implements OnInit {
       if(x === 'addProject') {
         newGoal.actionGoalField = 'smallproject'
       }
-      if(x === 'addProblem') {
-        newGoal.actionGoalField = 'problem'
+      if(x === 'addRisk') {
+        newGoal.actionGoalField = 'risk'
+        newGoal.actionGoalFieldSecondary = 'permanent'
       }
     }
   }

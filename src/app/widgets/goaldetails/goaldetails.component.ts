@@ -59,7 +59,7 @@ export class GoaldetailsComponent implements OnInit {
     }
   }
 
-  test(item: GoalItem): void {
+  setStausUndefined(item: GoalItem): void {
     item.status = 'undefined'
   }
 

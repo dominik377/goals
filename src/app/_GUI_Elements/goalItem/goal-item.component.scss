@@ -248,6 +248,15 @@
   background-image: linear-gradient(#f8c000, #f0a020);
 }
 
+.button--yellow{
+  background-image: linear-gradient(#f8f855, #f0f000);
+}
+
+.button--red{
+  background-image: linear-gradient(red, darkred);
+  color:white;
+}
+
 /* highlight */
 .button:before {
   content: '';
@@ -311,6 +320,14 @@
 
 .goldFont{
   color:gold;
+}
+
+orange{
+  color:orange;
+}
+
+yellow{
+  color:yellow;
 }
 
 

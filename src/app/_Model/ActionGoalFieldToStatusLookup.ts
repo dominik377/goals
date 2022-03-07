@@ -6,5 +6,7 @@ export const actionGoalFieldToStatusLookup = {
   'smallproject': ['focus' ,'active' , 'background' , 'intend', 'later', 'mind',  'unrealistic',  'undefined'],
   'largeproject': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'metaaction': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
-  'undefined': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined']
+  'undefined': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
+  'risk' : ['safe', 'lightDanger', 'significantDanger', 'occurenceOfDamage'],
+  'challenge':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn']
 }

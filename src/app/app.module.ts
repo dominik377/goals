@@ -53,6 +53,7 @@ import { CardComponent } from './_GUI_ELEMENTS/card/card.component';
 import { Grid4Component } from './_GUI_ELEMENTS/grid4/grid4.component';
 import {ProjectsGuiComponent} from "./widgets/projects/gui/gui.component";
 import { DoubleCardComponent } from './_GUI_Elements/doubleCard/doubleCard.component';
+import {ItemColorPipe} from "./_Model/itemColorPipe";
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { DoubleCardComponent } from './_GUI_Elements/doubleCard/doubleCard.compo
     FundingCategoryNamePipe,
     ActionGoalFieldToSecondaryPipe,
     ActionGoalFieldToStatusPipe,
+    ItemColorPipe,
     SplitviewComponent,
     TabviewComponent,
     OverviewComponent,
