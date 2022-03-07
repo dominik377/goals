@@ -1,10 +1,7 @@
 <ng-container *ngIf="Item !== null && Item !== undefined" >
   <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true,   'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
-    <div >  <!--   "{'color': Item | itemColorPipe}"> -->
-
-
+    <div class="text">
         {{Item.displayName}}
-
     </div>
     <div class="badge">
       <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
