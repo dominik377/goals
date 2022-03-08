@@ -45,7 +45,6 @@ export class GlobalService {
   publishGoals(): void {
     this.getGoalList.next(this.goalList)
     this.getSelectedGoal.next(this.selectedGoal)
-    this.sendSelectedGoalUpdatedSignal()
   }
 
   addGoal(newGoal: GoalItem): void {
@@ -81,9 +80,7 @@ export class GlobalService {
     return g
   }
 
-  sendSelectedGoalUpdatedSignal(): void {
-    this.selectedGoalUpdated.next(true)
-  }
+
 
 
 
@@ -120,31 +117,22 @@ export class GlobalService {
     }
 
     this.http.post<any>(environment.backend + '/query', body ).subscribe(next => {
-
       const data =  next.result[0]
 
-
+      //      ___ I ___     goal List
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
 
-      console.log(this.goalList)
 
-      for(let item of this.goalList) {
-        item.parentList = []
-      }
-
-
-
+      //      ___ II ___    Daily Item
       if (data.dailyItem !== undefined) {
         this.globalDailyItem = data.dailyItem
       } else {
         this.globalDailyItem = new DailyItem()
       }
 
-
+      //      ___ III ___    Item Counter
       this.itemIdCounter = data.itemIdCounter
-      console.log (this.itemIdCounter)
-
 
 
       this.snackbarService.openSnackBar('data Loaded');
