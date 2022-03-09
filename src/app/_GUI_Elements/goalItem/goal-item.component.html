@@ -3,7 +3,7 @@
     <div class="text">
         {{Item.displayName}}
     </div>
-    <div class="badge">
+    <div class="badge" *ngIf="Item.juicyness != 0">
       <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
       <div class="badgeInner">  {{Item.juicyness}}  </div>
     </div>
