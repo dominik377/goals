@@ -44,8 +44,6 @@ export class ProjectsComponent implements OnInit {
         return
       }
 
-      console.log(this.baseProject.id)
-
       const newGoal = this.globalService.createNewGoal2()
       newGoal.parentList.push(this.baseProject.id)
       newGoal.displayName = 'test subtask'
@@ -60,6 +58,10 @@ export class ProjectsComponent implements OnInit {
       if(x === 'addRisk') {
         newGoal.actionGoalField = 'risk'
         newGoal.actionGoalFieldSecondary = 'permanent'
+      }
+      if(x === 'addAssociatedGoal') {
+        newGoal.actionGoalField = 'associatedGoal'
+        newGoal.actionGoalFieldSecondary = 'primary'
       }
     }
   }

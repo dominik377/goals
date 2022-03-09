@@ -8,5 +8,6 @@ export const actionGoalFieldToStatusLookup = {
   'metaaction': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'undefined': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'risk' : ['safe', 'lightDanger', 'significantDanger', 'occurenceOfDamage'],
-  'challenge':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn']
+  'challenge':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn'],
+  'associatedGoal':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'promising', 'hope'],
 }

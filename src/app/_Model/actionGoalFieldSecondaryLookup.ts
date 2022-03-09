@@ -7,5 +7,6 @@ export const actionGoalFieldSecondaryLookup = {
   'largeproject': [],
   'metaaction': [],
   'undefined': [],
-  'risk' : ['permanent', 'acute']
+  'risk' : ['permanent', 'acute'],
+  'associatedGoal': ['primary', 'secondary']
 }

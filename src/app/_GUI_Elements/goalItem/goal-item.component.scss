@@ -257,6 +257,37 @@
   color:white;
 }
 
+.button--purple{
+  background-image: linear-gradient(#c060ff, purple);
+  color:white;
+}
+
+.button--lightgrey{
+  background-image: linear-gradient(#ddd, #bbb);
+}
+
+.button--grey{
+  background-image: linear-gradient(#bbb, #888);
+}
+
+.button--black{
+  background-image: linear-gradient(#888, #333);
+  color:white;
+}
+
+.button--purplegrey{
+  background-image: linear-gradient(#c060ff, #aaa);
+  color:white;
+}
+
+.button--bluegrey{
+  background-image: linear-gradient(#5cf, #aaa);
+}
+
+.button--greengrey{
+  background-image: linear-gradient(#7f7, #aaa);
+}
+
 /* highlight */
 .button:before {
   content: '';

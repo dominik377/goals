@@ -67,10 +67,28 @@
           </ng-container>
         </div>
       </app-doubleCard>
-      <app-card g4>
-        <div header>   </div>
-        <div body> work in progress </div>
-      </app-card>
+      <app-doubleCard g4>
+        <div header1>  Associated Goals  </div>
+        <div body1>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['associatedGoal'].includes (item.actionGoalField)
+              && ['primary'].includes (item.actionGoalFieldSecondary)">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+        <div header2> secondary Goals </div>
+        <div body2>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['associatedGoal'].includes (item.actionGoalField)
+              && ['secondary'].includes (item.actionGoalFieldSecondary)">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
     </app-grid4>
   </ng-container>
 

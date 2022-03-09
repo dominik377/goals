@@ -6,6 +6,7 @@ import {actionGoalFieldList} from "./actionGoalFieldList";
 @Pipe({ name: 'actionGoalFieldToSecondaryPipe' })
 export class ActionGoalFieldToSecondaryPipe {
   transform(x: string): string [] {
+    console.log(x)
     // @ts-ignore
     if (actionGoalFieldList.includes(x) ) {return actionGoalFieldSecondaryLookup [x]}
     else {

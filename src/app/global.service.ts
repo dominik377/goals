@@ -123,7 +123,6 @@ export class GlobalService {
       this.goalList.length = 0
       this.goalList.push(...data.goalList)
 
-
       //      ___ II ___    Daily Item
       if (data.dailyItem !== undefined) {
         this.globalDailyItem = data.dailyItem
