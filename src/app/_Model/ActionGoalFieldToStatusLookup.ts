@@ -4,10 +4,10 @@ export const actionGoalFieldToStatusLookup = {
   'goal': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'field': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'smallproject': ['focus' ,'active' , 'background' , 'intend', 'later', 'mind',  'unrealistic',  'undefined'],
-  'largeproject': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
+  'largeproject': ['focus' ,'active' , 'background' , 'intend', 'later', 'mind',  'unrealistic',  'undefined'],
   'metaaction': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'undefined': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'risk' : ['safe', 'lightDanger', 'significantDanger', 'occurenceOfDamage'],
   'challenge':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn'],
-  'associatedGoal':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'promising', 'hope'],
+  'associatedGoal':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
 }
