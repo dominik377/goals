@@ -1,6 +1,6 @@
 {
   "name": "goals",
-  "version": "0.35.10",
+  "version": "0.35.11",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

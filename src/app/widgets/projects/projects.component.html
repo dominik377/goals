@@ -78,7 +78,14 @@
                 <div left>
                   <app-gui-goal-item [Item]="item"></app-gui-goal-item>
                 </div>
-                <div right> test right content </div>
+                <div right>
+                  <ng-container *ngFor="let otherItem of goalList">
+                    <ng-container *ngIf="otherItem.parentList.includes(item.id)
+                      && ['measure'].includes (otherItem.actionGoalField)">
+                        <app-gui-goal-item [Item]="otherItem"></app-gui-goal-item>
+                    </ng-container>
+                  </ng-container>
+                </div>
               </app-splitrow-dual>
 
             </ng-container>

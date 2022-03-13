@@ -21,6 +21,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.goalList = this.globalService.goalList;
 
+    this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
+      this.selectedItem = next;
+    })
+
     this.baseProject = this.globalService.selectedGoal;
 
     this.projectsGuiService.button1Subject.subscribe ( x => {
@@ -44,25 +48,70 @@ export class ProjectsComponent implements OnInit {
         return
       }
 
-      const newGoal = this.globalService.createNewGoal2()
-      newGoal.parentList.push(this.baseProject.id)
-      newGoal.displayName = 'test subtask'
-      newGoal.status = 'undefined'
+
 
       if(x === 'addTask') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
         newGoal.actionGoalField = 'task'
       }
       if(x === 'addProject') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
         newGoal.actionGoalField = 'smallproject'
       }
       if(x === 'addRisk') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
         newGoal.actionGoalField = 'risk'
         newGoal.actionGoalFieldSecondary = 'permanent'
       }
       if(x === 'addAssociatedGoal') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
         newGoal.actionGoalField = 'associatedGoal'
         newGoal.actionGoalFieldSecondary = 'primary'
       }
+      if(x === 'addMeasure') {
+
+        console.log(this.selectedItem)
+        console.log(this.selectedItem?.displayName)
+        console.log(this.selectedItem?.actionGoalField)
+
+        // make the newly created measure a child of the active associatedGoal
+        if (this.selectedItem !== null && this.selectedItem.actionGoalField === 'associatedGoal') {
+          // we need to store the id of the selected associatedGoal here, because after creating the new goalItem, it is set to be the selected goal
+          const parentId = this.selectedItem.id
+
+          const newGoal = this.globalService.createNewGoal2()
+          newGoal.parentList.push(this.baseProject.id)
+          newGoal.displayName = 'test subtask'
+          newGoal.status = 'undefined'
+
+          newGoal.actionGoalField = 'measure'
+
+          newGoal.parentList.push(parentId)
+          console.log('is associated Goal')
+          console.log(newGoal.parentList)
+        } else {
+          alert ('no associated goal defined')
+        }
+
+
+      }
+
     }
   }
 
