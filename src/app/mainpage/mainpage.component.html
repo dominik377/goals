@@ -10,19 +10,20 @@
 
 
 
-
+    <!--  left selection  -->
     <app-gui-headerdivision [header]="'left Component'">
       <button (click)="selectLeftView('overview')">overview</button>
       <button (click)="selectLeftView('action')">action</button>
       <button (click)="selectLeftView('projects')"> projects </button>
     </app-gui-headerdivision>
 
-
+    <!--  left content  -->
     <div style="width:5px;"> </div> <!-- Mini -  Spacer  -->
     <app-gui-headerdivision [header]="'overview'" *ngIf="leftView === 'overview'" > <app-mainpage-overview-gui></app-mainpage-overview-gui> </app-gui-headerdivision>
     <app-gui-headerdivision [header]="'test'" *ngIf="leftView === 'action'" > <app-testcomponent-gui></app-testcomponent-gui> </app-gui-headerdivision>
     <app-gui-headerdivision [header]="'projects'" *ngIf="leftView === 'projects'" > <app-projects-gui></app-projects-gui> </app-gui-headerdivision>
 
+    <!--  right selection  -->
     <div style="width:40px;"> </div> <!-- Spacer  -->
     <app-gui-headerdivision [header]="'right Component'">
       <button (click)="selectRightView('details')">details</button>
@@ -30,9 +31,11 @@
       <button (click)="selectRightView('tabview')">overview -  tabs</button>
     </app-gui-headerdivision>
 
+    <!--  right content  -->
     <div style="width:5px;"> </div> <!-- Mini -  Spacer  -->
     <app-gui-headerdivision [header]="'details'" *ngIf="rightView === 'details'" > <app-goaldetails-gui></app-goaldetails-gui> </app-gui-headerdivision>
 
+    <!-- test functions -->
     <div style="width:40px;"> </div> <!-- Spacer  -->
     <app-gui-headerdivision [header]="'Test Functions'">
       <button (click)="logHandler()"> Log FundedList</button>
