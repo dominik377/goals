@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {SnackbarService} from "../_Utility/snackbar.service";
 
 import * as _lodash from 'lodash';
@@ -13,11 +13,23 @@ import {GlobalService} from "../global.service";
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if(event.key == 'Control'){
+      this.showOverlaySection = true
+    }
+    if(event.key == 'Alt'){
+      this.showOverlaySection = false
+    }
+
+    console.log(event.key)
+  }
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   leftView: 'overview' | 'action' | 'projects' = 'overview';
   rightView: 'details' | 'daily' | 'tabview' = 'details';
   showPrivate: boolean []
+  showOverlaySection = false;
 
   testIcon = 'view_column'
 
@@ -86,6 +98,14 @@ export class MainpageComponent implements OnInit {
 
   selectRightView(selected: 'details' | 'daily' | 'tabview') {
     this.rightView = selected
+  }
+
+  switchOverlayDisplay() : void {
+    if (this.showOverlaySection === true ) {
+      this.showOverlaySection = false
+    } else {
+      this.showOverlaySection = true
+    }
   }
 
 

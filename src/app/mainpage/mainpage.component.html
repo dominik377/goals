@@ -43,6 +43,7 @@
       <mat-radio-group aria-label="Juiciness" [(ngModel)]="showPrivate [0]">
         <mat-radio-button *ngFor="let o of [true, false]" [value]="o"> {{o}} </mat-radio-button>
       </mat-radio-group>
+      <button (click)="switchOverlayDisplay()"> switch Overlay </button>
     </app-gui-headerdivision>
 
   </div>
@@ -53,7 +54,7 @@
       <app-mainpage-actions *ngIf="leftView === 'action'"> </app-mainpage-actions>
       <app-projects *ngIf="leftView === 'projects'"></app-projects>
     </div>
-    <div class="rightContainer">
+    <div class="rightContainer" [ngClass]="{ 'z1000': showOverlaySection === true, 'zMinus1000': showOverlaySection === false }" >
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>

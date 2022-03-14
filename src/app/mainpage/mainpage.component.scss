@@ -58,11 +58,23 @@
 }
 
 .rightContainer{
+  position:absolute;
+  left:200px;
   padding: 5px;
   margin-left:10px;
   flex-grow:0;
   flex-basis:30%;
   overflow-y:hidden;
+}
+
+.z1000{
+  z-index: 1000;
+  visibility: visible;
+}
+
+.zMinus1000{
+  z-index: -1000000;
+  visibility: hidden;
 }
 
 
