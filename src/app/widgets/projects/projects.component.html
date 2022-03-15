@@ -102,6 +102,94 @@
           </ng-container>
         </div>
       </app-doubleCard>
+      <app-doubleCard g5>
+        <div header1>  Challenges  </div>
+        <div body1>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['challenge'].includes (item.actionGoalField)
+              ">
+                  <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+        <div header2>  secondary </div>
+        <div body2>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['challenge'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
+      <app-doubleCard g6>
+        <div header1>  Roadblocks  </div>
+        <div body1>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['roadblock'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+        <div header2>  secondary  </div>
+        <div body2>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['roadblock'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
+      <app-doubleCard g7>
+        <div header1>  Assumptions  </div>
+        <div body1>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['assumption'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+        <div header2>  secondary  </div>
+        <div body2>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['assumption'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
+      <app-doubleCard g8>
+        <div header1>  Experiments </div>
+        <div body1>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['experiment'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+        <div header2>  secondary  </div>
+        <div body2>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.parentList.includes(baseProject.id)
+              && ['experiment'].includes (item.actionGoalField)
+              ">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-doubleCard>
     </app-grid8>
   </ng-container>
 

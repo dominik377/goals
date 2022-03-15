@@ -84,6 +84,42 @@ export class ProjectsComponent implements OnInit {
         newGoal.actionGoalField = 'associatedGoal'
         newGoal.actionGoalFieldSecondary = 'primary'
       }
+      if(x === 'addRoadblock') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
+        newGoal.actionGoalField = 'roadblock'
+        //newGoal.actionGoalFieldSecondary = 'primary'
+      }
+      if(x === 'addChallenge') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = ''
+        newGoal.status = 'undefined'
+
+        newGoal.actionGoalField = 'challenge'
+        // newGoal.actionGoalFieldSecondary = 'primary'
+      }
+      if(x === 'addAssumption') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
+        newGoal.actionGoalField = 'assumption'
+        // newGoal.actionGoalFieldSecondary = 'primary'
+      }
+      if(x === 'addExperiment') {
+        const newGoal = this.globalService.createNewGoal2()
+        newGoal.parentList.push(this.baseProject.id)
+        newGoal.displayName = 'test subtask'
+        newGoal.status = 'undefined'
+
+        newGoal.actionGoalField = 'experiment'
+        // newGoal.actionGoalFieldSecondary = 'primary'
+      }
       if(x === 'addMeasure') {
 
         console.log(this.selectedItem)
