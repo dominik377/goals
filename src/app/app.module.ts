@@ -55,6 +55,7 @@ import {ProjectsGuiComponent} from "./widgets/projects/gui/gui.component";
 import { DoubleCardComponent } from './_GUI_Elements/doubleCard/doubleCard.component';
 import {ItemColorPipe} from "./_Model/itemColorPipe";
 import { SplitrowDualComponent } from './_GUI_Elements/splitrow-dual/splitrow-dual.component';
+import { Grid8Component } from './_GUI_Elements/grid8/grid8.component';
 
 
 @NgModule({
@@ -93,7 +94,8 @@ import { SplitrowDualComponent } from './_GUI_Elements/splitrow-dual/splitrow-du
     Grid4Component,
     ProjectsGuiComponent,
     DoubleCardComponent,
-    SplitrowDualComponent
+    SplitrowDualComponent,
+    Grid8Component
 
   ],
   imports: [
