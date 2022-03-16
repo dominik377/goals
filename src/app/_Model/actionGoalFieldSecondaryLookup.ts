@@ -8,5 +8,9 @@ export const actionGoalFieldSecondaryLookup = {
   'metaaction': [],
   'undefined': [],
   'risk' : ['permanent', 'acute'],
-  'associatedGoal': ['primary', 'secondary']
+  'associatedGoal': ['primary', 'secondary'],
+  'challenge' : ['primary', 'secondary'],
+  'roadblocks' : ['primary', 'secondary'],
+  'assumptions' : ['primary', 'secondary'],
+  'experiments' : ['primary', 'secondary']
 }

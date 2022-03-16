@@ -108,7 +108,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['challenge'].includes (item.actionGoalField)
-              ">
+              && ['primary'].includes (item.actionGoalFieldSecondary)">
                   <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -118,7 +118,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['challenge'].includes (item.actionGoalField)
-              ">
+              && ['secondary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -130,7 +130,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['roadblock'].includes (item.actionGoalField)
-              ">
+              && ['primary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -140,7 +140,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['roadblock'].includes (item.actionGoalField)
-              ">
+              && ['secondary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -152,7 +152,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['assumption'].includes (item.actionGoalField)
-              ">
+              && ['primary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -162,7 +162,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['assumption'].includes (item.actionGoalField)
-              ">
+              && ['secondary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -174,7 +174,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['experiment'].includes (item.actionGoalField)
-              ">
+              && ['primary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>
@@ -184,7 +184,7 @@
           <ng-container *ngFor="let item of goalList">
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['experiment'].includes (item.actionGoalField)
-              ">
+              && ['secondary'].includes (item.actionGoalFieldSecondary)">
               <app-gui-goal-item [Item]="item"></app-gui-goal-item>
             </ng-container>
           </ng-container>

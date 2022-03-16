@@ -91,7 +91,7 @@ export class ProjectsComponent implements OnInit {
         newGoal.status = 'undefined'
 
         newGoal.actionGoalField = 'roadblock'
-        //newGoal.actionGoalFieldSecondary = 'primary'
+        newGoal.actionGoalFieldSecondary = 'primary'
       }
       if(x === 'addChallenge') {
         const newGoal = this.globalService.createNewGoal2()
@@ -100,7 +100,7 @@ export class ProjectsComponent implements OnInit {
         newGoal.status = 'undefined'
 
         newGoal.actionGoalField = 'challenge'
-        // newGoal.actionGoalFieldSecondary = 'primary'
+        newGoal.actionGoalFieldSecondary = 'primary'
       }
       if(x === 'addAssumption') {
         const newGoal = this.globalService.createNewGoal2()
@@ -109,7 +109,7 @@ export class ProjectsComponent implements OnInit {
         newGoal.status = 'undefined'
 
         newGoal.actionGoalField = 'assumption'
-        // newGoal.actionGoalFieldSecondary = 'primary'
+        newGoal.actionGoalFieldSecondary = 'primary'
       }
       if(x === 'addExperiment') {
         const newGoal = this.globalService.createNewGoal2()
@@ -118,7 +118,7 @@ export class ProjectsComponent implements OnInit {
         newGoal.status = 'undefined'
 
         newGoal.actionGoalField = 'experiment'
-        // newGoal.actionGoalFieldSecondary = 'primary'
+        newGoal.actionGoalFieldSecondary = 'primary'
       }
       if(x === 'addMeasure') {
 
