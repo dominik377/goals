@@ -1,0 +1,13 @@
+<app-splitrow-dual *ngIf="parentItem !== null">
+  <div left>
+    <app-gui-goal-item [Item]="parentItem"> </app-gui-goal-item>
+  </div>
+  <div right>
+    <ng-container *ngFor="let childItem of goalList">
+      <ng-container *ngIf="childItem.parentList.includes(parentItem.id)
+                      && ['measure'].includes (childItem.actionGoalField)">
+        <app-gui-goal-item [Item]="childItem"></app-gui-goal-item>
+      </ng-container>
+    </ng-container>
+  </div>
+</app-splitrow-dual>

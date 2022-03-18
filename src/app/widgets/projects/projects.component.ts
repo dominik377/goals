@@ -127,7 +127,7 @@ export class ProjectsComponent implements OnInit {
         console.log(this.selectedItem?.actionGoalField)
 
         // make the newly created measure a child of the active associatedGoal
-        if (this.selectedItem !== null && this.selectedItem.actionGoalField === 'associatedGoal') {
+        if (this.selectedItem !== null &&  ['associatedGoal', 'challenge', 'roadblock', 'risk'].includes(this.selectedItem.actionGoalField) ) {
           // we need to store the id of the selected associatedGoal here, because after creating the new goalItem, it is set to be the selected goal
           const parentId = this.selectedItem.id
 
@@ -142,7 +142,7 @@ export class ProjectsComponent implements OnInit {
           console.log('is associated Goal')
           console.log(newGoal.parentList)
         } else {
-          alert ('no associated goal defined')
+          alert ('no associatedGoal, risk, challenge or roadblock selected')
         }
 
 

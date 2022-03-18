@@ -10,4 +10,5 @@ export const actionGoalFieldToStatusLookup = {
   'risk' : ['safe', 'lightDanger', 'significantDanger', 'occurenceOfDamage'],
   'challenge':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn'],
   'associatedGoal':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
+  'measure' :  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'veryPromising', 'promising', 'hope']
 }

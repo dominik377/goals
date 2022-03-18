@@ -10,7 +10,7 @@ export const actionGoalFieldSecondaryLookup = {
   'risk' : ['permanent', 'acute'],
   'associatedGoal': ['primary', 'secondary'],
   'challenge' : ['primary', 'secondary'],
-  'roadblocks' : ['primary', 'secondary'],
+  'roadblock' : ['primary', 'secondary'],
   'assumptions' : ['primary', 'secondary'],
   'experiments' : ['primary', 'secondary']
 }

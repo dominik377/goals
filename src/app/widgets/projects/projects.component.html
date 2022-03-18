@@ -52,7 +52,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['risk'].includes (item.actionGoalField)
                && ['permanent'].includes (item.actionGoalFieldSecondary)">
-              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
@@ -62,7 +62,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['risk'].includes (item.actionGoalField)
                && ['acute'].includes (item.actionGoalFieldSecondary)">
-              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
@@ -74,19 +74,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['associatedGoal'].includes (item.actionGoalField)
               && ['primary'].includes (item.actionGoalFieldSecondary)">
-              <app-splitrow-dual>
-                <div left>
-                  <app-gui-goal-item [Item]="item"></app-gui-goal-item>
-                </div>
-                <div right>
-                  <ng-container *ngFor="let otherItem of goalList">
-                    <ng-container *ngIf="otherItem.parentList.includes(item.id)
-                      && ['measure'].includes (otherItem.actionGoalField)">
-                        <app-gui-goal-item [Item]="otherItem"></app-gui-goal-item>
-                    </ng-container>
-                  </ng-container>
-                </div>
-              </app-splitrow-dual>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
 
             </ng-container>
           </ng-container>
@@ -97,7 +85,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['associatedGoal'].includes (item.actionGoalField)
               && ['secondary'].includes (item.actionGoalFieldSecondary)">
-              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
@@ -109,7 +97,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['challenge'].includes (item.actionGoalField)
               && ['primary'].includes (item.actionGoalFieldSecondary)">
-                  <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+                  <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
@@ -119,7 +107,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['challenge'].includes (item.actionGoalField)
               && ['secondary'].includes (item.actionGoalFieldSecondary)">
-              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
@@ -131,7 +119,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['roadblock'].includes (item.actionGoalField)
               && ['primary'].includes (item.actionGoalFieldSecondary)">
-              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
@@ -141,7 +129,7 @@
             <ng-container *ngIf="item.parentList.includes(baseProject.id)
               && ['roadblock'].includes (item.actionGoalField)
               && ['secondary'].includes (item.actionGoalFieldSecondary)">
-              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              <app-projects-item-with-measures [parentItem]="item"></app-projects-item-with-measures>
             </ng-container>
           </ng-container>
         </div>
