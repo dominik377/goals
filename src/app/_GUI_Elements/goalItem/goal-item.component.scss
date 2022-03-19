@@ -288,6 +288,10 @@
   background-image: linear-gradient(#7f7, #aaa);
 }
 
+.button--white{
+  background-image: linear-gradient(#f8f8f8, #ffffff);
+}
+
 /* highlight */
 .button:before {
   content: '';

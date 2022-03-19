@@ -52,7 +52,7 @@ export class ItemColorPipe {
       }
 
 
-    return 'button--blue'
+    return 'button--white'
 
   }
 }
