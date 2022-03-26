@@ -27,6 +27,8 @@ export class GoalItem {
   lifechangingPotential: boolean = false
   secret: boolean = false
   parentList: number [] = []
+  moneyblocked: 'no' | 'soft' | 'hard' | null = 'no'
+  easilySolvable: 'no' | 'money' | 'timeAndEnergy' | 'determinedAction' = 'no'
 
   constructor() {
 

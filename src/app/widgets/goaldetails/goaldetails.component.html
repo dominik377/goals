@@ -66,6 +66,20 @@
         </mat-radio-group>
       </div>
 
+      <div class="radiocontainer">
+        <div class="radiolabel"> moneyblocked </div>
+        <mat-radio-group [(ngModel)]="item.moneyblocked">
+          <mat-radio-button *ngFor="let o of ['no', 'soft', 'hard']">  {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"></div>
+        <mat-radio-group [(ngModel)]="item.easilySolvable">
+          <mat-radio-button *ngFor="let o of ['no', 'money', 'timeAndEnergy','determinedAction']"> {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
 
 
       <form class="example-form">
