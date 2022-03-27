@@ -15,6 +15,7 @@ export class SplitviewComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   actionGoalFieldCategories: actionGoalField [] = actionGoalFieldListAbridged
+  largeCategories: actionGoalField [] = ['task', 'practise', 'smallproject', 'largeproject', 'field']
 
 
   constructor(private globalService: GlobalService) {}
