@@ -49,7 +49,17 @@ export class ItemColorPipe {
       case  'hope' :
         return 'button--greengrey'
         break
+      case  'light' :
+        return 'button--yellow'
+        break
+      case  'serious' :
+        return 'button--orange'
+        break
+      case  'existential' :
+        return 'button--red'
+        break
       }
+
 
 
     return 'button--white'
