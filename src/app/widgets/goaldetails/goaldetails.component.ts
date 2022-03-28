@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {actionGoalFieldSecondaryLookup} from "../../_Model/actionGoalFieldSecondaryLookup";
 import {actionGoalFieldList} from "../../_Model/actionGoalFieldList";
 
@@ -13,7 +13,7 @@ import {GoaldetailsGuiService} from "./gui.service";
 })
 export class GoaldetailsComponent implements OnInit {
   @Input() item: GoalItem | null = null;
-  @Output() ok: EventEmitter<GoalItem> = new EventEmitter();
+  @Input() hidden: boolean = true
   @ViewChild('displaynameRef') displaynameRef: any
   secondaryCategoryList : string [] = []
   actionGoalFieldList = actionGoalFieldList
@@ -47,9 +47,9 @@ export class GoaldetailsComponent implements OnInit {
 
   }
 
-  okHandler(): void {
-    if (this.item !== null) {
-      this.ok.emit(this.item)
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.hidden && changes.hidden.currentValue === false) {
+      this.displaynameRef.nativeElement.focus()
     }
   }
 

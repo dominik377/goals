@@ -54,8 +54,8 @@
       <app-mainpage-actions *ngIf="leftView === 'action'"> </app-mainpage-actions>
       <app-projects *ngIf="leftView === 'projects'"></app-projects>
     </div>
-    <div class="rightContainer" [ngClass]="{ 'z1000': showOverlaySection === true, 'zMinus1000': showOverlaySection === false }" >
-      <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" (ok)="detailOkHandler($event)" ></app-goaldetails>
+    <div class="rightContainer" [ngClass]="{ 'z1000': hideOverlaySection === false, 'zMinus1000': hideOverlaySection === true }" >
+      <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" [hidden]="hideOverlaySection" ></app-goaldetails>
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
     </div>

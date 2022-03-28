@@ -64,6 +64,7 @@ export class GlobalService {
     this.selectedGoal = g
     this.goalList.push(g)
     this.publishGoals()
+    this.focusOnGoalDetails.next(true)
   }
 
   createNewGoal2(): GoalItem {  // like the normal createNewGoal, but returns the goal
@@ -76,6 +77,8 @@ export class GlobalService {
     this.goalList.push(g)
     this.selectedGoal = g
     this.publishGoals()
+
+    this.focusOnGoalDetails.next(true)
 
     return g
   }

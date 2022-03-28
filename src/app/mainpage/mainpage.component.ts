@@ -15,11 +15,11 @@ import {GlobalService} from "../global.service";
 export class MainpageComponent implements OnInit {
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if(event.key == 'Control'){
-      this.showOverlaySection = true
-    }
     if(event.key == 'Alt'){
-      this.showOverlaySection = false
+      this.hideOverlaySection = true
+    }
+    if(event.key == 'Control'){
+      this.hideOverlaySection = false
     }
 
     console.log(event.key)
@@ -29,7 +29,7 @@ export class MainpageComponent implements OnInit {
   leftView: 'overview' | 'action' | 'projects' = 'overview';
   rightView: 'details' | 'daily' | 'tabview' = 'details';
   showPrivate: boolean []
-  showOverlaySection = false;
+  hideOverlaySection = true;
 
   testIcon = 'view_column'
 
@@ -101,10 +101,10 @@ export class MainpageComponent implements OnInit {
   }
 
   switchOverlayDisplay() : void {
-    if (this.showOverlaySection === true ) {
-      this.showOverlaySection = false
+    if (this.hideOverlaySection === true ) {
+      this.hideOverlaySection = false
     } else {
-      this.showOverlaySection = true
+      this.hideOverlaySection = true
     }
   }
 
