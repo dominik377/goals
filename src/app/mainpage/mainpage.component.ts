@@ -30,6 +30,7 @@ export class MainpageComponent implements OnInit {
   rightView: 'details' | 'daily' | 'tabview' = 'details';
   showPrivate: boolean []
   hideOverlaySection = true;
+  displayRightSection = true;
 
   testIcon = 'view_column'
 
@@ -108,7 +109,9 @@ export class MainpageComponent implements OnInit {
     }
   }
 
-
+  switchDisplayRightSection(displayRightSection: boolean): void {
+    this.displayRightSection = displayRightSection
+  }
 
 
 

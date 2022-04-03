@@ -9,6 +9,13 @@
     <div style="width:40px;"> </div> <!-- Spacer  -->
 
 
+    <!--  layout section  -->
+    <app-gui-headerdivision [header]="'Layout'">
+      <button (click)="switchDisplayRightSection(true)"> show Right section</button>
+      <button (click)="switchDisplayRightSection(false)"> hide right section</button>
+    </app-gui-headerdivision>
+    <div style="width:40px;"> </div> <!-- Spacer  -->
+
 
     <!--  left selection  -->
     <app-gui-headerdivision [header]="'left Component'">
@@ -54,7 +61,12 @@
       <app-mainpage-actions *ngIf="leftView === 'action'"> </app-mainpage-actions>
       <app-projects *ngIf="leftView === 'projects'"></app-projects>
     </div>
-    <div class="rightContainer" [ngClass]="{ 'z1000': hideOverlaySection === false, 'zMinus1000': hideOverlaySection === true }" >
+    <div class="overlayContainer" [ngClass]="{ 'z1000': hideOverlaySection === false, 'zMinus1000': hideOverlaySection === true }" >
+      <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" [hidden]="hideOverlaySection" ></app-goaldetails>
+      <app-daily *ngIf="rightView === 'daily'"> </app-daily>
+      <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
+    </div>
+    <div class="rightContainer" *ngIf="displayRightSection === true" >
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" [hidden]="hideOverlaySection" ></app-goaldetails>
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
