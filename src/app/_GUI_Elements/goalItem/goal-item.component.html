@@ -1,25 +1,38 @@
 <ng-container *ngIf="Item !== null && Item !== undefined" >
-  <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true,   'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
-    <div class="text">
-        {{Item.displayName}}
+  <ng-container *ngIf="useFilter [0] === false
+  || (highlightsList.lifechangingPotential === true && Item.lifechangingPotential === true)
+  || (highlightsList.moneyblocked.soft === true && Item.moneyblocked === 'soft')
+  || (highlightsList.moneyblocked.hard === true && Item.moneyblocked === 'hard')
+  || (highlightsList.solveable.money === true && Item.easilySolvable === 'money')
+  || (highlightsList.solveable.timeAndEnergy === true && Item.easilySolvable === 'timeAndEnergy')
+  || (highlightsList.solveable.determinedAction === true && Item.easilySolvable === 'determinedAction')
+    ">
+    <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true,   'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
+      <div class="text">
+          {{Item.displayName}}
+      </div>
+      <div class="badge" *ngIf="Item.juicyness != 0">
+        <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
+        <div class="badgeInner">  {{Item.juicyness}}  </div>
+      </div>
+
+      <!--
+        This section is used to create animated arrows around the selected element
+      -->
+      <ng-container *ngIf="Item === selectedItem">
+        <div class="selectedRight1"> <  </div>
+        <div class="selectedRight2"> <  </div>
+        <div class="selectedRight3"> <  </div>
+        <div class="selectedLeft1"> >  </div>
+        <div class="selectedLeft2"> >  </div>
+        <div class="selectedLeft3"> >  </div>
+        <div class="selectedTop1"> &#8964;  </div>
+        <div class="selectedTop2"> &#8964;  </div>
+        <div class="selectedTop3"> &#8964;  </div>
+        <div class="selectedBottom1"> &#8963; </div>
+        <div class="selectedBottom2"> &#8963;  </div>
+        <div class="selectedBottom3"> &#8963;  </div>
+      </ng-container>
     </div>
-    <div class="badge" *ngIf="Item.juicyness != 0">
-      <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
-      <div class="badgeInner">  {{Item.juicyness}}  </div>
-    </div>
-    <ng-container *ngIf="Item === selectedItem">
-      <div class="selectedRight1"> <  </div>
-      <div class="selectedRight2"> <  </div>
-      <div class="selectedRight3"> <  </div>
-      <div class="selectedLeft1"> >  </div>
-      <div class="selectedLeft2"> >  </div>
-      <div class="selectedLeft3"> >  </div>
-      <div class="selectedTop1"> &#8964;  </div>
-      <div class="selectedTop2"> &#8964;  </div>
-      <div class="selectedTop3"> &#8964;  </div>
-      <div class="selectedBottom1"> &#8963; </div>
-      <div class="selectedBottom2"> &#8963;  </div>
-      <div class="selectedBottom3"> &#8963;  </div>
-    </ng-container>
-  </div>
+  </ng-container>
 </ng-container>

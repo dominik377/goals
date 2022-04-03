@@ -1,0 +1,95 @@
+.main{
+  display:flex;
+  flex-direction: column;
+  border:1px solid lightskyblue;
+  width:100%;
+  height:100%;
+}
+
+.item{
+  margin-bottom:10px;
+  width:400px;
+}
+
+.secondaryCat{
+  margin-left:20px;
+}
+
+.detail{
+  display:flex;
+  flex-direction:column;
+  border:2px ridge blue;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.radiocontainer{
+  display: flex;
+  flex-direction: row;
+  padding:5px;
+  background-color:#d0d9ff;
+  background-image:linear-gradient(to bottom right, #d8f4ff, #d0d9ff);
+  box-shadow: inset 0 1px 0 0 hsla(0,0%,100%,0.4);
+  margin-bottom:7px;
+}
+.radiolabel{
+  flex-basis:150px;
+  flex-shrink:0;
+}
+
+:host {
+  ::ng-deep .mat-radio-label {
+    margin-left: 20px;
+  }
+  ::ng-deep .mat-radio-label-content {
+    margin-left: -7px;
+  }
+
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: blue !important;
+    box-shadow: 0 0 0.75em #000 inset;
+
+  }
+
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: blue!important;   /*inner circle color change*/
+    background-image: radial-gradient(10% 10% at 50% 50%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0)), radial-gradient(12% 12% at 60% 25%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0)), radial-gradient(100% 100% at 60% 50%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.25) 50%)
+
+  }
+
+  ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color:blue!important; /*outer ring color change*/
+  }
+
+  ::ng-deep .mat-label{
+    width: 100px;
+    margin-right:20px;
+    background-color: crimson;
+  }
+
+  ::ng-deep .mat-checkbox{
+    margin-left:15px;
+  }
+
+  ::ng-deep .mat-checkbox-label{
+    margin-left: -7px;
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: blue!important;
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: blue!important;
+  }
+
+}

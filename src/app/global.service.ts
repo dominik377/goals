@@ -6,6 +6,7 @@ import {GoalItem} from "./_Model/goalItem";
 import {DailyItem} from "./_Model/dailyItem";
 import {environment} from "../environments/environment";
 import {SnackbarService} from "./_Utility/snackbar.service";
+import {HighlightList} from "./_Model/highlightList";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class GlobalService {
   globalDailyItem: DailyItem
   showPrivate = [true]
   itemIdCounter = 0;
+  highlightList = new HighlightList()
+  useFilter = [false]
 
 
 

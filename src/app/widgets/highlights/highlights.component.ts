@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalService} from "../../global.service";
+import {HighlightList} from "../../_Model/highlightList";
 
 @Component({
   selector: 'app-highlights',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HighlightsComponent implements OnInit {
 
-  constructor() { }
+  test = false;
+  highlightList : HighlightList
+  useFilter: boolean []
+
+  constructor(private globalService:GlobalService) {
+    this.highlightList = globalService.highlightList
+    this.useFilter = this.globalService.useFilter
+  }
 
   ngOnInit(): void {
+
   }
 
 }

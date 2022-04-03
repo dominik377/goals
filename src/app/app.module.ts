@@ -58,6 +58,7 @@ import { SplitrowDualComponent } from './_GUI_Elements/splitrow-dual/splitrow-du
 import { Grid8Component } from './_GUI_Elements/grid8/grid8.component';
 import { ItemWithMeasuresComponent } from './widgets/projects/item-with-measures/item-with-measures.component';
 import { HighlightsComponent } from './widgets/highlights/highlights.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
@@ -102,27 +103,28 @@ import { HighlightsComponent } from './widgets/highlights/highlights.component';
     HighlightsComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatListModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatInputModule,
-    MatButtonModule,
-    MatBadgeModule,
-    HttpClientModule,
-    MatTabsModule,
-    MatSnackBarModule,
-    MatIconModule,
-    MatTooltipModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatListModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatRadioModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatInputModule,
+        MatButtonModule,
+        MatBadgeModule,
+        HttpClientModule,
+        MatTabsModule,
+        MatSnackBarModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatCheckboxModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

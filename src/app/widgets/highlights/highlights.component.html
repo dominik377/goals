@@ -1,1 +1,29 @@
-<p>highlights works!</p>
+<mat-card>
+  <mat-card-header>Highlights</mat-card-header>
+  <mat-card-content>
+
+    <div class="main">
+      <div class="radiocontainer">
+        <mat-checkbox [(ngModel)]="useFilter [0]"> USE FILTER  </mat-checkbox>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel">  Lifechanging Potential </div>
+        <mat-checkbox [(ngModel)]="highlightList.lifechangingPotential"> true </mat-checkbox>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> Moneyblocked </div>
+        <mat-checkbox [(ngModel)]="highlightList.moneyblocked.soft"> soft  </mat-checkbox>
+        <mat-checkbox [(ngModel)]="highlightList.moneyblocked.hard"> hard  </mat-checkbox>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> solveable</div>
+        <mat-checkbox [(ngModel)]="highlightList.solveable.money"> money  </mat-checkbox>
+        <mat-checkbox [(ngModel)]="highlightList.solveable.timeAndEnergy"> time and energy  </mat-checkbox>
+        <mat-checkbox [(ngModel)]="highlightList.solveable.determinedAction"> determined action  </mat-checkbox>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

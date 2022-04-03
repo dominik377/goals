@@ -3,10 +3,9 @@ import {GoalItem} from "./goalItem";
 
 @Pipe({ name: 'itemColorPipe' })
 export class ItemColorPipe {
-  transform(status: string | null, item: GoalItem ): string {
+  transform(status: string | null, item: GoalItem): string {
 
-    console.log(item.id)
-    // @ts-ignore
+
 
     // @ts-ignore
     switch (status) {

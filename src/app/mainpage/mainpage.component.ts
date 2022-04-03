@@ -5,6 +5,7 @@ import * as _lodash from 'lodash';
 
 import {GoalItem} from "../_Model/goalItem";
 import {GlobalService} from "../global.service";
+import {HighlightList} from "../_Model/highlightList";
 
 
 @Component({
@@ -31,11 +32,13 @@ export class MainpageComponent implements OnInit {
   showPrivate: boolean []
   hideOverlaySection = true;
   displayRightSection = true;
+  highlightsList: HighlightList
 
   testIcon = 'view_column'
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {
     this.showPrivate = this.globalService.showPrivate
+    this.highlightsList = this.globalService.highlightList
   }
 
   ngOnInit(): void {
