@@ -55,7 +55,7 @@
       <div class="radiocontainer">
         <div class="radiolabel"> Lifechanging Potential </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.lifechangingPotential">
-          <mat-radio-button *ngFor="let o of [true, false]" [value]="o"> {{o}} </mat-radio-button>
+          <mat-radio-button *ngFor="let o of ['gamechanging', 'lifechanging', false]" [value]="o"> {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
 

@@ -24,7 +24,7 @@ export class GoalItem {
   timePer : number |  'undefined' = 'undefined'
   utilonsOt: number |  'undefined' = 'undefined'
   utilonsPer : number |  'undefined' = 'undefined'
-  lifechangingPotential: boolean = false
+  lifechangingPotential: 'gamechanging' | 'lifechanging' | false = false
   secret: boolean = false
   parentList: number [] = []
   moneyblocked: 'no' | 'soft' | 'hard' | null = 'no'

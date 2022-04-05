@@ -1,5 +1,8 @@
 export class HighlightList  {
-  lifechangingPotential = false;
+  lifechangingPotential =  {
+    gamechanging: false,
+    lifechanging: false
+  }
   moneyblocked = {
     soft : false,
     hard: false
