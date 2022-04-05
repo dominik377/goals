@@ -39,6 +39,16 @@
           </ng-container>
         </div>
       </app-card>
+      <app-card g4>
+        <div header> Contingencies </div>
+        <div body>
+          <ng-container *ngFor="let item of goalList">
+            <ng-container *ngIf="item.actionGoalField === 'contingency'">
+              <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+            </ng-container>
+          </ng-container>
+        </div>
+      </app-card>
     </app-grid4>
   </div>
 </div>
