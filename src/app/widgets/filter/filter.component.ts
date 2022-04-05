@@ -3,11 +3,11 @@ import {GlobalService} from "../../global.service";
 import {HighlightList} from "../../_Model/highlightList";
 
 @Component({
-  selector: 'app-highlights',
-  templateUrl: './highlights.component.html',
-  styleUrls: ['./highlights.component.scss']
+  selector: 'app-filter',
+  templateUrl: './filter.html',
+  styleUrls: ['./filter.scss']
 })
-export class HighlightsComponent implements OnInit {
+export class FilterComponent implements OnInit {
 
   test = false;
   highlightList : HighlightList

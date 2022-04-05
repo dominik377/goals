@@ -57,7 +57,7 @@ import {ItemColorPipe} from "./_Model/itemColorPipe";
 import { SplitrowDualComponent } from './_GUI_Elements/splitrow-dual/splitrow-dual.component';
 import { Grid8Component } from './_GUI_Elements/grid8/grid8.component';
 import { ItemWithMeasuresComponent } from './widgets/projects/item-with-measures/item-with-measures.component';
-import { HighlightsComponent } from './widgets/highlights/highlights.component';
+import { FilterComponent } from './widgets/filter/filter.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
@@ -100,7 +100,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     SplitrowDualComponent,
     Grid8Component,
     ItemWithMeasuresComponent,
-    HighlightsComponent
+    FilterComponent
 
   ],
     imports: [

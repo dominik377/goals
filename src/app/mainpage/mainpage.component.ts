@@ -28,17 +28,17 @@ export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   leftView: 'overview' | 'action' | 'projects' = 'overview';
-  rightView: 'details' | 'daily' | 'tabview' | 'highlights' = 'details';
+  rightView: 'details' | 'daily' | 'tabview' | 'filter' = 'details';
   showPrivate: boolean []
   hideOverlaySection = true;
   displayRightSection = true;
-  highlightsList: HighlightList
+  filterList: HighlightList
 
   testIcon = 'view_column'
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {
     this.showPrivate = this.globalService.showPrivate
-    this.highlightsList = this.globalService.highlightList
+    this.filterList = this.globalService.highlightList
   }
 
   ngOnInit(): void {
@@ -100,7 +100,7 @@ export class MainpageComponent implements OnInit {
   }
 
 
-  selectRightView(selected: 'details' | 'daily' | 'tabview' | 'highlights') {
+  selectRightView(selected: 'details' | 'daily' | 'tabview' | 'filter') {
     this.rightView = selected
   }
 

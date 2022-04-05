@@ -1,11 +1,11 @@
 <ng-container *ngIf="Item !== null && Item !== undefined" >
   <ng-container *ngIf="useFilter [0] === false
-  || (highlightsList.lifechangingPotential === true && Item.lifechangingPotential === true)
-  || (highlightsList.moneyblocked.soft === true && Item.moneyblocked === 'soft')
-  || (highlightsList.moneyblocked.hard === true && Item.moneyblocked === 'hard')
-  || (highlightsList.solveable.money === true && Item.easilySolvable === 'money')
-  || (highlightsList.solveable.timeAndEnergy === true && Item.easilySolvable === 'timeAndEnergy')
-  || (highlightsList.solveable.determinedAction === true && Item.easilySolvable === 'determinedAction')
+  || (filterList.lifechangingPotential === true && Item.lifechangingPotential === true)
+  || (filterList.moneyblocked.soft === true && Item.moneyblocked === 'soft')
+  || (filterList.moneyblocked.hard === true && Item.moneyblocked === 'hard')
+  || (filterList.solveable.money === true && Item.easilySolvable === 'money')
+  || (filterList.solveable.timeAndEnergy === true && Item.easilySolvable === 'timeAndEnergy')
+  || (filterList.solveable.determinedAction === true && Item.easilySolvable === 'determinedAction')
     ">
     <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true,   'goldFont': Item.lifechangingPotential === true }" class="button"  (click)="clickHandler(Item)">
       <div class="text">

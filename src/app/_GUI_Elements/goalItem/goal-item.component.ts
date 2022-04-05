@@ -18,12 +18,12 @@ export class GoalItemComponent implements OnInit {
 
   selectedItem: GoalItem | null = null
   showPrivate: boolean []
-  highlightsList: HighlightList;
+  filterList: HighlightList;
   useFilter: boolean[];
 
   constructor(private globalService: GlobalService) {
     this.showPrivate = this.globalService.showPrivate
-    this.highlightsList = this.globalService.highlightList
+    this.filterList = this.globalService.highlightList
     this.useFilter = this.globalService.useFilter
   }
 

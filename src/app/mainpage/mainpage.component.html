@@ -8,10 +8,10 @@
     </app-gui-headerdivision>
     <div style="width:40px;"> </div> <!-- Spacer  -->
 
-    <app-gui-headerdivision [header]="'testing highlights selection'">
-      {{highlightsList.lifechangingPotential}}
-      {{highlightsList.moneyblocked.soft}}
-      {{highlightsList.moneyblocked.hard}}
+    <app-gui-headerdivision [header]="'testing filter selection'">
+      {{filterList.lifechangingPotential}}
+      {{filterList.moneyblocked.soft}}
+      {{filterList.moneyblocked.hard}}
     </app-gui-headerdivision>
 
 
@@ -42,7 +42,7 @@
       <button (click)="selectRightView('details')">details</button>
       <button (click)="selectRightView('daily')">daily</button>
       <button (click)="selectRightView('tabview')">overview -  tabs</button>
-      <button (click)="selectRightView('highlights')"> select  highlights</button>
+      <button (click)="selectRightView('filter')"> select  filter</button>
     </app-gui-headerdivision>
 
     <!--  right content  -->
@@ -77,7 +77,7 @@
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" [hidden]="hideOverlaySection" ></app-goaldetails>
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
-      <app-highlights *ngIf="rightView === 'highlights'"> </app-highlights>
+      <app-filter *ngIf="rightView === 'filter'"> </app-filter>
     </div>
   </div>
 </div>
