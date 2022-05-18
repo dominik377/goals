@@ -29,6 +29,7 @@ export class GoalItem {
   parentList: number [] = []
   moneyblocked: 'no' | 'soft' | 'hard' | null = 'no'
   easilySolvable: 'no' | 'money' | 'timeAndEnergy' | 'determinedAction' = 'no'
+  moonshot: boolean = false
 
   constructor() {
 

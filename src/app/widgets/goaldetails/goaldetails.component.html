@@ -74,9 +74,16 @@
       </div>
 
       <div class="radiocontainer">
-        <div class="radiolabel"></div>
+        <div class="radiolabel"> easily Solvable</div>
         <mat-radio-group [(ngModel)]="item.easilySolvable">
           <mat-radio-button *ngFor="let o of ['no', 'money', 'timeAndEnergy','determinedAction']" [value]="o"> {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> Moonshot</div>
+        <mat-radio-group [(ngModel)]="item.moonshot">
+          <mat-radio-button *ngFor="let o of [false, true]" [value]="o"> {{o}}</mat-radio-button>
         </mat-radio-group>
       </div>
 
