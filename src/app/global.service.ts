@@ -19,6 +19,8 @@ export class GlobalService {
   itemIdCounter = 0;
   highlightList = new HighlightList()
   useFilter = [false]
+  highlightMoonshots = [false]
+  highlightLifechanging = [false]
 
 
 

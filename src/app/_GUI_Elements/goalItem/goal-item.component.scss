@@ -331,7 +331,36 @@
   left: calc(100% - 10px);
   padding-top:-5px;
   box-shadow: 0 2px 4px rgba(50,60,70,0.2);
+}
 
+.moonshotBadge{
+  box-sizing:border-box;
+  position:absolute;
+  background-image:linear-gradient(to bottom right, darkgrey, grey);
+  width:18px;
+  height:18px;
+  padding:1px 1px 1px 1px;
+  border-radius:9px;
+  z-index:20;
+  top:-5px;
+  left: calc(100% - 40px);
+  padding-top:-5px;
+  box-shadow: 0 2px 4px rgba(50,60,70,0.2);
+}
+
+.lifechangingBadge{
+  box-sizing:border-box;
+  position:absolute;
+  background-image:linear-gradient(to bottom right, darkgrey, grey);
+  width:18px;
+  height:18px;
+  padding:1px 1px 1px 1px;
+  border-radius:9px;
+  z-index:20;
+  top:-5px;
+  left: 30px;
+  padding-top:-5px;
+  box-shadow: 0 2px 4px rgba(50,60,70,0.2);
 }
 
 .badgeInner {

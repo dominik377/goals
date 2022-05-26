@@ -28,3 +28,27 @@
     </div>
   </mat-card-content>
 </mat-card>
+
+<mat-card>
+  <mat-card-header>Highlighting </mat-card-header>
+  <mat-card-content>
+
+    <div class="main">
+      <div class="radiocontainer">
+        <div class="radiolabel"> Moonshots  </div>
+        <mat-radio-group [(ngModel)]="highlightMoonshots [0]">
+          <mat-radio-button *ngFor="let o of [false, true]" [value]="o">  {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> Lifechanging  </div>
+        <mat-radio-group [(ngModel)]="highlightLifechanging [0]">
+          <mat-radio-button *ngFor="let o of [false, true]" [value]="o">  {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+
+    </div>
+  </mat-card-content>
+</mat-card>

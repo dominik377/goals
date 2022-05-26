@@ -17,6 +17,23 @@
         <div class="badgeInner">  {{Item.juicyness}}  </div>
       </div>
 
+      <div class="moonshotBadge" *ngIf="Item.moonshot === true">
+        <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #46f'}"></div>
+        <div class="badgeInner">  M   </div>
+      </div>
+
+      <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'lifechanging'">
+        <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'linear-gradient(to bottom right, #795809, #ffeb00'}"></div>
+        <div class="badgeInner">  L  </div>
+      </div>
+
+      <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'gamechanging'">
+        <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #bdf'}"></div>
+        <div class="badgeInner">  G  </div>
+      </div>
+
+
+
       <!--
         This section is used to create animated arrows around the selected element
       -->
