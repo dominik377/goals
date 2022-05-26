@@ -14,7 +14,8 @@ const nameLookup : { [char: string]: string } = {
   'later': 'do later',
   'consider': 'consider doing',
   'mind': 'keep in mind',
-  'lowInterest' : 'lowInterest'
+  'lowInterest' : 'lowInterest',
+  'backgroundLow': 'Background-low Attention'
 }
 
 @Pipe({ name: 'fundingCategoryNamePipe' })
