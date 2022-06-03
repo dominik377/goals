@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>Search </mat-card-header>
+  <mat-card-content>
+    <div style="height:20px;flex-basis: 20px;"> </div> <!-- Spacer -->
+    <input type="text" [(ngModel)]="searchString" (input)="inputHandler($event)">
+    <div class="resultsContainer">
+      <ng-container *ngFor="let item of filteredList">
+        <app-gui-goal-item [Item]="item"  > </app-gui-goal-item>
+      </ng-container>
+    </div>
+  </mat-card-content>
+
+
+
+</mat-card>

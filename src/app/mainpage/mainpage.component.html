@@ -42,7 +42,8 @@
       <button (click)="selectRightView('details')">details</button>
       <button (click)="selectRightView('daily')">daily</button>
       <button (click)="selectRightView('tabview')">overview -  tabs</button>
-      <button (click)="selectRightView('filter')"> select  filter</button>
+      <button (click)="selectRightView('filter')"> filter</button>
+      <button (click)="selectRightView('search')"> search</button>
     </app-gui-headerdivision>
 
     <!--  right content  -->
@@ -78,6 +79,7 @@
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
       <app-filter *ngIf="rightView === 'filter'"> </app-filter>
+      <app-search *ngIf="rightView === 'search'"> </app-search>
     </div>
   </div>
 </div>
