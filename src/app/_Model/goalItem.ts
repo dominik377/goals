@@ -30,6 +30,8 @@ export class GoalItem {
   moneyblocked: 'no' | 'soft' | 'hard' | null = 'no'
   easilySolvable: 'no' | 'money' | 'timeAndEnergy' | 'determinedAction' = 'no'
   moonshot: boolean = false
+  relieverSatisfier: 'reliever' | 'satisfier' | 'undefined' = 'undefined'
+  priorityToday: 'primary' | 'secondary' | 'tertiary' | 'no' = 'no'
 
   constructor() {
 

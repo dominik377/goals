@@ -87,6 +87,20 @@
         </mat-radio-group>
       </div>
 
+      <div class="radiocontainer">
+        <div class="radiolabel"> Satisfier vr Reliever</div>
+        <mat-radio-group [(ngModel)]="item.relieverSatisfier">
+          <mat-radio-button *ngFor="let o of ['reliever', 'satisfier', 'undefined']" [value]="o"> {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radiocontainer">
+        <div class="radiolabel"> Priority Today </div>
+        <mat-radio-group [(ngModel)]="item.priorityToday">
+          <mat-radio-button *ngFor="let o of ['primary', 'secondary', 'tertiary', 'no' ]" [value]="o"> {{o}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
 
 
       <form class="example-form">
