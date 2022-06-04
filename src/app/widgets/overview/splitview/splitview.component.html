@@ -16,7 +16,7 @@
           <div body>
             <ng-container *ngFor="let item of goalList">
               <ng-container *ngIf="item.relieverSatisfier === 'satisfier' && item.priorityToday === 'primary'">
-                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+                <app-gui-goal-item [Item]="item" [colorOverride]="'button--blue'"></app-gui-goal-item>
               </ng-container>
             </ng-container>
           </div>
@@ -26,7 +26,7 @@
           <div body>
             <ng-container *ngFor="let item of goalList">
               <ng-container *ngIf="item.relieverSatisfier === 'reliever' && item.priorityToday === 'primary'">
-                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+                <app-gui-goal-item [Item]="item" [colorOverride]="'button--orange'"></app-gui-goal-item>
               </ng-container>
             </ng-container>
           </div>
@@ -36,7 +36,7 @@
           <div body>
             <ng-container *ngFor="let item of goalList">
               <ng-container *ngIf="item.relieverSatisfier === 'satisfier' && item.priorityToday === 'secondary'">
-                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+                <app-gui-goal-item [Item]="item"  [colorOverride]="'button--green'"></app-gui-goal-item>
               </ng-container>
             </ng-container>
           </div>
@@ -46,7 +46,7 @@
           <div body>
             <ng-container *ngFor="let item of goalList">
               <ng-container *ngIf="item.relieverSatisfier === 'reliever' && item.priorityToday === 'secondary'">
-                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+                <app-gui-goal-item [Item]="item" [colorOverride]="'button--yellow'"></app-gui-goal-item>
               </ng-container>
             </ng-container>
           </div>

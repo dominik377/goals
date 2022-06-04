@@ -13,7 +13,8 @@ templateUrl: './goal-item.component.html',
   styleUrls: ['./goal-item.component.scss']
 })
 export class GoalItemComponent implements OnInit {
- @Input() Item: GoalItem | null = null
+  @Input() Item: GoalItem | null = null
+  @Input() colorOverride: string | null = null //  Enables setting the color directly from the parent; overrides normal color settings
 
 
   selectedItem: GoalItem | null = null

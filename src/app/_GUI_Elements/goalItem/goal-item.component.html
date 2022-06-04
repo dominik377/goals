@@ -6,51 +6,107 @@
   || (filterList.moneyblocked.hard === true && Item.moneyblocked === 'hard')
   || (filterList.solveable.money === true && Item.easilySolvable === 'money')
   || (filterList.solveable.timeAndEnergy === true && Item.easilySolvable === 'timeAndEnergy')
-  || (filterList.solveable.determinedAction === true && Item.easilySolvable === 'determinedAction')
-    ">
-    <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true}" class="button"  (click)="clickHandler(Item)">
-      <div class="text">
+  || (filterList.solveable.determinedAction === true && Item.easilySolvable === 'determinedAction') ">
+
+
+    <!-- Some ugly piece of code duplication: this whole section is duplicated for two different if-conditions:
+          Case A for colorOverride === null,
+          Case B for colorOverride !== null.
+          setting the class property needs to be done completely different in each case.
+    -->
+
+    <ng-container *ngIf="colorOverride === null">
+      <div  class="{{Item.status | itemColorPipe: Item}} " [ngClass]=" {'main': true}" class="button"  (click)="clickHandler(Item)">
+        <div class="text">
+            {{Item.displayName}}
+        </div>
+        <div class="badge" *ngIf="Item.juicyness != 0">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
+          <div class="badgeInner">  {{Item.juicyness}}  </div>
+        </div>
+
+        <div class="moonshotBadge" *ngIf="Item.moonshot === true">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #46f'}"></div>
+          <div class="badgeInner">  M   </div>
+        </div>
+
+        <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'lifechanging'">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'linear-gradient(to bottom right, #795809, #ffeb00'}"></div>
+          <div class="badgeInner">  L  </div>
+        </div>
+
+        <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'gamechanging'">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #bdf'}"></div>
+          <div class="badgeInner">  G  </div>
+        </div>
+
+
+
+        <!--
+          This section is used to create animated arrows around the selected element
+        -->
+        <ng-container *ngIf="Item === selectedItem">
+          <div class="selectedRight1"> <  </div>
+          <div class="selectedRight2"> <  </div>
+          <div class="selectedRight3"> <  </div>
+          <div class="selectedLeft1"> >  </div>
+          <div class="selectedLeft2"> >  </div>
+          <div class="selectedLeft3"> >  </div>
+          <div class="selectedTop1"> &#8964;  </div>
+          <div class="selectedTop2"> &#8964;  </div>
+          <div class="selectedTop3"> &#8964;  </div>
+          <div class="selectedBottom1"> &#8963; </div>
+          <div class="selectedBottom2"> &#8963;  </div>
+          <div class="selectedBottom3"> &#8963;  </div>
+        </ng-container>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="colorOverride !== null">
+      <div  class="{{colorOverride}} " [ngClass]=" {'main': true}" class="button"  (click)="clickHandler(Item)">
+        <div class="text">
           {{Item.displayName}}
+        </div>
+        <div class="badge" *ngIf="Item.juicyness != 0">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
+          <div class="badgeInner">  {{Item.juicyness}}  </div>
+        </div>
+
+        <div class="moonshotBadge" *ngIf="Item.moonshot === true">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #46f'}"></div>
+          <div class="badgeInner">  M   </div>
+        </div>
+
+        <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'lifechanging'">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'linear-gradient(to bottom right, #795809, #ffeb00'}"></div>
+          <div class="badgeInner">  L  </div>
+        </div>
+
+        <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'gamechanging'">
+          <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #bdf'}"></div>
+          <div class="badgeInner">  G  </div>
+        </div>
+
+
+
+        <!--
+          This section is used to create animated arrows around the selected element
+        -->
+        <ng-container *ngIf="Item === selectedItem">
+          <div class="selectedRight1"> <  </div>
+          <div class="selectedRight2"> <  </div>
+          <div class="selectedRight3"> <  </div>
+          <div class="selectedLeft1"> >  </div>
+          <div class="selectedLeft2"> >  </div>
+          <div class="selectedLeft3"> >  </div>
+          <div class="selectedTop1"> &#8964;  </div>
+          <div class="selectedTop2"> &#8964;  </div>
+          <div class="selectedTop3"> &#8964;  </div>
+          <div class="selectedBottom1"> &#8963; </div>
+          <div class="selectedBottom2"> &#8963;  </div>
+          <div class="selectedBottom3"> &#8963;  </div>
+        </ng-container>
       </div>
-      <div class="badge" *ngIf="Item.juicyness != 0">
-        <div class="badgeInnerBackground" [ngStyle]="{'background-image': Item.juicyness | juicynessColorPipe}"></div>
-        <div class="badgeInner">  {{Item.juicyness}}  </div>
-      </div>
-
-      <div class="moonshotBadge" *ngIf="Item.moonshot === true">
-        <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #46f'}"></div>
-        <div class="badgeInner">  M   </div>
-      </div>
-
-      <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'lifechanging'">
-        <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'linear-gradient(to bottom right, #795809, #ffeb00'}"></div>
-        <div class="badgeInner">  L  </div>
-      </div>
-
-      <div class="lifechangingBadge" *ngIf="Item.lifechangingPotential === 'gamechanging'">
-        <div class="badgeInnerBackground" [ngStyle]="{'background-image': 'radial-gradient(circle at center, #f5f5f5, #bdf'}"></div>
-        <div class="badgeInner">  G  </div>
-      </div>
-
-
-
-      <!--
-        This section is used to create animated arrows around the selected element
-      -->
-      <ng-container *ngIf="Item === selectedItem">
-        <div class="selectedRight1"> <  </div>
-        <div class="selectedRight2"> <  </div>
-        <div class="selectedRight3"> <  </div>
-        <div class="selectedLeft1"> >  </div>
-        <div class="selectedLeft2"> >  </div>
-        <div class="selectedLeft3"> >  </div>
-        <div class="selectedTop1"> &#8964;  </div>
-        <div class="selectedTop2"> &#8964;  </div>
-        <div class="selectedTop3"> &#8964;  </div>
-        <div class="selectedBottom1"> &#8963; </div>
-        <div class="selectedBottom2"> &#8963;  </div>
-        <div class="selectedBottom3"> &#8963;  </div>
-      </ng-container>
-    </div>
+    </ng-container>
   </ng-container>
 </ng-container>
