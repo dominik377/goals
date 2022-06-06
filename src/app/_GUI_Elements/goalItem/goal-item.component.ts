@@ -1,5 +1,5 @@
 import {
-  Component,
+  Component, HostListener,
   Input,
   OnInit,
 } from '@angular/core';
@@ -15,6 +15,11 @@ templateUrl: './goal-item.component.html',
 export class GoalItemComponent implements OnInit {
   @Input() Item: GoalItem | null = null
   @Input() colorOverride: string | null = null //  Enables setting the color directly from the parent; overrides normal color settings
+  @HostListener('contextmenu', ['$event'])
+  onClick(e: any) {
+    this.globalService.rightclickHandler(this.Item)
+    e.preventDefault();
+  }
 
 
   selectedItem: GoalItem | null = null

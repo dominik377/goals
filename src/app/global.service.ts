@@ -165,6 +165,10 @@ export class GlobalService {
     return this.http.post<any>(environment.backend + '/backendTest', {}  )
   }
 
+  rightclickHandler(rightclickedItem: GoalItem | null): void {
+    this.snackbarService.openSnackBar('Item rightclicked');
+  }
+
 
 
 
