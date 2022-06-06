@@ -7,6 +7,7 @@ import {DailyItem} from "./_Model/dailyItem";
 import {environment} from "../environments/environment";
 import {SnackbarService} from "./_Utility/snackbar.service";
 import {HighlightList} from "./_Model/highlightList";
+import {ParentChildRelationship} from "./_Model/parentChildRelationship";
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,12 @@ export class GlobalService {
   globalDailyItem: DailyItem
   showPrivate = [true]
   itemIdCounter = 0;
+  relationshipCounter = 0; // every parent-child relationship needs an individual Id
   highlightList = new HighlightList()
   useFilter = [false]
   highlightMoonshots = [false]
   highlightLifechanging = [false]
+
 
 
 
@@ -106,7 +109,8 @@ export class GlobalService {
           id: 1,
           goalList: this.goalList,
           dailyItem: this.globalDailyItem,
-          itemIdCounter: this.itemIdCounter
+          itemIdCounter: this.itemIdCounter,
+          relationshipCounter: this.relationshipCounter
         }
       }
 
@@ -138,10 +142,14 @@ export class GlobalService {
         this.globalDailyItem = new DailyItem()
       }
 
-      //      ___ III ___    Item Counter
+      //      ___ III ___    Counters
       this.itemIdCounter = data.itemIdCounter
+      if (data.relationshipCounter) {this.relationshipCounter = data.relationshipCounter}
 
 
+
+
+      //      ___ V ___ Snackbar Service
       this.snackbarService.openSnackBar('data Loaded');
 
     })
@@ -166,7 +174,19 @@ export class GlobalService {
   }
 
   rightclickHandler(rightclickedItem: GoalItem | null): void {
-    this.snackbarService.openSnackBar('Item rightclicked');
+    if(rightclickedItem === null || this.selectedGoal === null) {
+      return
+    }
+
+    console.log(this.relationshipCounter)
+
+    this.relationshipCounter += 1
+    const childRelationship = new ParentChildRelationship(this.relationshipCounter, 'child', rightclickedItem.id)
+    this.selectedGoal.complexChildList.push(childRelationship)
+
+    console.log(this.selectedGoal)
+
+
   }
 
 

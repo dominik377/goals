@@ -1,5 +1,6 @@
 import {actionGoalField} from "./actionGoalField";
 import {actionGoalFieldSecondary} from "./actionGoalFieldSecondary";
+import {ParentChildRelationship} from "./parentChildRelationship";
 
 export class GoalItem {
   id: number = -1
@@ -27,6 +28,7 @@ export class GoalItem {
   lifechangingPotential: 'gamechanging' | 'lifechanging' | false = false
   secret: boolean = false
   parentList: number [] = []
+  complexChildList: ParentChildRelationship [] = []
   moneyblocked: 'no' | 'soft' | 'hard' | null = 'no'
   easilySolvable: 'no' | 'money' | 'timeAndEnergy' | 'determinedAction' = 'no'
   moonshot: boolean = false
