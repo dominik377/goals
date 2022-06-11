@@ -13,5 +13,6 @@ export const actionGoalFieldToStatusLookup = {
   'measure' :  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
   'assumption':  ['great', 'good', 'ok', 'lightDanger', 'significantDanger'],
   'problem': ['light', 'serious', 'existential'],
-  'confusion': ['light', 'serious', 'existential']
+  'confusion': ['light', 'serious', 'existential'],
+  'system' :  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn']
 }

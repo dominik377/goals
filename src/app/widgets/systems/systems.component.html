@@ -1,8 +1,16 @@
 <div class="outerContainer">
-  <ng-container *ngFor="let item of goalList">
-    <ng-container  *ngIf="item.actionGoalField === 'system'">
-      <app-mainsystem [item]="item"> test mainsystem </app-mainsystem>
+  <div class="upperContainer">
+    <ng-container *ngFor="let item of goalList">
+      <ng-container  *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldSecondary === 'main'">
+        <app-mainsystem [item]="item"> test mainsystem </app-mainsystem>
+      </ng-container>
     </ng-container>
-  </ng-container>
-
+  </div>
+  <div class="lowerContainer">
+    <ng-container *ngFor="let item of goalList">
+      <ng-container  *ngIf="item.actionGoalField === 'system'">
+        <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>

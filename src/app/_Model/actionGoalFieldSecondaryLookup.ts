@@ -12,5 +12,6 @@ export const actionGoalFieldSecondaryLookup = {
   'challenge' : ['primary', 'secondary'],
   'roadblock' : ['primary', 'secondary'],
   'assumptions' : ['primary', 'secondary'],
-  'experiments' : ['primary', 'secondary']
+  'experiments' : ['primary', 'secondary'],
+  'system': ['main', 'sub']
 }
