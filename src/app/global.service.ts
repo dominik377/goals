@@ -23,6 +23,7 @@ export class GlobalService {
   useFilter = [false]
   highlightMoonshots = [false]
   highlightLifechanging = [false]
+  displayOverlaySelectedRelationshipType: boolean [] = [false]
 
 
 
@@ -33,11 +34,14 @@ export class GlobalService {
 
   focusOnGoalDetails: BehaviorSubject<boolean | null>
 
+  relationshipTypeSelectionSubject: BehaviorSubject<string | null>
+
   constructor(private http:HttpClient, private snackbarService: SnackbarService) {
     this.getGoalList = new BehaviorSubject<GoalItem []>([])
     this.getSelectedGoal = new BehaviorSubject<GoalItem | null>(null)
     this.selectedGoalUpdated = new BehaviorSubject<boolean | null>(null)
     this.focusOnGoalDetails = new BehaviorSubject<boolean | null>(null)
+    this.relationshipTypeSelectionSubject = new BehaviorSubject<string | null>(null)
 
     this.globalDailyItem = new DailyItem()
     console.log(this.globalDailyItem)
@@ -173,21 +177,26 @@ export class GlobalService {
     return this.http.post<any>(environment.backend + '/backendTest', {}  )
   }
 
-  rightclickHandler(rightclickedItem: GoalItem | null): void {
+  activateRelationshipTypeDialog(rightclickedItem: GoalItem | null): void {
     if(rightclickedItem === null || this.selectedGoal === null) {
       return
     }
+    this.displayOverlaySelectedRelationshipType [0] =  true
 
-    console.log(this.relationshipCounter)
-
-    this.relationshipCounter += 1
-    const childRelationship = new ParentChildRelationship(this.relationshipCounter, 'child', rightclickedItem.id)
-    this.selectedGoal.complexChildList.push(childRelationship)
-
-    console.log(this.selectedGoal)
-
-
+    this.relationshipTypeSelectionSubject.subscribe(next => {
+      if(rightclickedItem === null || this.selectedGoal === null) {
+        return
+      }
+      if (next !== null) {
+        this.relationshipCounter += 1
+        const childRelationship = new ParentChildRelationship(this.relationshipCounter, 'child', rightclickedItem.id)
+        childRelationship.relationshipType = next
+        this.selectedGoal.complexChildList.push(childRelationship)
+        console.log(this.selectedGoal.complexChildList)
+      }
+    })
   }
+
 
 
 

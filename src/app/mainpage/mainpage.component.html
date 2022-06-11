@@ -28,6 +28,7 @@
       <button (click)="selectLeftView('overview')">overview</button>
       <button (click)="selectLeftView('action')">action</button>
       <button (click)="selectLeftView('projects')"> projects </button>
+      <button (click)="selectLeftView('systems')"> systems </button>
     </app-gui-headerdivision>
 
     <!--  left content  -->
@@ -68,11 +69,25 @@
       <app-mainpage-overview *ngIf="leftView === 'overview'"></app-mainpage-overview>
       <app-mainpage-actions *ngIf="leftView === 'action'"> </app-mainpage-actions>
       <app-projects *ngIf="leftView === 'projects'"></app-projects>
+      <app-systems *ngIf="leftView === 'systems'"> </app-systems>
     </div>
     <div class="overlayContainer" [ngClass]="{ 'z1000': hideOverlaySection === false, 'zMinus1000': hideOverlaySection === true }" >
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" [hidden]="hideOverlaySection" ></app-goaldetails>
       <app-daily *ngIf="rightView === 'daily'"> </app-daily>
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
+    </div>
+    <div  class="z1000 selectRealtionshipTypeOverlay" *ngIf="displayOverlaySelectedRelationshipType [0] === true">
+      <div class="radiocontainer">
+        <div class="radiolabel"> Select Relationship Type  </div>
+          <div style="height:10px;flex-basis:10px;"> </div> <!-- SPACER -->
+          <mat-radio-group [(ngModel)]="overlaySelectedRelationshipType">
+            <mat-radio-button *ngFor="let o of ['default', 'subsystem' ]" [value]="o"> {{o}}</mat-radio-button>
+          </mat-radio-group>
+      </div>
+      <div style="height:10px;flex-basis:10px;"> </div> <!-- SPACER -->
+      <button (click)="cancelOverlaySelectRelationship()"> cancel </button>
+      <div style="width:10px;flex-basis:10px;"> </div> <!-- SPACER -->
+      <button (click)="confirmOverlaySelectRelationship()"> confirm </button>
     </div>
     <div class="rightContainer" *ngIf="displayRightSection === true" >
       <app-goaldetails *ngIf="rightView === 'details'" [item]="selectedItem" [hidden]="hideOverlaySection" ></app-goaldetails>

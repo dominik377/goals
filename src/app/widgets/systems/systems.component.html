@@ -1,0 +1,8 @@
+<div class="outerContainer">
+  <ng-container *ngFor="let item of goalList">
+    <ng-container  *ngIf="item.actionGoalField === 'system'">
+      <app-mainsystem [item]="item"> test mainsystem </app-mainsystem>
+    </ng-container>
+  </ng-container>
+
+</div>

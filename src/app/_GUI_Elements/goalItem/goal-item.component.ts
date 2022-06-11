@@ -17,7 +17,7 @@ export class GoalItemComponent implements OnInit {
   @Input() colorOverride: string | null = null //  Enables setting the color directly from the parent; overrides normal color settings
   @HostListener('contextmenu', ['$event'])
   onClick(e: any) {
-    this.globalService.rightclickHandler(this.Item)
+    this.globalService.activateRelationshipTypeDialog(this.Item)
     e.preventDefault();
   }
 

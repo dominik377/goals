@@ -27,18 +27,21 @@ export class MainpageComponent implements OnInit {
   }
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  leftView: 'overview' | 'action' | 'projects' = 'overview';
+  leftView: 'overview' | 'action' | 'projects' | 'systems' = 'overview';
   rightView: 'details' | 'daily' | 'tabview' | 'filter' | 'search' = 'details';
   showPrivate: boolean []
   hideOverlaySection = true;
   displayRightSection = true;
   filterList: HighlightList
+  displayOverlaySelectedRelationshipType: boolean []
+  overlaySelectedRelationshipType: string = 'default'
 
   testIcon = 'view_column'
 
   constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {
     this.showPrivate = this.globalService.showPrivate
     this.filterList = this.globalService.highlightList
+    this.displayOverlaySelectedRelationshipType = this.globalService.displayOverlaySelectedRelationshipType
   }
 
   ngOnInit(): void {
@@ -90,7 +93,7 @@ export class MainpageComponent implements OnInit {
     }
   }
 
-  selectLeftView(selected: 'overview' | 'action' | 'projects') {
+  selectLeftView(selected: 'overview' | 'action' | 'projects' | 'systems') {
     // if 'projects' is seleleted, the selectedItem must be a project
     if(selected === 'projects' && ( this.selectedItem === null || ! ['smallproject', 'largeproject'].includes (this.selectedItem.actionGoalField)) ) {
       alert(' no item selected or item is no project. Please select a Project before moving to project view')
@@ -121,6 +124,15 @@ export class MainpageComponent implements OnInit {
 
   testHandler(e: any): void {
     alert(e)
+  }
+
+  cancelOverlaySelectRelationship(): void {
+    this.displayOverlaySelectedRelationshipType [0] = false
+  }
+
+  confirmOverlaySelectRelationship(): void {
+    this.displayOverlaySelectedRelationshipType [0] = false
+    this.globalService.relationshipTypeSelectionSubject.next(this.overlaySelectedRelationshipType)
   }
 
 }

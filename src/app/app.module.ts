@@ -60,6 +60,9 @@ import { ItemWithMeasuresComponent } from './widgets/projects/item-with-measures
 import { FilterComponent } from './widgets/filter/filter.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { SearchComponent } from './widgets/search/search.component';
+import { SystemsComponent } from './widgets/systems/systems.component';
+import { MainsystemComponent } from './widgets/systems/mainSystem/mainsystem.component';
+import { ExtractChildListByRealtionshipTypePipePipe } from './widgets/systems/mainSystem/extract-child-list-by-realtionship-type-pipe.pipe';
 
 
 @NgModule({
@@ -102,8 +105,10 @@ import { SearchComponent } from './widgets/search/search.component';
     Grid8Component,
     ItemWithMeasuresComponent,
     FilterComponent,
-    SearchComponent
-
+    SearchComponent,
+    SystemsComponent,
+    MainsystemComponent,
+    ExtractChildListByRealtionshipTypePipePipe
   ],
     imports: [
         BrowserModule,
