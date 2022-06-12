@@ -63,6 +63,8 @@ import { SearchComponent } from './widgets/search/search.component';
 import { SystemsComponent } from './widgets/systems/systems.component';
 import { MainsystemComponent } from './widgets/systems/mainSystem/mainsystem.component';
 import { ExtractChildListByRealtionshipTypePipePipe } from './widgets/systems/mainSystem/extract-child-list-by-realtionship-type-pipe.pipe';
+import { RelationshipsComponent } from './widgets/relationships/relationships.component';
+import { IdToGoalItemPipe } from './_Model/id-to-goal-item-pipe.pipe';
 
 
 @NgModule({
@@ -108,7 +110,9 @@ import { ExtractChildListByRealtionshipTypePipePipe } from './widgets/systems/ma
     SearchComponent,
     SystemsComponent,
     MainsystemComponent,
-    ExtractChildListByRealtionshipTypePipePipe
+    ExtractChildListByRealtionshipTypePipePipe,
+    RelationshipsComponent,
+    IdToGoalItemPipe
   ],
     imports: [
         BrowserModule,

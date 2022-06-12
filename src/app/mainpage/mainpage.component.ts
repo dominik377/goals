@@ -28,7 +28,7 @@ export class MainpageComponent implements OnInit {
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
   leftView: 'overview' | 'action' | 'projects' | 'systems' = 'overview';
-  rightView: 'details' | 'daily' | 'tabview' | 'filter' | 'search' = 'details';
+  rightView: 'details' | 'daily' | 'tabview' | 'filter' | 'search' | 'relationships' = 'details';
   showPrivate: boolean []
   hideOverlaySection = true;
   displayRightSection = true;
@@ -103,7 +103,7 @@ export class MainpageComponent implements OnInit {
   }
 
 
-  selectRightView(selected: 'details' | 'daily' | 'tabview' | 'filter' | 'search') {
+  selectRightView(selected: 'details' | 'daily' | 'tabview' | 'filter' | 'search' | 'relationships') {
     this.rightView = selected
   }
 

@@ -45,6 +45,7 @@
       <button (click)="selectRightView('tabview')">overview -  tabs</button>
       <button (click)="selectRightView('filter')"> filter</button>
       <button (click)="selectRightView('search')"> search</button>
+      <button (click)="selectRightView('relationships')"> relationships</button>
     </app-gui-headerdivision>
 
     <!--  right content  -->
@@ -95,6 +96,7 @@
       <app-tabview *ngIf="rightView === 'tabview'"> </app-tabview>
       <app-filter *ngIf="rightView === 'filter'"> </app-filter>
       <app-search *ngIf="rightView === 'search'"> </app-search>
+      <app-relationships *ngIf="rightView === 'relationships'"  [item]="selectedItem"> relationships </app-relationships>
     </div>
   </div>
 </div>

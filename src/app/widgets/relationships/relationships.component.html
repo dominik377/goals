@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>Relationships </mat-card-header>
+  <mat-card-content *ngIf="item !== null">
+    <div *ngFor="let relationship of item.complexChildList" class="relationship">
+      <div class="relationshipItem">  {{(relationship.targetId | idToGoalItemPipe)?.displayName }}    </div>
+      <div class="relationshipItem">  {{relationship.relationshipType}}  </div>
+      <div class="relationshipItem">  {{relationship.relationshipStatus}}    </div>
+      <button (click)="deleteRelationship(relationship)"> delete Relationship </button>
+    </div>
+
+  </mat-card-content>
+</mat-card>

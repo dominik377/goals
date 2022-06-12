@@ -4,7 +4,6 @@
       <app-gui-goal-item [Item]="item"> </app-gui-goal-item>
     </div>
     <div body>
-      {{item | extractChildListByRealtionshipTypePipe: 'subsystem'}}
       <ng-container *ngFor="let childItem of goalList">
         <ng-container *ngIf="(item | extractChildListByRealtionshipTypePipe: 'subsystem') .indexOf(childItem.id) !== -1 " >
           <app-gui-goal-item [Item]="childItem"> </app-gui-goal-item>
