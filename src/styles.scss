@@ -4,17 +4,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-.globalGoalContainer {
-  flex-grow:1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 5px;
-  gap: 5px;
-}
-
 :root {
   --shadow-1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }

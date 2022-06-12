@@ -8,6 +8,8 @@
   background-image:linear-gradient(to bottom right, #fff, #eee);
 }
 
+
+
 .header{
   text-align:center;
   height:17px;
@@ -26,4 +28,13 @@
 }
 
 
-
+.GoalContainer {
+  flex-grow:1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  gap: 5px;
+}
