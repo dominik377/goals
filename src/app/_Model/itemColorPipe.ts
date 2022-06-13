@@ -30,11 +30,23 @@ export class ItemColorPipe {
       case  'ok' :
         return 'button--green'
         break
-      case  'suboptimal' :
+      case  'suboptimal_h' :
         return 'button--lightgrey'
         break
-      case  'bad' :
+      case  'suboptimalx' :
+        return 'button--yellow'
+        break
+      case  'bad_h' :
         return 'button--grey'
+        break
+      case  'badx' :
+        return 'button--orange'
+        break
+      case  'terrible_h' :
+        return 'button--black'
+        break
+      case  'terriblex' :
+        return 'button--red'
         break
       case  'nothingGoingOn' :
         return 'button--black'

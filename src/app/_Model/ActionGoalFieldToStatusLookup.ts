@@ -8,11 +8,12 @@ export const actionGoalFieldToStatusLookup = {
   'metaaction': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'undefined': ['funded' , 'semi-funded' , 'near' ,'seminear' , 'far' , 'veryfar', 'undefined'],
   'risk' : ['safe', 'lightDanger', 'significantDanger', 'occurenceOfDamage'],
-  'challenge':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn'],
-  'associatedGoal':  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
-  'measure' :  ['great', 'good', 'ok', 'suboptimal', 'bad', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
+  'challenge':  ['great', 'good', 'ok', 'suboptimal_h', 'bad_h', 'terrible_h', 'nothingGoingOn'],
+  'associatedGoal':  ['great', 'good', 'ok', 'suboptimal_h', 'bad_h', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
+  'measure' :  ['great', 'good', 'ok', 'suboptimal_h', 'bad_h', 'nothingGoingOn', 'veryPromising', 'promising', 'hope'],
   'assumption':  ['great', 'good', 'ok', 'lightDanger', 'significantDanger'],
   'problem': ['light', 'serious', 'existential'],
   'confusion': ['light', 'serious', 'existential'],
-  'system' :  ['great', 'good', 'ok', 'suboptimal', 'bad', 'terrible', 'nothingGoingOn']
+  'contingency': ['ok', 'suboptimalx', 'badx', 'terriblex'],
+  'system' :  ['great', 'good', 'ok', 'suboptimal_h', 'bad_h', 'terrible_h','suboptimalx', 'badx', 'terriblex', 'nothingGoingOnx']
 }
