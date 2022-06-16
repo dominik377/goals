@@ -14,6 +14,7 @@ export class GoalItem {
   actionCategory : 'purchase' | 'practise' | 'project' | 'meta-action' | 'other' | null = null   //  Deprecated : not yet deleted for reasons of save backwards compatibility
   actionGoalField : string = 'goal'
   actionGoalFieldSecondary : string = 'undefined'
+  actionGoalFieldTertiary : string = 'undefined'
   resoucesNeeded: number = 0
   resourcesAssigned: number = 0
   priority: number = 0

@@ -37,6 +37,12 @@
           <mat-radio-button *ngFor="let o of item.actionGoalField | actionGoalFieldToSecondaryPipe" [value]="o"> {{o}} </mat-radio-button>
         </mat-radio-group>
       </div>
+      <div class="radiocontainer secondaryCat">
+        <div class="radiolabel"> Tertiary Category </div>
+        <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.actionGoalFieldTertiary">
+          <mat-radio-button *ngFor="let o of item.actionGoalField | actionGoalFieldToTertiary" [value]="o"> {{o}} </mat-radio-button>
+        </mat-radio-group>
+      </div>
       <div class="radiocontainer">
         <div class="radiolabel"> Status </div>
         <mat-radio-group aria-label="Juiciness" [(ngModel)]="item.status">

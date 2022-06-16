@@ -65,6 +65,7 @@ import { MainsystemComponent } from './widgets/systems/mainSystem/mainsystem.com
 import { ExtractChildListByRealtionshipTypePipePipe } from './widgets/systems/mainSystem/extract-child-list-by-realtionship-type-pipe.pipe';
 import { RelationshipsComponent } from './widgets/relationships/relationships.component';
 import { IdToGoalItemPipe } from './_Model/id-to-goal-item-pipe.pipe';
+import { ActionGoalFieldToTertiaryPipe } from './_Model/action-goal-field-to-tertiary.pipe';
 
 
 @NgModule({
@@ -112,7 +113,8 @@ import { IdToGoalItemPipe } from './_Model/id-to-goal-item-pipe.pipe';
     MainsystemComponent,
     ExtractChildListByRealtionshipTypePipePipe,
     RelationshipsComponent,
-    IdToGoalItemPipe
+    IdToGoalItemPipe,
+    ActionGoalFieldToTertiaryPipe
   ],
     imports: [
         BrowserModule,
