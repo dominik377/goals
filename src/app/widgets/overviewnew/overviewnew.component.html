@@ -1,0 +1,107 @@
+<div class="main">
+
+  <app-card>
+    <div header> Systems </div>
+    <div body>
+      <ng-container *ngFor="let item of goalList">
+        <app-mainsystem [item]="item" *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldTertiary === 'primary'"> </app-mainsystem>
+      </ng-container>
+    </div>
+  </app-card>
+
+
+
+  <app-doubleCard>
+    <div header1> DO TODAY  </div>
+    <div body1>
+      <app-grid4> <!-- upper section -->
+        <app-card g1>
+          <div header> Satisfier - primary   </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.relieverSatisfier === 'satisfier' && item.priorityToday === 'primary'">
+                <app-gui-goal-item [Item]="item" [colorOverride]="'button--blue'"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+        <app-card g2>
+          <div header> Reliever- Primary </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.relieverSatisfier === 'reliever' && item.priorityToday === 'primary'">
+                <app-gui-goal-item [Item]="item" [colorOverride]="'button--orange'"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+        <app-card g3>
+          <div header> Satisfier- secondary </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.relieverSatisfier === 'satisfier' && item.priorityToday === 'secondary'">
+                <app-gui-goal-item [Item]="item"  [colorOverride]="'button--green'"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+        <app-card g4>
+          <div header> Reliever-Secondary </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.relieverSatisfier === 'reliever' && item.priorityToday === 'secondary'">
+                <app-gui-goal-item [Item]="item" [colorOverride]="'button--yellow'"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+      </app-grid4>
+    </div>
+
+    <div header2>  overview </div>
+    <div body2>
+      <app-grid4>  <!-- lower section -->
+        <app-card g1>
+          <div header> Problems </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.actionGoalField === 'problem'">
+                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+        <app-card g2>
+          <div header> Assumptions </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.actionGoalField === 'assumption'">
+                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+        <app-card g3>
+          <div header> Confusions </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.actionGoalField === 'confusion'">
+                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+        <app-card g4>
+          <div header> Contingencies </div>
+          <div body>
+            <ng-container *ngFor="let item of goalList">
+              <ng-container *ngIf="item.actionGoalField === 'contingency'">
+                <app-gui-goal-item [Item]="item"></app-gui-goal-item>
+              </ng-container>
+            </ng-container>
+          </div>
+        </app-card>
+      </app-grid4>
+    </div>
+  </app-doubleCard>
+</div>

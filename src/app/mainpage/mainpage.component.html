@@ -26,6 +26,7 @@
     <!--  left selection  -->
     <app-gui-headerdivision [header]="'left Component'">
       <button (click)="selectLeftView('overview')">overview</button>
+      <button (click)="selectLeftView('overviewNew')">overview NEW</button>
       <button (click)="selectLeftView('action')">action</button>
       <button (click)="selectLeftView('projects')"> projects </button>
       <button (click)="selectLeftView('systems')"> systems </button>
@@ -68,6 +69,7 @@
   <div class="mainContainer">
     <div class="leftContainer">
       <app-mainpage-overview *ngIf="leftView === 'overview'"></app-mainpage-overview>
+      <app-overviewnew *ngIf="leftView === 'overviewNew'"> </app-overviewnew>
       <app-mainpage-actions *ngIf="leftView === 'action'"> </app-mainpage-actions>
       <app-projects *ngIf="leftView === 'projects'"></app-projects>
       <app-systems *ngIf="leftView === 'systems'"> </app-systems>

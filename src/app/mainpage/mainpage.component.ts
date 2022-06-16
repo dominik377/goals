@@ -27,7 +27,7 @@ export class MainpageComponent implements OnInit {
   }
   selectedItem: GoalItem | null = null;
   goalList: GoalItem [] = [];
-  leftView: 'overview' | 'action' | 'projects' | 'systems' = 'overview';
+  leftView: 'overview' | 'overviewNew' | 'action' | 'projects' | 'systems' = 'overview';
   rightView: 'details' | 'daily' | 'tabview' | 'filter' | 'search' | 'relationships' = 'details';
   showPrivate: boolean []
   hideOverlaySection = true;
@@ -93,7 +93,7 @@ export class MainpageComponent implements OnInit {
     }
   }
 
-  selectLeftView(selected: 'overview' | 'action' | 'projects' | 'systems') {
+  selectLeftView(selected: 'overview' | 'overviewNew' | 'action' | 'projects' | 'systems') {
     // if 'projects' is seleleted, the selectedItem must be a project
     if(selected === 'projects' && ( this.selectedItem === null || ! ['smallproject', 'largeproject'].includes (this.selectedItem.actionGoalField)) ) {
       alert(' no item selected or item is no project. Please select a Project before moving to project view')

@@ -66,6 +66,7 @@ import { ExtractChildListByRealtionshipTypePipePipe } from './widgets/systems/ma
 import { RelationshipsComponent } from './widgets/relationships/relationships.component';
 import { IdToGoalItemPipe } from './_Model/id-to-goal-item-pipe.pipe';
 import { ActionGoalFieldToTertiaryPipe } from './_Model/action-goal-field-to-tertiary.pipe';
+import { OverviewnewComponent } from './widgets/overviewnew/overviewnew.component';
 
 
 @NgModule({
@@ -114,7 +115,8 @@ import { ActionGoalFieldToTertiaryPipe } from './_Model/action-goal-field-to-ter
     ExtractChildListByRealtionshipTypePipePipe,
     RelationshipsComponent,
     IdToGoalItemPipe,
-    ActionGoalFieldToTertiaryPipe
+    ActionGoalFieldToTertiaryPipe,
+    OverviewnewComponent
   ],
     imports: [
         BrowserModule,
