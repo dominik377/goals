@@ -11,3 +11,8 @@
   gap: 5px;
   box-shadow: var(--shadow-1);
 }
+
+.systemsContainer{
+  display:flex;
+  flex-direction:column;
+}

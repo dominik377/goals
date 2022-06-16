@@ -3,9 +3,14 @@
   <app-card>
     <div header> Systems </div>
     <div body>
-      <ng-container *ngFor="let item of goalList">
-        <app-mainsystem [item]="item" *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldTertiary === 'primary'"> </app-mainsystem>
-      </ng-container>
+      <div class="systemsContainer">
+        <ng-container *ngFor="let item of goalList">
+          <ng-container *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldTertiary === 'primary'">
+            <app-mainsystem [item]="item" > </app-mainsystem>
+            <div style="flex-basis: 50px;">  </div> <!-- SPACER -->
+          </ng-container>
+        </ng-container>
+      </div>
     </div>
   </app-card>
 
