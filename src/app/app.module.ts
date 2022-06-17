@@ -67,6 +67,7 @@ import { RelationshipsComponent } from './widgets/relationships/relationships.co
 import { IdToGoalItemPipe } from './_Model/id-to-goal-item-pipe.pipe';
 import { ActionGoalFieldToTertiaryPipe } from './_Model/action-goal-field-to-tertiary.pipe';
 import { OverviewnewComponent } from './widgets/overviewnew/overviewnew.component';
+import {PortalModule} from "@angular/cdk/portal";
 
 
 @NgModule({
@@ -138,7 +139,8 @@ import { OverviewnewComponent } from './widgets/overviewnew/overviewnew.componen
         MatSnackBarModule,
         MatIconModule,
         MatTooltipModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        PortalModule
     ],
   providers: [],
   bootstrap: [AppComponent]

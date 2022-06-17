@@ -6,6 +6,8 @@ import * as _lodash from 'lodash';
 import {GoalItem} from "../_Model/goalItem";
 import {GlobalService} from "../global.service";
 import {HighlightList} from "../_Model/highlightList";
+import {Portal} from "@angular/cdk/portal";
+import {PortalService} from "../services/portal.service";
 
 
 @Component({
@@ -35,10 +37,11 @@ export class MainpageComponent implements OnInit {
   filterList: HighlightList
   displayOverlaySelectedRelationshipType: boolean []
   overlaySelectedRelationshipType: string = 'default'
+  _portal!: Portal<any>;
 
   testIcon = 'view_column'
 
-  constructor(private globalService: GlobalService, private snackbarService: SnackbarService) {
+  constructor(private globalService: GlobalService, private snackbarService: SnackbarService, private portalService: PortalService) {
     this.showPrivate = this.globalService.showPrivate
     this.filterList = this.globalService.highlightList
     this.displayOverlaySelectedRelationshipType = this.globalService.displayOverlaySelectedRelationshipType
@@ -54,6 +57,10 @@ export class MainpageComponent implements OnInit {
 
     this.globalService.getSelectedGoal.subscribe( (next: GoalItem | null) => {
       this.selectedItem = next;
+    })
+
+    this.portalService.portalSubject.subscribe((next) => {
+      this._portal = next
     })
 
   }

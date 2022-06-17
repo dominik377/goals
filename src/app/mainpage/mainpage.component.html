@@ -8,10 +8,11 @@
     </app-gui-headerdivision>
     <div style="width:40px;"> </div> <!-- Spacer  -->
 
-    <app-gui-headerdivision [header]="'testing filter selection'">
-      {{filterList.lifechangingPotential}}
-      {{filterList.moneyblocked.soft}}
-      {{filterList.moneyblocked.hard}}
+    <app-gui-headerdivision [header]="'testing portal'">
+      <div class="portalHost">
+        <!-- Similar to routerOutlets, PortalHosts inject Portals as siblings -->
+        <ng-container [cdkPortalHost]="_portal"></ng-container>
+      </div>
     </app-gui-headerdivision>
 
 

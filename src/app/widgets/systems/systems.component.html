@@ -1,7 +1,12 @@
 <div class="outerContainer">
   <div class="upperContainer">
     <app-doubleCard>
-      <div header1> PRIMARY SYSTEMS </div>
+      <div header1> PRIMARY SYSTEMS
+        <div class="portalHost">
+          <!-- Similar to routerOutlets, PortalHosts inject Portals as siblings -->
+          <ng-container [cdkPortalHost]="_portal"></ng-container>
+        </div>
+      </div>
       <div body1 class="upperContainer">
         <ng-container *ngFor="let item of goalList">
           <ng-container  *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldSecondary === 'main' && item.actionGoalFieldTertiary === 'primary'">
@@ -28,3 +33,6 @@
     </ng-container>
   </div>
 </div>
+<ng-template  cdkPortal #myTemplate="cdkPortal">
+  <button style="background-color:red" (click)="testSystems()"> test systems portal </button>
+</ng-template>
