@@ -1,10 +1,24 @@
 <div class="outerContainer">
   <div class="upperContainer">
-    <ng-container *ngFor="let item of goalList">
-      <ng-container  *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldSecondary === 'main'">
-        <app-mainsystem [item]="item"> test mainsystem </app-mainsystem>
-      </ng-container>
-    </ng-container>
+    <app-doubleCard>
+      <div header1> PRIMARY SYSTEMS </div>
+      <div body1 class="upperContainer">
+        <ng-container *ngFor="let item of goalList">
+          <ng-container  *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldSecondary === 'main' && item.actionGoalFieldTertiary === 'primary'">
+            <app-mainsystem [item]="item"> test mainsystem </app-mainsystem>
+          </ng-container>
+        </ng-container>
+      </div>
+      <div header2> SECONDARY SYSTEMS </div>
+
+      <div body2 class="upperContainer">
+        <ng-container *ngFor="let item of goalList">
+          <ng-container  *ngIf="item.actionGoalField === 'system' && item.actionGoalFieldSecondary === 'main' && item.actionGoalFieldTertiary === 'secondary'">
+            <app-mainsystem [item]="item"> test mainsystem </app-mainsystem>
+          </ng-container>
+        </ng-container>
+      </div>
+    </app-doubleCard>
   </div>
   <div class="lowerContainer">
     <ng-container *ngFor="let item of goalList">
