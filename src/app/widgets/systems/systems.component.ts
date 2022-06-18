@@ -42,4 +42,17 @@ export class SystemsComponent implements OnInit {
     alert(' Systems test')
   }
 
+  addSubsystem(): void {
+    if(this.selectedItem === null) {return}
+    if(this.selectedItem.actionGoalFieldSecondary !== 'main') {
+      alert (' only main systems can have subsystems')
+      return
+    }
+    const newItem = this.globalService.createNewGoal2()
+    newItem.actionGoalField = 'system'
+    newItem.actionGoalFieldSecondary = 'sub'
+    this.globalService.createRelationship(this.selectedItem, newItem, 'subsystem' )
+    this.globalService.selectedGoal = newItem
+  }
+
 }

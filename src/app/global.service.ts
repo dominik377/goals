@@ -79,7 +79,7 @@ export class GlobalService {
     this.focusOnGoalDetails.next(true)
   }
 
-  createNewGoal2(): GoalItem {  // like the normal createNewGoal, but returns the goal
+  createNewGoal2(setAsSelected: boolean = false): GoalItem {  // like the normal createNewGoal, but returns the goal
     // create new goal and assign a unique Id
     const g = new GoalItem();
     this.itemIdCounter += 1
@@ -87,7 +87,7 @@ export class GlobalService {
 
 
     this.goalList.push(g)
-    this.selectedGoal = g
+    if (setAsSelected === true) {this.selectedGoal = g}
     this.publishGoals()
 
     this.focusOnGoalDetails.next(true)
@@ -188,13 +188,23 @@ export class GlobalService {
         return
       }
       if (next !== null) {
-        this.relationshipCounter += 1
+        this.createRelationship(this.selectedGoal, rightclickedItem, next)
+        /*
         const childRelationship = new ParentChildRelationship(this.relationshipCounter, 'child', rightclickedItem.id)
         childRelationship.relationshipType = next
         this.selectedGoal.complexChildList.push(childRelationship)
         console.log(this.selectedGoal.complexChildList)
+         */
       }
     })
+  }
+
+  createRelationship(parent: GoalItem, child: GoalItem, relationshipType: string): void {
+    if  (parent  === null || child === null) { return }
+    const childRelationship = new ParentChildRelationship(this.relationshipCounter, 'child', child.id)
+    childRelationship.relationshipType = relationshipType
+    parent.complexChildList.push(childRelationship)
+
   }
 
 
